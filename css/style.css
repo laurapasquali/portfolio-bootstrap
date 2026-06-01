@@ -1,0 +1,650 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'MonteCrysto';
+  src: url('../assets/fonts/MonteCrystoReguler.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --terracotta:  #9B2E15;
+  --beige:       #D6B996;
+  --base:        #EAE3DA;
+  --burgundy:    #4A1811;
+  --navy:        #09354A;
+
+  --font-display: 'MonteCrysto', Georgia, serif;
+  --font-body:    'Sweet Sans Pro', Helvetica, sans-serif;
+
+  --h1-size:  2.5rem;    /* 40px */
+  --h3-size:  1rem;     /* 16px */
+  --p-size:   0.75rem;  /* 12px */
+
+  --nav-height: 64px;
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background: var(--base);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 100;
+}
+
+.container-full {
+  height: 100%;
+  padding: 0 10%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menubottom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+/* menu mobile che si apre con .open*/
+
+.menu {
+  display: none;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: var(--base);
+  padding: 1.5em 0;
+  
+}
+
+.menu.open {
+  display: block;
+  height: 100vh;
+}
+
+.menu.oper a:hover {
+  color: var(--burgundy);
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu li {
+  width: 100%;
+  text-align: center;
+  
+}
+
+.menu a {
+  display: block;
+  padding: 0.75em 1.25em;
+  font-family: var(--font-body);
+  font-size: var(--h3-size);
+  color: var(--terracotta);
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--burgundy);
+}
+
+.prenotaunacalltendina {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.6em 1em;
+  font-family: var(--font-display);
+  font-size: 1rem;;
+  color: var(--base);
+  background: var(--terracotta);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.prenotaunacalltendina:hover {
+  color: var(--burgundy);
+}
+
+/* bottone cta navbar - no mobile solo desktop */
+
+.prenotaunacall {
+  display: none;
+  color: var(--base);
+
+}
+
+.button {
+  background-color: var(--terracotta);
+  border-radius: 15px;
+}
+
+
+/* HAMBURGER visibile solo mobile */
+
+.toggleMenu {
+  display: block;
+  background: var(--base);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggleMenu img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+
+/* hero*/
+
+
+.hero {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+  background-color: var(--beige);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.hero p {
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+}
+
+.imghero {
+  display: flex;
+  justify-content: center;
+}
+
+.imghero img {
+  width: 80%;
+  height: auto;
+  display: block;
+  padding-top: 2rem;
+  }
+
+
+.scrivimi {
+  background-color: var(--navy);
+  color: var(--base);
+  border: none;
+  border-radius: 12px;
+  padding: 0.85em 2em;
+  font-family: var(--font-display);
+  font-size: var(--p-size);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.scrivimi:hover {
+  background-color: var(--terracotta);
+  color: var(--base);
+}
+
+.scopricomelavoro {
+  background-color: transparent;
+  color: var(--navy);
+  border: 3px solid var(--navy);
+  border-radius: 12px;
+  padding: 0.85em 2em;
+  font-family: var(--font-display);
+  font-size: var(--p-size);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.scopricomelavoro:hover {
+  background-color: var(--terracotta);
+  border: none;
+  color: var(--base);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+/* about me*/
+
+
+.aboutme {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  background-color: var(--base);
+}
+
+.aboutme h1 {
+  color: var(--terracotta);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+}
+
+.aboutme p {
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.aboutme-img {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutme-img img {
+  width: 80%;
+  height: auto;
+  display: block;
+  padding-top: 2rem;
+}
+
+
+/* step come lavoreremo*/
+
+.step {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  background-color: var(--navy);
+}
+
+.step-title {
+  text-align: center;
+}
+
+.step-title h1 {
+  color: var(--beige);
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  line-height: 0.9;
+  margin-bottom: 1rem;
+}
+
+.step-title p {
+  font-size: var(--p-size);
+  color: var(--base);
+  line-height: 1.1;
+}
+
+.step-card {
+  background-color: var(--beige);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.step-card-descrizione h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  margin-bottom: 1rem;
+  line-height: 0.9;
+  text-align: left;
+  color: var(--terracotta);
+}
+
+.step-card-descrizione h3 {
+  font-family: var(--font-display);
+  font-size: var(--h3-size);
+  line-height: 0.9;
+  text-align: left;
+  color: var(--terracotta);
+}
+.step-card-descrizione p {
+  font-size: var(--p-size);
+  text-align: left;
+  line-height: 1.1;
+  color: var(--burgundy);
+}
+
+
+
+/* BREAKPOINT TABLET — min-width: 768px */
+
+@media (min-width: 768px) {
+
+   .hero {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    
+  }
+
+  .scrivimi, .scopricomelavoro {
+    font-size: 1rem; 
+  }
+
+}
+
+/* BREAKPOINT DESKTOP — min-width: 1200px (xl Bootstrap) */
+
+@media (min-width: 1200px) {
+
+  header {
+    height: 100px;
+  }
+
+  :root {
+    --nav-height: 100px;
+  }  
+
+  .menu {
+    display: block;
+    position: static;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .menu li {
+    width: auto;
+  }
+
+  .menu a {
+    padding: 0.5rem 1rem;
+    font-size: var(--p-size);
+  }
+
+  /* bottone cta navbar che compare */
+  .prenotaunacall {
+    display: block;
+    background: var(--terracotta);
+    color: var(--base);
+    border: none;
+    border-radius: 12px;
+    padding: 0.5em 1.25em;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .prenotaunacall:hover {
+    background: var(--burgundy);
+  }
+
+  
+  .toggleMenu {                    /* hambuerger viene nascosto su desktop */
+    display: none;    
+  }
+  .prenotaunacalltendina {          /* hambuerger viene nascosto su desktop */
+    display: none;
+  }
+
+
+  .menu a {
+    padding: 0.5rem 1.25rem;
+    font-size: var(--h3-size);
+  }
+
+
+
+/* hero */
+
+   .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-height);
+    padding-bottom: 2rem;
+  }
+
+  .hero .container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+   .hero h1 {
+    text-align: left;
+    font-size: 5rem;
+  }
+
+  .hero p {
+    text-align: left;
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.5rem;
+  }
+
+
+  .imghero img {
+    width: 100%;
+    padding-top: none;
+  }
+
+  .hero-ctas {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: auto;    
+  margin: 0; 
+  padding-top: 2rem;
+  }
+ 
+  .scrivimi, .scopricomelavoro {
+    font-size: 1.5rem; 
+  }
+
+
+
+
+/* about me */
+
+
+ .aboutme .container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .aboutme h1 {
+  color: var(--terracotta);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-align: left;
+}
+
+.aboutme p {
+  font-size: 1.5rem;
+  color: var(--burgundy);
+  line-height: 1.1;
+  text-align: left;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 2rem;
+
+}
+
+.aboutme-img {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutme-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 1rem;
+}
+
+/* step come lavoreremo */
+
+.step-title {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-title h1 {
+  font-size: 4rem;
+}
+
+.step-title p {
+  font-size: 1.5rem;
+}
+
+.step-card {
+  height: 215px
+}
+
+.step-card {
+    padding: 2.5rem;
+  }
+  
+.step .container-fluid {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+
+
+
+/* cards cover solo desktop */
+
+
+.step-card-wrap {
+    position: relative;
+    height: 340px;
+  }
+
+.step-card-wrap .step-card {
+    height: 100%;
+  }  
+.step-card-descrizione h1 {
+    font-size: 4rem;
+}
+
+.step-card-descrizione h3 {
+    font-size: 2.5rem;
+}
+
+.step-card-descrizione p {
+    font-size: 1.5rem;
+}
+
+
+
+.step-card-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--terracotta);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity var(--transition);
+  }
+
+ .step-card-cover h1 {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    line-height: 0.9;
+    color: var(--beige);
+    margin-bottom: 6rem;
+  }
+
+  .step-card-cover h3 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 0.9;
+    text-align: left;
+    color: var(--base);
+  }
+
+  .step-card-wrap:hover .step-card-cover {
+    opacity: 0;
+  }
+
+
+
+
+}
+

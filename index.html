@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+    <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" />
+        </div>
+
+        
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="comelavoro.html">Come lavoreremo insieme</a></li>
+            </ul>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <button type="button" class="prenotaunacalltendina">Prenota una call</button>
+          
+          </nav>
+
+          <!-- Bottone CTA visibile su desktop -->
+          <button type="button" class="prenotaunacall">Prenota una call</button>
+
+          
+
+          <!-- Hamburger -->
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+         <!-- Testo: mobile centro, desktop colonne sinistra -->
+          <div class="col-12 col-xl-5 hero-text">
+            <h1>Il tuo brand merita di essere riconosciuto al primo sguardo.</h1>
+            <p>Non entreresti mai in un negozio a comprare il latte se fuori non c'è scritto supermarket. Il tuo cliente funziona allo stesso modo: sceglie con gli occhi, in pochi secondi. Io progetto quei pochi secondi.</p>
+            
+            <div class="hero-ctas">
+              <button type="button" class="scrivimi">Scrivimi</button>
+              <button type="button" class="scopricomelavoro">Scopri come lavoro</button>
+            </div>
+          </div>
+
+          <!-- Immagine: mobile centro, desktop colonne sinistra -->
+          <div class="col-12 col-xl-6 offset-xl-1 imghero">
+            <img src="img/hero.png" alt="Laura al lavoro su un progetto di branding" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  
+     <section class="aboutme">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+          <!-- Testo: su mobile prima, su desktop a destra -->
+          <div class="col-12 col-xl-6 offset-xl-1 aboutme-text order-1 order-xl-2">
+            <h1>Ciao,<br class="d-none d-xl-block"> sono Laura</h1>
+            <p>Lavoro con chi vuole un'identità visiva riconoscibile, coerente e memorabile, che tu stia partendo da zero o che sia ora di cambiare pelle. 
+              Non consegno solo file: ti guido anche su come portare il tuo brand nel mondo perché un'identità visiva funziona solo se sai come usarla. Se cerchi qualcuno che lavori con cura e con metodo, sei nel posto giusto.</p>
+          </div>
+
+          <!-- Immagine: su mobile viene dopo, su desktop è a sinistra -->
+          <div class="col-12 col-xl-5 aboutme-img order-2 order-xl-1">
+            <img src="img/imgaboutme.png" alt="Ciao sono Laura" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- sezione steps come lavoreremo -->
+    <section class="step">
+      <div class="container-fluid">
+        <div class="row g-4">
+
+           <div class="col-12 col-xl-4 step-title">
+            <h1>Come lavoreremo insieme</h1>
+            <p>Un percorso chiaro, step dopo step. Niente sorprese.</p>
+          </div>
+
+         
+          <div class="col-xl-4">
+            <div class="step-card-wrap">
+              
+              <div class="step-card">
+                <div class="step-card-descrizione">
+                  <h1>01</h1>
+                  <h3>Discovery Call</h3>
+                </div>
+                <p>Una chiacchierata senza impegno per capire il tuo progetto, i tuoi obiettivi e se siamo la coppia giusta.</p>
+              </div>
+             
+              <div class="step-card-cover d-none d-xl-block">
+                <h1>01</h1>
+                <h3>Discovery Call</h3>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="col-xl-4">
+            <div class="step-card-wrap">
+              <div class="step-card">
+                <div class="step-card-descrizione">
+                  <h1>02</h1>
+                  <h3>Moodboard di allineamento</h3>
+                </div>
+                <p>Prima di disegnare una sola linea, costruiamo insieme la direzione visiva. Ti presento due strade stilistiche diverse: tu scegli quella che senti tua. Così non ci sono sorprese.</p>
+              </div>
+              <div class="step-card-cover d-none d-xl-block">
+                <h1>02</h1>
+                <h3>Moodboard di allineamento</h3>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="col-xl-4">
+            <div class="step-card-wrap">
+              <div class="step-card">
+                <div class="step-card-descrizione">
+                  <h1>03</h1>
+                  <h3>Presentazione del Concept</h3>
+                </div>
+                <p>Disegno il progetto sulla base di tutto quello che abbiamo costruito insieme. Ogni scelta ha una ragione, te la racconto, perché capire il tuo brand è parte del servizio.</p>
+              </div>
+              <div class="step-card-cover d-none d-xl-block">
+                <h1>03</h1>
+                <h3>Presentazione del Concept</h3>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="col-xl-4">
+            <div class="step-card-wrap">
+              <div class="step-card">
+                <div class="step-card-descrizione">
+                  <h1>04</h1>
+                  <h3>Revisione Insieme</h3>
+                </div>
+                <p>Raffiniamo insieme fino a quando non si sente giusto. Ogni pacchetto include due round di revisione per arrivare esattamente dove vuoi.</p>
+              </div>
+              <div class="step-card-cover d-none d-xl-block">
+                <h1>04</h1>
+                <h3>Revisione Insieme</h3>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-xl-4">
+            <div class="step-card-wrap">
+              <div class="step-card">
+                <div class="step-card-descrizione">
+                  <h1>05</h1>
+                  <h3>Consegna &amp; Supporto</h3>
+                </div>
+                <p>Ricevi i tuoi file completi insieme a una video walkthrough che ti spiega come usare tutto. E per 30 giorni dopo la consegna, sono qui se hai domande.</p>
+              </div>
+              <div class="step-card-cover d-none d-xl-block">
+                <h1>05</h1>
+                <h3>Consegna &amp; Supporto</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+
+   <script>
+    function toggleMenu() {
+            const element = document.getElementById("menu");
+            //console.log(element)
+             element.classList.toggle("open");}
+
+     </script>
+     
+      
+  </body>
+ 
+
+</html>
