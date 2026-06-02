@@ -356,6 +356,34 @@ header {
   color: var(--burgundy);
 }
 
+/* portfolio*/
+
+.portfolio {
+  background-color: var(--base);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.portfolio-title h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.portfolio-title p {
+   font-size: var(--p-size);
+  color: var(--burgundy);
+  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+
 
 
 /* BREAKPOINT TABLET — min-width: 768px */
@@ -644,6 +672,19 @@ header {
   }
 
 
+/* portfolio*/
+
+.portfolio {
+  padding-top: 6rem;
+
+}
+.portfolio-title h1 {
+  font-size: 5rem;;
+}
+
+.portfolio-title p {
+  font-size: 1.5rem;;
+}
 
 
 }
