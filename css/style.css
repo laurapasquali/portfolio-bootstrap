@@ -395,7 +395,31 @@ header {
   object-fit: cover; 
 }
 
+.portfolio-cta {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
 
+}
+.guardaimieiprogetti {
+  background-color: transparent;
+  color: var(--navy);
+  border: 3px solid var(--navy);
+  border-radius: 12px;
+  padding: 0.85em 2em;
+  font-family: var(--font-display);
+  font-size: var(--p-size);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+
+
+.guardaimieiprogetti:hover {
+  background-color: var(--terracotta);
+  border: none;
+  color: var(--base);
+}
 
 
 
@@ -431,6 +455,9 @@ header {
   height: 400px;      
   }
 
+.guardaimieiprogetti {
+    font-size: 1rem; 
+  }
 
 }
 
@@ -706,6 +733,10 @@ header {
 
 .carousel-item img {       
   height: 800px;      
+  }
+
+.guardaimieiprogetti {
+    font-size: 1.5rem; 
   }
 
 }
