@@ -359,7 +359,7 @@ header {
 /* portfolio*/
 
 .portfolio {
-  background-color: var(--base);
+  background-color: var(--beige);
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -403,8 +403,8 @@ header {
 }
 .guardaimieiprogetti {
   background-color: transparent;
-  color: var(--navy);
-  border: 3px solid var(--navy);
+  color: var(--terracotta);
+  border: 3px solid var(--terracotta);
   border-radius: 12px;
   padding: 0.85em 2em;
   font-family: var(--font-display);
@@ -414,14 +414,159 @@ header {
 }
 
 
-
 .guardaimieiprogetti:hover {
   background-color: var(--terracotta);
   border: none;
   color: var(--base);
 }
 
+/*form di contatto*/
 
+.form {
+  padding-top: calc(var(--nav-height));
+  padding-bottom: 3rem;
+  background-color: var(--base);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.form h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.form p {
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.form-box {
+  background-color: var(--burgundy);
+  border-radius: 20px;
+  padding: 1.5rem;
+  
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;  
+  gap: 1rem; 
+}
+
+.form-box h1 {
+  font-family: var(--font-display);
+  font-size: var(--h3-size);
+  color: var(--beige);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--base);
+  color: var(--burgundy);
+  outline: none;
+  transition: background-color var(--transition);
+  gap: 15px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--burgundy);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-field button {
+  width: 100%;
+  background-color: var(--beige);
+  color: var(--burgundy);
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-family: var(--font-display);
+  font-size: var(--p-size);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.form-filed button:hover {
+  background-color: var(--terracotta);
+  color: var(--base);
+}
+
+/*footer*/
+
+.footer {
+  background-color: var(--terracotta);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 120px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-social img {
+  height: 22px;
+  width: auto;
+  transition: opacity var(--transition);
+}
+
+.footer-social a:hover img {
+  opacity: 0.7;
+}
+
+.footer-top {
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  color: var(--base);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: opacity var(--transition);
+}
+
+.footer-top:hover {
+  opacity: 0.7;
+}
+
+.footer-line {
+  width: 80%;
+  border: none;
+  border-top: 2px solid var(--base);
+  opacity: 0.4;
+}
 
 /* BREAKPOINT TABLET — min-width: 768px */
 
@@ -738,6 +883,67 @@ header {
 .guardaimieiprogetti {
     font-size: 1.5rem; 
   }
+
+/*form di contatto*/
+
+.form .container-fluid {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.form-text {
+  align-self: start;
+}
+
+.form-text h1 {
+  font-size: 4rem;
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+
+.form-text p {
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 80%;
+}
+
+.text-extra {
+  margin-top: 2rem;
+}
+
+.form-box {
+  padding: 2.5rem;
+}
+
+.form-box h1 {
+  font-size: 2rem;
+}
+
+.form-field button {
+  font-size: 1.5rem;
+}
+
+/*footer*/
+
+.footer-social img {
+  height: 32px;
+  width: auto;
+  transition: opacity var(--transition);
+}
+
+.footer-logo img {
+  height: 200px;
+}
+
+.footer-line {
+   width: 80%;
+  border: none;
+  border-top: 4px solid var(--base);
+  opacity: 0.4;
+}
 
 }
 
