@@ -571,7 +571,7 @@ header {
 
 /*pagina progetti*/
 
-/*titolo*/
+
 .progetti-hero {
   background-color: var(--base);
   padding-top: calc(var(--nav-height) + 2rem);
@@ -695,7 +695,148 @@ header {
   background: var(--burgundy);
 }
 
+/*pagina progetto singolo*/
 
+
+.progetto-header {
+  background-color: var(--terracotta);
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 2rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.progetto-header h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--base);
+  line-height: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.progetto-sottotitolo {
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  color: var(--beige);
+  letter-spacing: 0.05em;
+}
+
+
+.progetto-blocco {
+  background-color: var(--base);
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+
+.progetto-testo h2 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--terracotta);
+  line-height: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.progetto-descrizione {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.progetto-testo p {
+  font-family: var(--font-body);
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  line-height: 1.5;
+}
+
+.progetto-img-singola img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+
+.progetto-galleria {
+  background-color: var(--base);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.progetto-galleria img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  
+}
+
+.progetto-img-larga {
+  width: 100vw;           
+  position: relative;
+  left: 50%;              
+  margin-left: -50vw;    
+  right: 50%;
+  margin-right: -50vw;
+  
+}
+
+
+/* navigazione tra progetti */
+
+.progetto-nav {
+  background-color: var(--base);
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* mobile: impilati e centrati */
+
+.progetto-nav-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.progetto-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.progetto-nav-link:hover {
+  color: var(--burgundy);
+}
+
+/* la freccia si sposta all'hover */
+
+.nav-freccia {
+  transition: transform var(--transition);
+}
+
+.nav-prev:hover .nav-freccia {
+  transform: translateX(-6px);
+}
+
+.nav-next:hover .nav-freccia {
+  transform: translateX(6px);
+}
 
 
 /* BREAKPOINT TABLET — min-width: 768px */
@@ -1127,6 +1268,73 @@ header {
   font-size: 1.5rem;
 }
 
+
+/* pagina progetto singolo */
+
+.progetto-header {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: calc(var(--nav-height) + 3rem);
+  padding-bottom: 3rem;
+}
+
+.progetto-header h1 {
+  font-size: 5rem;
+}
+
+.progetto-blocco {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.progetto-testo h2 {
+  font-size: 4rem;
+}
+
+.progetto-testo p {
+  font-size: 1.25rem;
+  padding-right: 6rem;
+}
+
+.progetto-descrizione {
+  font-size: 1rem;
+}
+
+
+.progetto-galleria {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.coppia-1 .row img {
+  height: 600px;
+  object-fit: cover;  
+}
+
+.progetto-img-larga {
+  padding-bottom: 3rem;
+}
+
+
+/* navigazione tra progetti desktop ai lati opposti */
+
+.progetto-nav {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.progetto-nav-content {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.progetto-nav-link {
+  font-size: 1.5rem;
+}
 
 }
 
