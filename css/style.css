@@ -1,7 +1,5 @@
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 @font-face {
   font-family: 'MonteCrysto';
@@ -800,7 +798,6 @@ header {
   padding-right: 1.25rem;
 }
 
-/* mobile: impilati e centrati */
 
 .progetto-nav-content {
   display: flex;
@@ -837,6 +834,50 @@ header {
 .nav-next:hover .nav-freccia {
   transform: translateX(6px);
 }
+
+
+/* pagina about me*/
+
+
+.chisono {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+  background-color: var(--beige);
+}
+
+.chi-sono-text h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.chi-sono-text p {
+  font-size: var(--p-size);
+  color: var(--burgundy);
+  padding-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+}
+
+.chi-sono-img {
+  display: flex;
+  justify-content: center;
+}
+
+.chi-sono-img img {
+  width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  padding-top: 2rem;
+}
+
 
 
 /* BREAKPOINT TABLET — min-width: 768px */
@@ -1335,6 +1376,43 @@ header {
 .progetto-nav-link {
   font-size: 1.5rem;
 }
+
+
+
+
+/* pagina about me */
+
+
+.chisono .container-fluid {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.chisono {
+  padding-top: calc(var(--nav-height) + 3rem);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.chi-sono-text h1 {
+  font-size: 5rem;
+  text-align: left;
+}
+
+.chi-sono-text p {
+  font-size: 1.15rem;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1.5;
+}
+
+.chi-sono-img img {
+  width: 100%;
+  padding-top: 0;
+}
+
 
 }
 

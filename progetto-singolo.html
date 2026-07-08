@@ -15,6 +15,17 @@
   />
 
   <link rel="stylesheet" href="css/style.css" />
+
+<script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+</script>
+
 </head>
 
 <body>
@@ -72,7 +83,7 @@
             <p>L'obbiettivo è dare un volto a un festival che ancora non esiste: nessun logo, nessun colore, nessuna voce, solo un'idea di cultura e amore da celebrare e un nome, Oodal, preso in prestito dalla lingua tamil. La sfida era costruire un'identità capace di evocare movimento, comunità e festa fin dal primo sguardo, parlando a un pubblico che del festival non sa ancora nulla. Tutto da inventare, partendo dal nome.</p>
           </div>
 
-          <div class="col-12 col-xl-6 progetto-img-singola">
+          <div class="col-12 col-xl-6 progetto-img-singola order-1 order-xl-2">
             <img src="img/oodal-festival/festival.png" alt="Oodal Festival - foto" />
           </div>
 
