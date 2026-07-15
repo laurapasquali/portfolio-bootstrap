@@ -11,11 +11,11 @@
 
 
 :root {
-  --terracotta:  #9B2E15;
-  --beige:       #D6B996;
-  --base:        #EAE3DA;
-  --burgundy:    #4A1811;
-  --navy:        #09354A;
+  --terracotta:  #9b2e15;
+  --beige:       #d6b996;
+  --base:        #eae3da;
+  --burgundy:    #4a1811;
+  --navy:        #05344a;
 
   --font-display: 'MonteCrysto', Georgia, serif;
   --font-body:    'Sweet Sans Pro', Helvetica, sans-serif;
@@ -24,7 +24,7 @@
   --h3-size:  1rem;     /* 16px */
   --p-size:   0.75rem;  /* 12px */
 
-  --nav-height: 64px;
+  --nav-height: 80px;
   --transition: 0.3s ease;
 }
 
@@ -57,7 +57,7 @@ header {
   height: 100%;
 }
 
-.logo img {
+.logo-mobile {
   height: 50px;
 }
 
@@ -111,13 +111,13 @@ header {
   padding: 0.75em 1.25em;
   font-family: var(--font-body);
   font-size: var(--h3-size);
-  color: var(--terracotta);
+  color: var(--burgundy);
   transition: color var(--transition);
   text-decoration: none;
 }
 
 .menu a:hover {
-  color: var(--burgundy);
+  color: var(--terracotta);
 }
 
 .prenotaunacalltendina {
@@ -127,14 +127,18 @@ header {
   margin-top: 1rem;
   text-align: center;
   padding: 0.6em 1em;
-  font-family: var(--font-display);
-  font-size: 1rem;;
-  color: var(--base);
-  background: var(--terracotta);
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: color var(--transition);
+  text-decoration: none;
+}
+
+.menu .prenotaunacalltendina {
+  color: var(--base);             
+  background: var(--terracotta);
+  font-family: var(--font-display);
+  font-size: 1rem;               
 }
 
 .prenotaunacalltendina:hover {
@@ -145,9 +149,12 @@ header {
 
 .prenotaunacall {
   display: none;
-  color: var(--base);
+  color: var(--terracotta);
+  text-decoration: none; 
+  
 
 }
+
 
 .button {
   background-color: var(--terracotta);
@@ -188,6 +195,8 @@ header {
   margin-bottom: 1.5rem;
   line-height: 0.9;
   text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .hero p {
@@ -224,6 +233,9 @@ header {
   font-size: var(--p-size);
   cursor: pointer;
   transition: background var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .scrivimi:hover {
@@ -241,11 +253,14 @@ header {
   font-size: var(--p-size);
   cursor: pointer;
   transition: background var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .scopricomelavoro:hover {
   background-color: var(--terracotta);
-  border: none;
+  border-color: var(--beige);
   color: var(--base);
 }
 
@@ -267,7 +282,7 @@ header {
 }
 
 .aboutme h1 {
-  color: var(--terracotta);
+  color: var(--burgundy);
   text-align: center;
   font-family: var(--font-display);
   font-size: var(--h1-size);
@@ -288,21 +303,43 @@ header {
 .aboutme-img {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
-.aboutme-img img {
+
+.aboutme-img img:not(.logo-loop) {
   width: 80%;
   height: auto;
   display: block;
-  padding-top: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
 }
 
+
+/* animazione logo con rotazione continua */
+
+@keyframes ruota {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.aboutme .aboutme-img img.logo-loop {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  animation: ruota 12s linear infinite;
+}
 
 /* step come lavoreremo*/
 
 .step {
-  padding-top: 2.5rem;
-  padding-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
   background-color: var(--navy);
 }
 
@@ -357,7 +394,7 @@ header {
 /* portfolio*/
 
 .portfolio {
-  background-color: var(--beige);
+  background-color: var(--base);
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -365,14 +402,14 @@ header {
 .portfolio-title h1 {
   font-family: var(--font-display);
   font-size: var(--h1-size);
-  color: var(--terracotta);
+  color: var(--burgundy);
   margin-bottom: 1.5rem;
   line-height: 0.9;
   text-align: center;
 }
 
 .portfolio-title p {
-   font-size: var(--p-size);
+  font-size: var(--p-size);
   color: var(--burgundy);
   padding-bottom: 0.5rem;
   line-height: 1.1;
@@ -386,12 +423,67 @@ header {
   padding-right: 10%;
 }
 
-.carousel-item img {
-  border-radius: 12px;
-  width: 100%;        
-  height: 300px;      
-  object-fit: cover; 
+.progetti-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0;
 }
+
+.progetti-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.progetto-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.progetto-slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.progetto-slide:hover img {
+  transform: scale(1.05);
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.slider-btn {
+  background: transparent;
+  border: 2px solid var(--terracotta);
+  color: var(--terracotta);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.slider-btn:hover {
+  background: var(--terracotta);
+  color: var(--base);
+}
+
+
+
 
 .portfolio-cta {
   display: flex;
@@ -409,12 +501,15 @@ header {
   font-size: var(--p-size);
   cursor: pointer;
   transition: background var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 
 .guardaimieiprogetti:hover {
   background-color: var(--terracotta);
-  border: none;
+  border-color: var(--base);
   color: var(--base);
 }
 
@@ -423,7 +518,7 @@ header {
 .form {
   padding-top: calc(var(--nav-height));
   padding-bottom: 3rem;
-  background-color: var(--base);
+  background-color: var(--beige);
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -431,7 +526,7 @@ header {
 .form h1 {
   font-family: var(--font-display);
   font-size: var(--h1-size);
-  color: var(--terracotta);
+  color: var(--burgundy);
   margin-bottom: 1.5rem;
   line-height: 0.9;
   text-align: center;
@@ -495,8 +590,8 @@ header {
 
 .form-field button {
   width: 100%;
-  background-color: var(--beige);
-  color: var(--burgundy);
+  background-color: var(--terracotta);
+  color: var(--base);
   border: none;
   border-radius: 8px;
   padding: 0.85rem;
@@ -507,8 +602,8 @@ header {
 }
 
 .form-filed button:hover {
-  background-color: var(--terracotta);
-  color: var(--base);
+  background-color: var(--beige);
+  color: var(--burgundy);
 }
 
 /*footer*/
@@ -597,7 +692,7 @@ header {
 
 .progetti-grid {
   background-color: var(--base);
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -660,7 +755,7 @@ header {
 
 
 .progetti-cta {
-  background-color: var(--navy);
+  background-color: var(--beige);
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-left: 1.25rem;
@@ -670,8 +765,8 @@ header {
 
 .progetti-cta h2 {
   font-family: var(--font-display);
-  font-size: var(--h1-size);
-  color: var(--beige);
+  font-size: 2rem;
+  color: var(--burgundy);
   line-height: 1;
   margin-bottom: 2rem;
 }
@@ -687,6 +782,9 @@ header {
   cursor: pointer;
   white-space: nowrap;
   transition: background var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .prenota-cta:hover {
@@ -872,11 +970,40 @@ header {
 
 .chi-sono-img img {
   width: 80%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  padding-top: 2rem;
+  height: 400px;
+  object-fit: cover; 
+  border-radius: 15px;
 }
+
+.progetti-cta-aboutme {
+  background-color: var(--base);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+}
+
+.progetti-cta-aboutme h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--burgundy);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+
+
+
+
+/* pagina contatti*/
+
+.form-contatti {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 4rem;
+  background-color: var(--beige);
+}
+
 
 
 
@@ -908,9 +1035,9 @@ header {
     font-size: 1rem; 
   }
 
- .carousel-item img {       
-  height: 400px;      
-  }
+ .progetto-slide img {
+  height: 400px;
+}
 
 .guardaimieiprogetti {
     font-size: 1rem; 
@@ -923,12 +1050,16 @@ header {
 @media (min-width: 1200px) {
 
   header {
-    height: 100px;
+    height: 150px;
   }
 
   :root {
-    --nav-height: 100px;
+    --nav-height: 120px;
   }  
+
+  .logo img {
+    height: 100px;
+  }
 
   .menu {
     display: block;
@@ -952,9 +1083,9 @@ header {
     font-size: var(--p-size);
   }
 
-  /* bottone cta navbar che compare */
+  /* bottone cta navbar */
   .prenotaunacall {
-    display: block;
+    display: inline-block;
     background: var(--terracotta);
     color: var(--base);
     border: none;
@@ -964,17 +1095,22 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
   }
 
   .prenotaunacall:hover {
-    background: var(--burgundy);
+    color: var(--base);
+    background: var(--navy);
   }
 
+  .menu .prenotaunacalltendina { display: none; }
+
   
-  .toggleMenu {                    /* hambuerger viene nascosto su desktop */
+  .toggleMenu {                    /* hambuerger nascosto su desktop */
     display: none;    
   }
-  .prenotaunacalltendina {          /* hambuerger viene nascosto su desktop */
+  .prenotaunacalltendina {          /* hambuerger nascosto su desktop */
     display: none;
   }
 
@@ -1004,6 +1140,8 @@ header {
    .hero h1 {
     text-align: left;
     font-size: 5rem;
+    padding-left: 0px;
+    
   }
 
   .hero p {
@@ -1029,6 +1167,9 @@ header {
   }
  
   .scrivimi, .scopricomelavoro {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
     font-size: 1.5rem; 
   }
 
@@ -1041,10 +1182,11 @@ header {
  .aboutme .container-fluid {
     padding-left: 10%;
     padding-right: 10%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .aboutme h1 {
-  color: var(--terracotta);
   text-align: center;
   font-family: var(--font-display);
   font-size: 4rem;
@@ -1070,20 +1212,51 @@ header {
   justify-content: center;
 }
 
-.aboutme-img img {
+.aboutme-img img:not(.logo-loop) {
   width: 100%;
   height: auto;
   display: block;
   padding-top: 1rem;
 }
 
+
+/* animazione logo con rotazione continua */
+
+@keyframes ruota {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.aboutme .aboutme-img img.logo-loop {
+  position: absolute;
+  top: -60px;
+  left: 530px;
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  animation: ruota 12s linear infinite;
+}
+
+
+
+
 /* step come lavoreremo */
+
+.step {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+}
+  
 
 .step-title {
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 3rem;
 }
 
 .step-title h1 {
@@ -1092,6 +1265,7 @@ header {
 
 .step-title p {
   font-size: 1.5rem;
+  padding-right: 6rem;
 }
 
 .step-card {
@@ -1181,19 +1355,45 @@ header {
 
 }
 .portfolio-title h1 {
-  font-size: 5rem;;
+  font-size: 5rem;
+  padding-bottom: 1.5rem;
 }
 
 .portfolio-title p {
-  font-size: 1.5rem;;
+  font-size: 1.5rem;
+  padding-bottom: 3rem;
+
 }
 
-.carousel-item img {       
-  height: 800px;      
-  }
+
+.progetti-slider {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 0 17.5vw;
+  gap: 2rem;
+}
+
+.progetto-slide {
+  flex: 0 0 65vw;
+  opacity: 0.35;
+  transition: opacity var(--transition);
+}
+
+.progetto-slide.attiva {
+  opacity: 1;
+}
+
+.progetto-slide img {
+  height: 600px;
+}
 
 .guardaimieiprogetti {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center; 
   }
 
 /*form di contatto*/
@@ -1201,6 +1401,8 @@ header {
 .form .container-fluid {
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .form-text {
@@ -1264,7 +1466,7 @@ header {
 .progetti-hero {
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: calc(var(--nav-height) + 5rem);
+  padding-top: calc(var(--nav-height) + 8rem);
 }
 
 .progetti-titolo h1 {
@@ -1303,10 +1505,14 @@ header {
   max-width: 70%;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.2;
 }
 
 .prenota-cta {
   font-size: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 
@@ -1315,7 +1521,7 @@ header {
 .progetto-header {
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: calc(var(--nav-height) + 3rem);
+  padding-top: calc(var(--nav-height) + 8rem);
   padding-bottom: 3rem;
 }
 
@@ -1389,7 +1595,7 @@ header {
 }
 
 .chisono {
-  padding-top: calc(var(--nav-height) + 3rem);
+  padding-top: calc(var(--nav-height) + 8rem);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1404,14 +1610,39 @@ header {
   font-size: 1.15rem;
   text-align: left;
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 6rem;
   line-height: 1.5;
 }
 
 .chi-sono-img img {
   width: 100%;
-  padding-top: 0;
+  height: 770px;
+  
 }
+
+.progetti-cta-aboutme {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+
+
+
+.progetti-cta-aboutme h2 {
+  font-size: 3rem;
+  padding-left: 14rem;
+  padding-right: 14rem;
+  line-height: 1.2;
+}
+
+/* pagina contatti */
+
+.form-contatti {
+  padding-top: calc(var(--nav-height) + 6rem);
+}
+
+
+
 
 
 }

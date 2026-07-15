@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>about me - Laura.P-Graphic Designer</title>
+  <title>Contattami - Laura.P-Graphic Designer</title>
   <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
@@ -57,6 +57,9 @@
           <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
           
 
+          
+
+          <!-- Hamburger -->
           <button class="toggleMenu" onclick="toggleMenu()">
             <img src="img/iconmenu.png" alt="Menu" />
           </button>
@@ -66,81 +69,134 @@
     </div>
   </header>
 
+<main>
 
-  <main>
-     <section class="chisono">
+
+    <!-- form contatti -->
+    <section class="form form-contatti">
       <div class="container-fluid">
         <div class="row align-items-center">
 
-          <!-- Testo: su mobile prima, su desktop a sinistra-->
-          <div class="col-12 col-xl-6 chi-sono-text">
-            <h1>Ciao,<br class="d-none d-xl-block"> sono Laura</h1>
-            <p>Progetto identità visive, loghi, brand, restyling, per chi ha un'idea a cui tiene davvero e vuole che si veda al primo sguardo.<br><br>
-                Il design, per me, è la cosa che parla prima delle parole. Un colore, una forma, un carattere raccontano chi sei ancora prima che qualcuno legga una riga di testo, e mi appassiona da sempre quel momento esatto in cui un'immagine dice tutto in un istante.<br><br>
-                Ci sono arrivata studiando, con la testa e le mani dentro il design, e oggi ho fatto di questa passione il mio mestiere: lavoro come graphic designer freelance con piccole attività e con persone che stanno costruendo qualcosa di loro: un locale da aprire, un evento da ricordare, un brand da far nascere o a cui ridare vita.<br><br>
-                Quello che mi distingue non è solo ciò che consegno, ma come lo consegno. Non ti lascio con una cartella di file e un "in bocca al lupo", ma ti spiego ogni scelta e ti guido su come usare la tua nuova identità nel mondo reale, perché un brand funziona solo se sai come portarlo con te sui social, sull'insegna, nel biglietto da visita che lasci a un cliente.<br><br>
-                Lavoro con cura e con metodo, un passo alla volta, senza sorprese. Mi piace capire davvero il progetto prima di disegnare, e costruire insieme la direzione: così il risultato non è "bello e basta", ma tuo.
-                </p>
+         <!-- Testo: mobile centro, desktop colonne sinistra -->
+          <div class="col-12 col-xl-6 form-text order-1 order-xl-1">
+            <h1>Facciamoci una chiaccherata</h1>
+            <p>Se sei arrivata fin qui, qualcosa ha fatto click ed è un buon segnale. Il posto migliore da cui partire è una discovery call. Una conversazione rilassata dove mi parli del tuo progetto e capiamo insieme se ha senso lavorare insieme. Nessun impegno, nessuna pressione.</p>
+            <p class="text-extra">Compila il form e ti rispondo entro 48 ore per fissare una data e un orario. Raccontami del tuo progetto, dove sei adesso e dove vorresti arrivare.</p>
           </div>
 
-          <!-- Immagine: su mobile viene dopo, su desktop è a destra -->
-          <div class="col-12 col-xl-5 offset-xl-1 chi-sono-img">
-            <img src="img/chisono.jpg" alt="Ciao sono Laura" />
-          </div>
 
+           <!-- form contatti: su mobile viene dopo, su desktop è a sinistra -->
+            
+          <div class="col-12 col-xl-5 offset-xl-1 form-box order-2 order-xl-2"> 
+             <form>           
+
+                <h1>Invia una richiesta</h1>
+
+                    <div class="form-field">
+                    <input type="text" name="nome" placeholder="Il tuo nome e cognome" required>
+                    </div>
+
+                    <div class="form-field">
+                    <input type="email" name="email" placeholder="La tua E-mail" required>
+                    </div>
+
+                    <div class="form-field">
+                    <input type="text" name="azienda" placeholder="Nome dell'azienda">
+                    </div>
+
+                    <div class="form-field">
+                    <input type="url" name="sito" placeholder="Hai un sito web?">
+                    </div>
+
+                    <div class="form-field">
+                    <textarea name="messaggio" rows="5" placeholder="Raccontami del tuo progetto"></textarea>
+                    </div>	
+
+                    <div class="form-field">
+                      <button type="submit">INVIA</button>		
+                    </div>
+            </form> 
+            
+		     </div> 
         </div>
       </div>
     </section>
 
 
-    <!-- CTA Prenota una call -->
-    <section class="progetti-cta-aboutme">
-      <div class="container-fluid">
-        <h2>Se cerchi qualcuno che tratti il tuo progetto con la stessa attenzione con cui lo tratti tu, sei nel posto giusto.</h2>
-       <a href="contatti.html" class="prenota-cta">Prenota una call</a>
-      </div>
-    </section>
 
 
-  </main>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
    <!-- footer -->
+
   <footer class="footer">
     <div class="container-fluid">
       <div class="footer-content">
 
+        
         <div class="footer-logo">
           <img src="img/logo-footer.png" alt="Laura.P Graphic Designer" />
         </div>
 
+        <hr class="footer-line">
+
+        
         <div class="footer-social">
           <a href="#" target="_blank" rel="noopener" aria-label="Behance">
-            <img src="img/behance.png" alt="Behance" />
+            <img src="img/behance.png" alt="Instagram" />
           </a>
           <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
             <img src="img/linkedin.png" alt="LinkedIn" />
           </a>
         </div>
 
-        <a href="#top" class="footer-top">Torna su ↑</a>
+        <!-- torna su -->
+        <a href="#hero" class="footer-top">Torna su ↑</a>
 
       </div>
     </div>
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-  </script>
 
-  <script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+
+   <script>
     function toggleMenu() {
-      const element = document.getElementById("menu");
-      element.classList.toggle("open");
-    }
-  </script>
+            const element = document.getElementById("menu");
+            //console.log(element)
+             element.classList.toggle("open");}
 
-</body>
+     </script>
+     
+      
+  </body>
+ 
+
 </html>

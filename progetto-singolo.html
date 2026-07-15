@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oodal Festival — Laura.P Graphic Designer</title>
-  <meta name="description" content="Brand identity e concept visivo per Oodal Festival." />
+  <title>Oodal Festival - Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
 
@@ -16,7 +15,7 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-<script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
 <script>
   const lenis = new Lenis();
   function raf(time) {
@@ -24,31 +23,39 @@
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-</script>
+  </script>
 
 </head>
 
 <body>
-
-  <header>
+    <header>
     <div class="container-full">
       <div class="flex">
 
         <div class="logo">
-          <a href="index.html"><img src="img/logo-nav.png" alt="Laura.P Graphic Designer" /></a>
+          <a href="index.html">
+          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          </a>
         </div>
 
+
+        
         <div class="menubottom">
           <nav id="menu" class="menu">
             <ul>
               <li><a href="aboutme.html">About me</a></li>
               <li><a href="progetti.html">Progetti</a></li>
-              <li><a href="comelavoro.html">Come lavoreremo insieme</a></li>
+              <li><a href="index.html #come-lavoro">Come lavoreremo insieme</a></li>
             </ul>
-            <button type="button" class="prenotaunacalltendina">Prenota una call</button>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
           </nav>
 
-          <button type="button" class="prenotaunacall">Prenota una call</button>
+          <!-- Bottone CTA visibile su desktop -->
+          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          
 
           <button class="toggleMenu" onclick="toggleMenu()">
             <img src="img/iconmenu.png" alt="Menu" />
