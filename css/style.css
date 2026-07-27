@@ -872,8 +872,8 @@ header {
   font-family: var(--font-display);
   font-size: var(--h1-size);
   color: var(--terracotta);
-  line-height: 0.9;
-  margin-bottom: 0.75rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
 }
 
 .progetto-descrizione {
@@ -1099,7 +1099,7 @@ header {
   }  
 
   .logo img {
-    height: 100px;
+    height: 120px;
   }
 
   .menu {
