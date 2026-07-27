@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Toros - Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+    <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          </a>
+        </div>
+
+
+        
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html #come-lavoro">Come lavoreremo insieme</a></li>
+            </ul>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+          </nav>
+
+          <!-- Bottone CTA visibile su desktop -->
+          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          
+
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!--titolo progetto -->
+
+    <section class="progetto-header" id="top">
+      <div class="container-fluid">
+        <h1>El Toros</h1>
+        <p class="progetto-sottotitolo">2023 | Restyling Logo Design</p>
+      </div>
+    </section>
+
+
+    <!-- brief (desktop: testo sinistra + immagine destra) -->
+    <section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo order-2 order-xl-1">
+            <h2>Da chiosco a locale,<br>un'identità all'altezza</h2>
+            <span class="progetto-descrizione">IL BRIEF</span>
+            <p>El Toros nasce come un piccolo chiosco a Sarzana, con una proposta semplice ma ambiziosa: hamburger di qualità per un pubblico giovane e notturno. Il passaparola ha fatto il resto. L'affluenza crescente, dai clienti locali a quelli in arrivo dalle città vicine, ha trasformato un'idea in un progetto più grande: aprire un vero e proprio locale. Con il nuovo spazio è arrivata una nuova sfida: costruire un'identità visiva all'altezza. Serviva un sistema di comunicazione completo: menù, flyer, insegne, vetrofanie, cartellonistica stradale e banner pubblicitari, capace di raccontare chi è El Toros e di renderlo immediatamente riconoscibile.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola order-1 order-xl-2">
+            <img src="img/el toros/takeaway.jpg" alt="El Toros - foto" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- immagini affiancate -->
+    <section class="progetto-galleria coppia-1">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/el toros/busta.jpg" alt="El Toros - foto" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/el toros/bag.jpg" alt="El Toros - foto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- lavoro (desktop testo sinistra + immagine destra) -->
+    <section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo">
+            <h2>Il vecchio west<br>in chiave contemporanea<br></h2>
+            <span class="progetto-descrizione">COME SI È SVOLTO IL LAVORO</span>
+            <p>La direzione creativa era chiara fin da subito: evocare l'estetica del vecchio West, ma reinterpretarla in chiave contemporanea. Volevo un'identità forte e autentica, lontana dall'immaginario delle grandi catene come Old Wild West: l'obiettivo era differenziarsi, non imitare. Ho preso le grafiche esistenti come punto di partenza, affinandole e strutturandole in un sistema coerente, scalabile e adatto sia agli spazi fisici del locale che alla comunicazione esterna. Il pittogramma è stato mantenuto: nonostante lo stile sia diffuso, nessun concorrente della zona lo utilizza in modo simile, e nel tempo era diventato un elemento di riconoscimento consolidato tra i clienti; eliminarlo avrebbe significato perdere un asset comunicativo già costruito. Per il logotipo la scelta è ricaduta su un typeface più deciso e impattante, capace di richiamare l'estetica western senza risultare didascalico o derivativo, trovando il giusto equilibrio tra carattere e originalità.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola">
+            <img src="img/el toros/logos.png" alt="El Toros - foto" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+      <!-- immagine larga 1 -->
+          <section class="progetto-galleria">
+            <div class="container-fluid">
+              <div class="progetto-img-larga">
+                <img src="img/eltoros.png" alt="El Toros - foto" />
+              </div>
+            </div>
+          </section>
+
+
+
+        
+
+
+    <!--immagini affiancate 2 -->
+    <section class="progetto-galleria">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/el toros/insegna.png" alt="El Toros - foto" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/el toros/menu.png" alt="El Toros - foto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- navigazione tra progetti -->
+  <nav class="progetto-nav">
+    <div class="container-fluid">
+      <div class="progetto-nav-content">
+
+        <a href="progetti.html" class="progetto-nav-link nav-prev">
+          <span class="nav-freccia">←</span>
+          <span>Torna al portfolio</span>
+        </a>
+
+        <a href="golosandia.html" class="progetto-nav-link nav-next">
+          <span>Golosandia</span>
+          <span class="nav-freccia">→</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer" />
+        </div>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener" aria-label="Behance">
+            <img src="img/behance.png" alt="Behance" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="img/linkedin.png" alt="LinkedIn" />
+          </a>
+        </div>
+
+        <a href="#top" class="footer-top">Torna su ↑</a>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const element = document.getElementById("menu");
+      element.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

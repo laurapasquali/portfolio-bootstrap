@@ -1,0 +1,226 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locanda Magno - Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+    <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          </a>
+        </div>
+
+
+        
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html #come-lavoro">Come lavoreremo insieme</a></li>
+            </ul>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+          </nav>
+
+          <!-- Bottone CTA visibile su desktop -->
+          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          
+
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!--titolo progetto -->
+
+    <section class="progetto-header" id="top">
+      <div class="container-fluid">
+        <h1>Locanda Magno</h1>
+        <p class="progetto-sottotitolo"> 2024 | Restyling Logo Design</p>
+      </div>
+    </section>
+
+
+    <!-- brief (desktop: testo sinistra + immagine destra) -->
+    <section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo order-2 order-xl-1">
+            <h2>Da trattoria rustica<br>a locale premium</h2>
+            <span class="progetto-descrizione">IL BRIEF</span>
+            <p>In occasione della riapertura, la Locanda Magno di Aulla, in Lunigiana, ha sentito il bisogno di evolvere la propria immagine. L'obiettivo era preciso: distanziarsi dal concetto di "trattoria rustica" per posizionarsi come un locale premium, sofisticato, di alto livello. Il logo originale raccontava bene la storia della Locanda, ma con la nuova veste non riusciva più a comunicare l'eleganza desiderata: un aspetto troppo informale, un tratto disegnato a mano fin troppo irregolare, mascotte e nome che si schiacciavano a vicenda rendendo il logo difficile da leggere nei formati piccoli. La sfida arrivava con due punti fermi da rispettare: conservare la mascotte storica, elemento iconico e riconoscibile del brand, e adottare una palette nero e oro capace di evocare lusso e modernità.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola order-1 order-xl-2">
+            <img src="img/locandamagno/work.jpeg" alt="raw bottega" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- immagini affiancate -->
+    <section class="progetto-galleria coppia-1">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/locandamagno/bv.jpg" alt="Raw-dettaglio 1" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/locandamagno/menu.jpg" alt="Raw-dettaglio 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- lavoro (desktop testo sinistra + immagine destra) -->
+    <section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo">
+            <h2>Un abito sartoriale<br>per un'icona<br></h2>
+            <span class="progetto-descrizione">COME SI È SVOLTO IL LAVORO</span>
+            <p>Lavorare su un brand con vincoli così forti ha richiesto un equilibrio delicato: dovevo evitare il cliché del luxury generico e dare invece dignità a un'icona che esisteva già. Ho scelto di isolare la mascotte per trasformarla nel simbolo distintivo del brand, aggiungendo una corona d'alloro in oro che la eleva da semplice figura rustica a vero emblema del locale. Per il nome ho optato per un carattere serif dalle linee morbide e sinuose, che riprende la fluidità e il tratto umano della mascotte originale, evitando che il logo risultasse rigido o freddo. Il payoff, invece, gioca su un contrasto netto: un sans-serif strutturato e deciso bilancia la morbidezza del nome principale, dando al brand quel senso di ordine, precisione e contemporaneità tipico dei ristoranti di alto livello. Il risultato è un'identità che non rinnega il passato, ma lo veste con un abito sartoriale, pronta a intercettare un pubblico più esigente.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola">
+            <img src="img/locandamagno/logo.jpg" alt="Raw-dettaglio 3" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+      <!-- immagine larga 1 -->
+          <section class="progetto-galleria">
+            <div class="container-fluid">
+              <div class="progetto-img-larga">
+                <img src="img/locandamagno/logo-oro.jpg" alt="Raw-immagine d'insieme" />
+              </div>
+            </div>
+          </section>
+
+
+        
+
+
+    <!--immagini affiancate 2 -->
+    <section class="progetto-galleria coppia-1">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/locandamagno/t-shirt.jpg" alt="Raw-dettaglio 4" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/locandamagno/wine.jpg" alt="Raw-dettaglio 5" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+     <!-- navigazione tra progetti -->
+  <nav class="progetto-nav">
+    <div class="container-fluid">
+      <div class="progetto-nav-content">
+
+        <a href="progetti.html" class="progetto-nav-link nav-prev">
+          <span class="nav-freccia">←</span>
+          <span>Torna al portfolio</span>
+        </a>
+
+        <a href="eltoros.html" class="progetto-nav-link nav-next">
+          <span>El Toros</span>
+          <span class="nav-freccia">→</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer" />
+        </div>
+
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener" aria-label="Behance">
+            <img src="img/behance.png" alt="Behance" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="img/linkedin.png" alt="LinkedIn" />
+          </a>
+        </div>
+
+        <a href="#top" class="footer-top">Torna su ↑</a>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const element = document.getElementById("menu");
+      element.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
