@@ -141,7 +141,7 @@ header {
   font-size: 1rem;               
 }
 
-.prenotaunacalltendina:hover {
+.menu .prenotaunacalltendina:hover {
   color: var(--burgundy);
 }
 
@@ -188,11 +188,7 @@ header {
   overflow: hidden;
 }
 
-.striscia-traccia {
-  display: flex;
-  width: max-content;
-  animation: scorriStriscia 25s linear infinite;
-}
+
 
 .striscia-gruppo {
   font-family: var(--font-display);
@@ -216,6 +212,11 @@ header {
   to   { transform: translateX(-50%); }
 }
 
+.striscia-traccia {
+  display: flex;
+  width: max-content;
+  animation: scorriStriscia 25s linear infinite;
+}
 
 /* hero*/
 
@@ -1122,6 +1123,7 @@ header {
   .menu a {
     padding: 0.5rem 1rem;
     font-size: var(--p-size);
+    color: var(--burgundy);
   }
 
   /* bottone cta navbar */
