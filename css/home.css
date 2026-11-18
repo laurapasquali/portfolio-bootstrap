@@ -1,0 +1,969 @@
+/* =====================================================
+   LAURA PASQUALI — home.css
+
+   Stili della sola home: questo file è collegato solo in
+   index.html, subito dopo style.css. Tutto quello che è
+   in comune con le altre pagine (variabili, font, navbar,
+   footer, slider dei progetti) resta in style.css.
+
+   Tutte le classi qui iniziano con "home-", così non si
+   scontrano con quelle di style.css e si capisce subito
+   in quale file cercarle.
+
+   Mobile first: regole base per il telefono, poi tablet
+   (768px) e desktop (1200px) in fondo.
+
+   Sezioni: elementi comuni, hero, manifesto, più di un
+   bel logo, chi sono, come lavoreremo, progetti,
+   recensioni, contatti, domande frequenti.
+   ===================================================== */
+
+
+/* =====================================================
+   MOBILE (regole base)
+   ===================================================== */
+
+
+/* elementi comuni */
+
+/* ogni sezione della home ha gli stessi spazi */
+.home-sezione {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--base);
+}
+
+.home-sezione .container-fluid {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* titoli delle sezioni: la parola in <em> va in corsivo terracotta */
+.home-titolo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--burgundy);
+  margin-bottom: 1.25rem;
+}
+
+.home-titolo em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.home-testo {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--burgundy);
+  max-width: 40rem;
+  margin-bottom: 1rem;
+}
+
+/* bottoni: pieno terracotta e solo contorno */
+.home-btn,
+.home-btn-contorno {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.7em 1.8em;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.home-btn {
+  background-color: var(--terracotta);
+  border: 2px solid var(--terracotta);
+  color: var(--base);
+}
+
+.home-btn:hover {
+  background-color: var(--burgundy);
+  border-color: var(--burgundy);
+  color: var(--base);
+}
+
+.home-btn-contorno {
+  background-color: transparent;
+  border: 2px solid var(--terracotta);
+  color: var(--terracotta);
+}
+
+.home-btn-contorno:hover {
+  background-color: var(--terracotta);
+  color: var(--base);
+}
+
+/* foto con il rettangolo navy ruotato dietro */
+.home-foto {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+}
+
+.home-foto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--navy);
+  transform: rotate(12deg) scale(1.03);
+}
+
+
+/* hero */
+
+/* il padding sopra la fa partire sotto la navbar fissa */
+.home-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + 2.5rem);
+  padding-bottom: 3rem;
+  background-color: var(--base);
+  overflow-x: clip;
+}
+
+.home-hero .container-fluid {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* tre parole sopra il titolo, separate da puntini */
+.home-hero-parole {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.home-hero-sep {
+  color: var(--verde);
+  padding: 0 0.4rem;
+}
+
+.home-hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--burgundy);
+  margin-bottom: 1.25rem;
+}
+
+.home-hero h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.home-hero-intro {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--burgundy);
+  max-width: 34rem;
+  margin-bottom: 1.75rem;
+}
+
+.home-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-hero .home-foto {
+  width: 80%;
+  margin: 3.5rem auto 1rem;
+}
+
+/* cosa faccio: etichetta e servizi a pillola */
+.home-servizi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.home-servizi-titolo {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--burgundy);
+  margin: 0 0.5rem 0 0;
+}
+
+.home-servizi ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-servizi li {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--burgundy);
+  border: 2px solid var(--burgundy);
+  border-radius: 999px;
+  padding: 0.3em 1em;
+}
+
+
+/* manifesto */
+
+.home-manifesto {
+  background-color: var(--burgundy);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.home-manifesto .container-fluid {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.home-manifesto p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--base);
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.home-manifesto h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: normal;
+  line-height: 1.05;
+  color: var(--base);
+  margin: 2.5rem auto;
+}
+
+
+/* più di un bel logo: cinque schede */
+
+.home-plus-schede {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 0;
+}
+
+.home-plus-schede li {
+  border: 2px solid var(--burgundy);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+}
+
+.home-plus-schede h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.05;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
+
+.home-plus-schede p {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--burgundy);
+  margin: 0;
+}
+
+
+/* chi sono */
+
+/* il logo che ruota sporge dalla foto: qui evita lo scroll orizzontale su mobile */
+.home-about {
+  overflow-x: clip;
+}
+
+.home-about .home-foto {
+  width: 80%;
+  margin: 1rem auto 3.5rem;
+}
+
+/* il rettangolo dietro qui gira dall'altra parte */
+.home-about .home-foto::before {
+  transform: rotate(-9deg) scale(1.03);
+}
+
+/* il logo che ruota, sull'angolo in alto a destra della foto.
+   Il selettore ha due classi perché deve battere ".home-foto img",
+   che altrimenti gli darebbe la larghezza della foto */
+.home-foto .home-about-logo {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 36%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  animation: home-ruota 12s linear infinite;
+}
+
+@keyframes home-ruota {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.home-about .home-btn {
+  margin-top: 1rem;
+}
+
+
+/* come lavoreremo */
+
+/* riquadro "come si paga" */
+.home-paga {
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.home-paga h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.home-paga p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--burgundy);
+  margin: 0;
+}
+
+/* i cinque passaggi: cerchio numerato a sinistra, linea che li collega */
+.home-passi {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0 0;
+}
+
+.home-passi li {
+  position: relative;
+  padding-left: 3.5rem;
+  padding-bottom: 2.25rem;
+}
+
+.home-passi li:last-child {
+  padding-bottom: 0;
+}
+
+/* la linea parte sotto il cerchio e arriva al passaggio successivo */
+.home-passi li::before {
+  content: "";
+  position: absolute;
+  left: calc(1.25rem - 1px);
+  top: 2.5rem;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--burgundy);
+}
+
+.home-passi li:last-child::before {
+  display: none;
+}
+
+.home-passo-numero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--base);
+  background-color: var(--terracotta);
+}
+
+/* colore del cerchio passaggio per passaggio */
+.home-passi li:nth-child(2) .home-passo-numero { background-color: var(--navy); }
+.home-passi li:nth-child(3) .home-passo-numero { background-color: var(--verde); }
+.home-passi li:nth-child(4) .home-passo-numero { background-color: var(--burgundy); }
+
+.home-passi h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: normal;
+  line-height: 1.1;
+  color: var(--burgundy);
+  padding-top: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-passi p {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--burgundy);
+  margin: 0;
+}
+
+/* la nota verde sotto alcuni passaggi */
+.home-passo-nota {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--burgundy);
+  background-color: var(--verde);
+  border-radius: 999px;
+  padding: 0.3em 1em;
+  margin-top: 0.75rem;
+}
+
+
+/* progetti: titolo e bottone, poi lo slider di style.css */
+
+.home-progetti-testata {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.home-progetti-testata .home-titolo {
+  margin-bottom: 0;
+}
+
+
+/* recensioni */
+
+.home-recensioni {
+  background-color: var(--verde);
+}
+
+/* le schede scorrono in orizzontale e si fermano una alla volta */
+.home-recensioni-lista {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.home-recensioni-lista::-webkit-scrollbar {
+  display: none;
+}
+
+.home-recensioni-lista li {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  background-color: var(--base);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+}
+
+.home-recensioni-lista blockquote {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--burgundy);
+  margin: 0 0 1.25rem;
+}
+
+/* virgolette grandi in terracotta prima della frase */
+.home-recensioni-lista blockquote::before {
+  content: "“";
+  display: block;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--terracotta);
+}
+
+.home-recensioni-lista p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--burgundy);
+  margin: 0;
+}
+
+
+/* contatti */
+
+.home-contatti-email {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--burgundy);
+}
+
+/* il modulo: su un fondo più chiaro della pagina */
+.home-modulo {
+  background-color: #fffcf8;
+  border: 1px solid var(--burgundy);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.home-modulo-campi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.home-modulo label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--burgundy);
+  margin-bottom: 0.4rem;
+}
+
+.home-modulo input[type="text"],
+.home-modulo input[type="email"],
+.home-modulo input[type="url"],
+.home-modulo textarea {
+  display: block;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--burgundy);
+  background-color: transparent;
+  border: 1px solid var(--burgundy);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+}
+
+.home-modulo textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.home-modulo ::placeholder {
+  color: var(--burgundy);
+  opacity: 0.5;
+}
+
+/* il campo attivo si vede anche navigando con la tastiera */
+.home-modulo input:focus-visible,
+.home-modulo textarea:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.home-modulo-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.home-modulo-privacy input {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--terracotta);
+}
+
+.home-modulo .home-modulo-privacy label {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.home-modulo-privacy a {
+  color: var(--burgundy);
+}
+
+.home-modulo button {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.home-modulo-nota {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--burgundy);
+  opacity: 0.75;
+  margin: 1rem 0 0;
+}
+
+
+/* domande frequenti: <details> si apre e si chiude senza JavaScript */
+
+.home-faq-lista {
+  margin-top: 2rem;
+  border-top: 1px solid var(--burgundy);
+}
+
+.home-faq-lista details {
+  border-bottom: 1px solid var(--burgundy);
+}
+
+.home-faq-lista summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--burgundy);
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* toglie il triangolino di default (Safari ha bisogno di questa riga) */
+.home-faq-lista summary::-webkit-details-marker {
+  display: none;
+}
+
+/* il "+" a destra diventa una "×" quando la domanda è aperta */
+.home-faq-lista summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--terracotta);
+  transition: transform var(--transition);
+}
+
+.home-faq-lista details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.home-faq-lista details p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--burgundy);
+  margin: 0;
+  padding-bottom: 1.25rem;
+  max-width: 40rem;
+}
+
+
+/* =====================================================
+   TABLET — min-width: 768px
+   ===================================================== */
+
+@media (min-width: 768px) {
+
+  .home-titolo {
+    font-size: 3.25rem;
+  }
+
+  .home-hero h1 {
+    font-size: 4rem;
+  }
+
+  .home-hero .home-foto,
+  .home-about .home-foto {
+    width: 60%;
+  }
+
+  .home-manifesto h2 {
+    font-size: 3rem;
+  }
+
+  .home-plus-schede {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-recensioni-lista li {
+    flex-basis: 45%;
+  }
+
+  /* nome dell'attività e sito web affiancati */
+  .home-modulo-campi {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-modulo-intero {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP — min-width: 1200px
+   ===================================================== */
+
+@media (min-width: 1200px) {
+
+  /* elementi comuni */
+
+  .home-sezione {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .home-sezione .container-fluid,
+  .home-hero .container-fluid,
+  .home-manifesto .container-fluid {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  /* il titolo cresce con la larghezza dello schermo, entro un minimo e un massimo */
+  .home-titolo {
+    font-size: clamp(3rem, 4.2vw, 5rem);
+  }
+
+  .home-testo {
+    font-size: 1.15rem;
+  }
+
+  .home-btn,
+  .home-btn-contorno {
+    font-size: 1.2rem;
+  }
+
+
+  /* hero */
+
+  .home-hero {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  .home-hero-parole {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(3.5rem, 4.6vw, 5.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .home-hero-intro {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .home-hero .home-foto {
+    width: 92%;
+    margin: 0;
+  }
+
+  .home-servizi {
+    margin-top: 4rem;
+    gap: 1rem;
+  }
+
+  .home-servizi-titolo,
+  .home-servizi li {
+    font-size: 1.05rem;
+  }
+
+  .home-servizi li {
+    min-width: 9rem;
+  }
+
+
+  /* manifesto */
+
+  .home-manifesto {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .home-manifesto p {
+    font-size: 1.25rem;
+  }
+
+  .home-manifesto h2 {
+    font-size: clamp(3rem, 4.2vw, 5rem);
+    margin: 3.5rem auto;
+  }
+
+
+  /* più di un bel logo: tre schede sopra, due più larghe sotto */
+
+  .home-plus-schede {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem;
+    margin-top: 4rem;
+  }
+
+  .home-plus-schede li {
+    grid-column: span 2;
+    padding: 3rem 2.5rem;
+  }
+
+  .home-plus-schede li:nth-child(n+4) {
+    grid-column: span 3;
+  }
+
+  .home-plus-schede h3 {
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    margin-bottom: 2rem;
+  }
+
+  .home-plus-schede p {
+    font-size: 1rem;
+  }
+
+
+  /* chi sono */
+
+  .home-about .home-foto {
+    width: 82%;
+    margin: 0;
+  }
+
+
+  /* come lavoreremo */
+
+  .home-paga {
+    padding: 2rem 2.25rem;
+    margin: 3rem 0;
+  }
+
+  .home-paga h3 {
+    font-size: 2rem;
+  }
+
+  .home-paga p {
+    font-size: 1.1rem;
+  }
+
+  .home-passi {
+    margin-top: 0;
+  }
+
+  .home-passi li {
+    padding-left: 4.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .home-passi li::before {
+    left: calc(1.5rem - 1px);
+    top: 3rem;
+  }
+
+  .home-passo-numero {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .home-passi h3 {
+    font-size: 1.75rem;
+  }
+
+  .home-passi p {
+    font-size: 1rem;
+  }
+
+  .home-passo-nota {
+    font-size: 0.9rem;
+  }
+
+
+  /* recensioni: la fila di schede esce dal margine destro */
+
+  .home-recensioni .container-fluid {
+    padding-right: 0;
+  }
+
+  .home-recensioni-lista {
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-right: 10%;
+  }
+
+  .home-recensioni-lista li {
+    flex-basis: 33%;
+    padding: 2.5rem 2.25rem;
+  }
+
+  .home-recensioni-lista blockquote {
+    font-size: 1.6rem;
+  }
+
+
+  /* contatti */
+
+  .home-contatti-email {
+    font-size: 1.15rem;
+  }
+
+  .home-modulo {
+    padding: 3rem;
+    margin-top: 0;
+  }
+
+  .home-modulo label {
+    font-size: 0.95rem;
+  }
+
+  .home-modulo button {
+    width: 80%;
+    margin: 0.5rem auto 0;
+  }
+
+
+  /* domande frequenti */
+
+  .home-faq-lista {
+    margin-top: 0;
+  }
+
+  .home-faq-lista summary {
+    font-size: 1.4rem;
+    padding: 1.4rem 0;
+  }
+
+  .home-faq-lista details p {
+    font-size: 1.05rem;
+  }
+
+}
+
+
+/* =====================================================
+   MOVIMENTO RIDOTTO
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-foto .home-about-logo {
+    animation: none;
+  }
+
+}

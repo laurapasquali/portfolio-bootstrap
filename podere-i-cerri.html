@@ -1,0 +1,191 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podere i Cerri - Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+    <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          </a>
+        </div>
+
+
+        
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoreremo insieme</a></li>
+            </ul>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+          </nav>
+
+          <!-- Bottone CTA visibile su desktop -->
+          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          
+
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+   <section class="progetto-galleria">
+      <div class="container-fluid progetto-serie">
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/1.jpg" alt="copertina-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/2.jpg" alt="brief-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/3.jpg" alt="analisi-logo-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/4.jpg" alt="nuovo-logo-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/5.jpg" alt="colori-brand-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/6.jpg" alt="mockup-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/7.jpg" alt="mockup-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/8.jpg" alt="mockup-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/9.jpg" alt="mockup-podere-i-cerri" />
+        </div>
+
+        <div class="progetto-immagine">
+          <img src="img/poderecerri/10.jpg" alt="mockup-podere-i-cerri" />
+        </div>
+
+    
+
+      </div>
+    </section>
+
+
+    
+
+     <!-- navigazione tra progetti -->
+  <nav class="progetto-nav">
+    <div class="container-fluid">
+      <div class="progetto-nav-content">
+
+        <a href="progetti.html" class="progetto-nav-link nav-prev">
+          <span class="nav-freccia">←</span>
+          <span>Torna al portfolio</span>
+        </a>
+
+        <a href="locandamagno.html" class="progetto-nav-link nav-next">
+          <span>Locanda Magno</span>
+          <span class="nav-freccia">→</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  </main>
+
+
+  <!-- footer -->
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer"/>
+        </div>
+
+        <hr class="footer-line">
+
+         <div class="footer-bottom">
+
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+
+          <a href="#hero" class="footer-top">Torna su ↑</a>
+
+        </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const element = document.getElementById("menu");
+      element.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

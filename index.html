@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laura.P-Graphic Designer</title>
-  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+  <title>Laura Pasquali - Graphic Designer</title>
+  <meta name="description" content="Creo loghi e identità visive per piccole attività e liberi professionisti che vogliono smettere di somigliare a tutti gli altri. In Lunigiana, Massa Carrara e da remoto." />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
 
@@ -13,123 +14,171 @@
         crossorigin="anonymous"
   />
 
+  <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-<script>
-  const lenis = new Lenis();
-  function raf(time) {
-    lenis.raf(time);
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
   </script>
 
 </head>
 
 <body>
-    <header>
+
+  <header>
     <div class="container-full">
       <div class="flex">
 
         <div class="logo">
           <a href="index.html">
-          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
-           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+            <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" />
           </a>
         </div>
 
-        
         <div class="menubottom">
           <nav id="menu" class="menu">
             <ul>
               <li><a href="aboutme.html">About me</a></li>
-              <li><a href="progetti.html">Progetti</a></li>
               <li><a href="#come-lavoro">Come lavoreremo insieme</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
             </ul>
 
-             <!-- Bottone CTA dentro hamburger -->
-          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+            <!-- bottone dentro il menu a tendina (mobile) -->
+            <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
           </nav>
 
-          <!-- Bottone CTA visibile su desktop -->
+          <!-- bottone visibile su desktop -->
           <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
-          
 
-          <!-- Hamburger -->
           <button class="toggleMenu" onclick="toggleMenu()">
             <img src="img/iconmenu.png" alt="Menu" />
           </button>
-
         </div>
+
       </div>
     </div>
   </header>
 
+
   <main>
 
-    <section class="striscia">
-  <div class="striscia-traccia">
+    <!-- hero -->
 
-    <span class="striscia-gruppo">
-      Brand Identity <span class="striscia-sep">•</span>
-      Logo Design <span class="striscia-sep">•</span>
-      Packaging <span class="striscia-sep">•</span>
-      Social Media <span class="striscia-sep">•</span>
-      Restyling <span class="striscia-sep">•</span>
-    </span>
+    <section class="home-hero" id="hero">
+      <div class="container-fluid">
 
-    <span class="striscia-gruppo" aria-hidden="true">
-      Brand Identity <span class="striscia-sep">•</span>
-      Logo Design <span class="striscia-sep">•</span>
-      Packaging <span class="striscia-sep">•</span>
-      Social Media <span class="striscia-sep">•</span>
-      Restyling <span class="striscia-sep">•</span>
-    </span>
+        <div class="row align-items-center">
 
-     <span class="striscia-gruppo" aria-hidden="true">
-      Brand Identity <span class="striscia-sep">•</span>
-      Logo Design <span class="striscia-sep">•</span>
-      Packaging <span class="striscia-sep">•</span>
-      Social Media <span class="striscia-sep">•</span>
-      Restyling <span class="striscia-sep">•</span>
-    </span>
+          <div class="col-12 col-xl-6">
 
-      <span class="striscia-gruppo" aria-hidden="true">
-      Brand Identity <span class="striscia-sep">•</span>
-      Logo Design <span class="striscia-sep">•</span>
-      Packaging <span class="striscia-sep">•</span>
-      Social Media <span class="striscia-sep">•</span>
-      Restyling <span class="striscia-sep">•</span>
-    </span>
+            <p class="home-hero-parole">Funzionale&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> coerente&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> riconoscibile</p>
 
-  </div>
-</section>
+            <h1>Il tuo brand<br>merita di essere<br><em>riconosciuto</em><br>al primo sguardo</h1>
+
+            <p class="home-hero-intro">Creo loghi e identità visive per piccole attività e liberi professionisti che vogliono smettere di somigliare a tutti gli altri. In Lunigiana, Massa Carrara e da remoto.</p>
+
+            <div class="home-hero-ctas">
+              <a href="#form" class="home-btn">Scrivimi</a>
+              <a href="#come-lavoro" class="home-btn-contorno">Scopri come lavoro</a>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-xl-5 offset-xl-1">
+            <div class="home-foto">
+              <img src="img/hero.jpg" alt="Laura al lavoro su un progetto di identità visiva" />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- cosa faccio -->
+        <div class="home-servizi">
+          <p class="home-servizi-titolo">Cosa faccio</p>
+          <ul>
+            <li>Brand Identity</li>
+            <li>Loghi</li>
+            <li>Restyling</li>
+            <li>Grafiche Social</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
 
 
+    <!-- manifesto -->
 
-    <!-- HERO -->
+    <section class="home-manifesto">
+      <div class="container-fluid">
+        <p>Tra due attività che offrono la stessa cosa, vai da quella che ti ispira di più.<br>Se si somigliano, scegli a caso.<br>Ed è proprio il limite dei loghi fatti con l'IA: si somigliano tutti.<br>Il tuo cliente decide in pochi secondi e premia chi si distingue.</p>
+        <h2>Io progetto quei pochi secondi.</h2>
+        <p>Poi la tua immagine passa nelle tue mani, con tutte le istruzioni per usarla.</p>
+      </div>
+    </section>
 
 
+    <!-- più di un bel logo -->
 
-    <section class="hero" id="hero">
+    <section class="home-sezione">
+      <div class="container-fluid">
+
+        <h2 class="home-titolo">Più di un <em>bel logo</em>.</h2>
+        <p class="home-testo">Un bel logo è solo l'inizio. Quello che conta è come lo userai domani, con la tipografia, sui social, sull'insegna.</p>
+
+        <ul class="home-plus-schede">
+          <li>
+            <h3>Impari a usare la tua immagine in autonomia</h3>
+            <p>Ricevi il brand manual, una call in cui ti spiego tutto e, se vuoi, i template Canva già pronti.</p>
+          </li>
+          <li>
+            <h3>Conosco attività come la tua</h3>
+            <p>Ho lavorato con chi accoglie e con piccole attività: B&amp;B, ristoranti, bistrot, artigiani e liberi professionisti.</p>
+          </li>
+          <li>
+            <h3>Rispetto quello che hai già costruito</h3>
+            <p>Se rinnovi la tua immagine, parto da ciò che i tuoi clienti riconoscono e lo porto con te nel nuovo.</p>
+          </li>
+          <li>
+            <h3>So cosa succede dopo lo schermo</h3>
+            <p>Ho imparato il mestiere seguendo i progetti fino alla stampa, anche in grande formato. I file che ti consegno funzionano davvero, dalla tipografia all'insegnista.</p>
+          </li>
+          <li>
+            <h3>Nessuna sorpresa</h3>
+            <p>Tempi, costi e passaggi sono chiari dall'inizio, e si va avanti solo quando approvi.</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- chi sono -->
+
+    <section class="home-sezione home-about">
       <div class="container-fluid">
         <div class="row align-items-center">
 
-         <!-- Testo: mobile centro, desktop colonne sinistra -->
-          <div class="col-12 col-xl-5 hero-text">
-            <h1>Il tuo brand merita di essere riconosciuto al primo sguardo.</h1>
-            <p>Non entreresti mai in un negozio a comprare il latte se fuori non c'è scritto supermarket. Il tuo cliente funziona allo stesso modo: sceglie con gli occhi, in pochi secondi. Io progetto quei pochi secondi.</p>
-            
-            <div class="hero-ctas">
-              <a href="#form" class="scrivimi">Scrivimi</a>
-              <a href="#come-lavoro" class="scopricomelavoro">Scopri come lavoro</a>
+          <div class="col-12 col-xl-5">
+            <div class="home-foto">
+              <img src="img/imgaboutme.jpg" alt="Laura Pasquali, graphic designer" />
+              <img src="img/logo-cerchio.png" alt="" class="home-about-logo" />
             </div>
           </div>
 
-          <!-- Immagine: mobile centro, desktop colonne sinistra -->
-          <div class="col-12 col-xl-6 offset-xl-1 imghero">
-            <img src="img/hero.jpg" alt="Laura al lavoro su un progetto di branding" />
+          <div class="col-12 col-xl-6 offset-xl-1">
+            <h2 class="home-titolo">Ciao, sono <em>Laura</em></h2>
+            <p class="home-testo">Sono una graphic designer di Aulla, in Lunigiana. Lavoro con piccole attività e liberi professionisti, in zona e da remoto in tutta Italia, e soprattutto con chi accoglie e chi ha piccole attività.</p>
+            <p class="home-testo">So cosa vuol dire non sapere come raccontarsi: ci sono passata anch'io, prima di trovare la mia strada. Per questo il mio lavoro è trasformare le tue idee, anche quelle più confuse, in un'identità chiara e riconoscibile, e lasciarti gli strumenti per usarla.</p>
+            <a href="aboutme.html" class="home-btn">Scopri chi sono</a>
           </div>
 
         </div>
@@ -137,140 +186,73 @@
     </section>
 
 
-  
-     <section class="aboutme">
-      <div class="container-fluid">
-        <div class="row align-items-center">
+    <!-- come lavoreremo insieme -->
 
-          <!-- Testo: su mobile prima, su desktop a destra-->
-          <div class="col-12 col-xl-6 offset-xl-1 aboutme-text order-1 order-xl-2">
-            <h1>Ciao,<br class="d-none d-xl-block"> sono Laura</h1>
-            <p>Lavoro con chi vuole un'identità visiva riconoscibile, coerente e memorabile, che tu stia partendo da zero o che sia ora di cambiare pelle. 
-              Non consegno solo file: ti guido anche su come portare il tuo brand nel mondo perché un'identità visiva funziona solo se sai come usarla. Se cerchi qualcuno che lavori con cura e con metodo, sei nel posto giusto.</p>
+    <section class="home-sezione" id="come-lavoro">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-12 col-xl-5">
+            <h2 class="home-titolo">Come<br>lavoreremo<br><em>insieme</em></h2>
+            <p class="home-testo">Un percorso chiaro, un passaggio alla volta. Si va avanti quando approvi il passaggio precedente: così ogni scelta è condivisa, e i tempi dipendono anche da quanto rapidamente mi rispondi.</p>
+
+            <div class="home-paga">
+              <h3>Come si paga</h3>
+              <p>In tre momenti: 40% alla firma, 30% quando approvi il logo, 30% alla consegna. Sono in regime forfettario: in fattura non c'è IVA.</p>
+            </div>
+
+            <a href="pacchetti.html" class="home-btn">Scopri i pacchetti</a>
           </div>
 
-          <!-- Immagine: su mobile viene dopo, su desktop è a sinistra -->
-          <div class="col-12 col-xl-5 aboutme-img order-2 order-xl-1">
-            <img src="img/imgaboutme.jpg" alt="Ciao sono Laura" />
-            <img src="img/logo-cerchio.png" alt="" class="logo-loop" />
+          <div class="col-12 col-xl-6 offset-xl-1">
+            <ol class="home-passi">
+              <li>
+                <span class="home-passo-numero" aria-hidden="true">1</span>
+                <h3>Chiamata conoscitiva</h3>
+                <p>Una chiacchierata senza impegno per conoscerci e capire il tuo progetto. Se siamo la coppia giusta, ti mando una proposta chiara, con tempi, costi e tutto quello che è incluso.</p>
+              </li>
+              <li>
+                <span class="home-passo-numero" aria-hidden="true">2</span>
+                <h3>Analisi e Moodboard</h3>
+                <p>Prima di disegnare, traduciamo in immagini quello che il tuo brand deve trasmettere. Ti presento due o tre moodboard, ognuna con un'atmosfera diversa: sei tu a sapere quale racconta meglio la tua attività ai tuoi clienti. E se le idee sono ancora confuse, vederle ti aiuta a riconoscerle.</p>
+                <span class="home-passo-nota">Si parte quando ne scegli una</span>
+              </li>
+              <li>
+                <span class="home-passo-numero" aria-hidden="true">3</span>
+                <h3>Proposta di Logo</h3>
+                <p>Disegno il logo e l'identità a partire dalla direzione scelta, e te li presento spiegandoti il perché di ogni scelta. A volte nasce una proposta, a volte più di una: dipende dal progetto.</p>
+              </li>
+              <li>
+                <span class="home-passo-numero" aria-hidden="true">4</span>
+                <h3>Revisione insieme</h3>
+                <p>Sulla proposta scelta costruisco il resto dell'identità e le applicazioni previste dal tuo pacchetto. Poi rifiniamo tutto insieme, logo compreso: sono inclusi due giri di revisione. Se servono altre modifiche, le concordiamo prima, con un costo chiaro.</p>
+                <span class="home-passo-nota">La consegna avviene quando approvi la versione finale</span>
+              </li>
+              <li>
+                <span class="home-passo-numero" aria-hidden="true">5</span>
+                <h3>Consegna e Call Finale</h3>
+                <p>Ricevi tutti i file pronti per la stampa e per il web, insieme al brand manual: la guida da consultare quando vuoi e da passare a chi lavora con te. Poi ci sentiamo per una call in cui ti spiego come usare tutto. Logo e file sono tuoi.</p>
+              </li>
+            </ol>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- sezione steps come lavoreremo -->
-    <section class="step" id="come-lavoro">
-      <div class="container-fluid">
-        <div class="row g-4">
 
-           <div class="col-12 col-xl-4 step-title">
-            <h1>Come lavoreremo insieme</h1>
-            <p>Un percorso chiaro, step dopo step. Niente sorprese.</p>
-          </div>
+    <!-- progetti -->
 
-         
-          <div class="col-xl-4">
-            <div class="step-card-wrap">
-              
-               <div class="step-card">
-                <div class="step-card-descrizione">
-                  <h1>01</h1>
-                  <h3>Discovery Call</h3>
-                </div>
-                <p>Una chiacchierata senza impegno per capire il tuo progetto, i tuoi obiettivi e se siamo la coppia giusta.</p>
-              </div>
-             
-              <div class="step-card-cover d-none d-xl-block">
-                <h1>01</h1>
-                <h3>Discovery Call</h3>
-              </div>
-            </div>
-          </div>
-
-         
-          <div class="col-xl-4">
-            <div class="step-card-wrap">
-              <div class="step-card">
-                <div class="step-card-descrizione">
-                  <h1>02</h1>
-                  <h3>Moodboard di allineamento</h3>
-                </div>
-                <p>Prima di disegnare una sola linea, costruiamo insieme la direzione visiva. Ti presento due strade stilistiche diverse: tu scegli quella che senti tua. Così non ci sono sorprese.</p>
-              </div>
-              <div class="step-card-cover d-none d-xl-block">
-                <h1>02</h1>
-                <h3>Moodboard di allineamento</h3>
-              </div>
-            </div>
-          </div>
-
-         
-          <div class="col-xl-4">
-            <div class="step-card-wrap">
-              <div class="step-card">
-                <div class="step-card-descrizione">
-                  <h1>03</h1>
-                  <h3>Presentazione del Concept</h3>
-                </div>
-                <p>Disegno il progetto sulla base di tutto quello che abbiamo costruito insieme. Ogni scelta ha una ragione, te la racconto, perché capire il tuo brand è parte del servizio.</p>
-              </div>
-              <div class="step-card-cover d-none d-xl-block">
-                <h1>03</h1>
-                <h3>Presentazione del Concept</h3>
-              </div>
-            </div>
-          </div>
-
-         
-          <div class="col-xl-4">
-            <div class="step-card-wrap">
-              <div class="step-card">
-                <div class="step-card-descrizione">
-                  <h1>04</h1>
-                  <h3>Revisione Insieme</h3>
-                </div>
-                <p>Raffiniamo insieme fino a quando non si sente giusto. Ogni pacchetto include due round di revisione per arrivare esattamente dove vuoi.</p>
-              </div>
-              <div class="step-card-cover d-none d-xl-block">
-                <h1>04</h1>
-                <h3>Revisione Insieme</h3>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-xl-4">
-            <div class="step-card-wrap">
-              <div class="step-card">
-                <div class="step-card-descrizione">
-                  <h1>05</h1>
-                  <h3>Consegna &amp; Supporto</h3>
-                </div>
-                <p>Ricevi i tuoi file completi insieme a una video walkthrough che ti spiega come usare tutto. E per 30 giorni dopo la consegna, sono qui se hai domande.</p>
-              </div>
-              <div class="step-card-cover d-none d-xl-block">
-                <h1>05</h1>
-                <h3>Consegna &amp; Supporto</h3>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    
-    <!-- carosello portfolio -->
-    <section class="portfolio">
+    <section class="home-sezione">
       <div class="container-fluid">
 
-        <div class="portfolio-title">
-            <h1>Dai un'occhiata ai miei progetti</h1>
-            <p>In questo portfolio ho scelto di raccogliere solo i lavori per me più importanti: quelli che mi hanno appassionato di più e che raccontano meglio come aiuto le idee a prendere forma.</p>
+        <div class="home-progetti-testata">
+          <h2 class="home-titolo">Dai un'occhiata<br>ai miei <em>progetti</em></h2>
+          <a href="progetti.html" class="home-btn">Vedi tutti i progetti</a>
         </div>
 
-                
-      <div class="progetti-slider" id="progettiSlider">
+        <!-- lo slider usa le classi e il JavaScript che c'erano già -->
+        <div class="progetti-slider" id="progettiSlider">
           <a href="oodal-festival.html" class="progetto-slide">
             <img src="img/oodal.png" alt="Oodal Festival">
           </a>
@@ -278,7 +260,7 @@
             <img src="img/raw.jpg" alt="Raw">
           </a>
           <a href="shampoococcole.html" class="progetto-slide">
-            <img src="img/shampoo&coccole.png" alt="Shampoo & Coccole">
+            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole">
           </a>
           <a href="locandamagno.html" class="progetto-slide">
             <img src="img/locandamagno.jpg" alt="Locanda Magno">
@@ -286,118 +268,201 @@
           <a href="eltoros.html" class="progetto-slide">
             <img src="img/eltoros.png" alt="El Toros">
           </a>
-           <a href="golosandia.html" class="progetto-slide">
+          <a href="golosandia.html" class="progetto-slide">
             <img src="img/golosandia/cupholder.jpg" alt="Golosandia">
           </a>
-      </div>
-
-      <div class="slider-nav">
-        <button class="slider-btn" onclick="scorriSlider(-1)" aria-label="Precedente">←</button>
-        <button class="slider-btn" onclick="scorriSlider(1)" aria-label="Successivo">→</button>
-      </div>
-
-
-      <div class="portfolio-cta"> 
-        <a href="progetti.html" class="guardaimieiprogetti">Esplora il Portfolio completo</a>           
-      </div>
-
         </div>
+
+        <div class="slider-nav">
+          <button class="slider-btn" onclick="scorriSlider(-1)" aria-label="Precedente">←</button>
+          <button class="slider-btn" onclick="scorriSlider(1)" aria-label="Successivo">→</button>
+        </div>
+
       </div>
     </section>
 
 
+    <!-- recensioni -->
 
-
-    <!-- form contatti -->
-    <section class="form" id="form">
+    <section class="home-sezione home-recensioni">
       <div class="container-fluid">
-        <div class="row align-items-center">
 
-        <!-- Testo: su mobile è al centro, su desktop colonne sinistra -->
-          <div class="col-12 col-xl-6 form-text">
-            <h1>Facciamoci una chiaccherata</h1>
-            <p>Se sei arrivata fin qui, qualcosa ha fatto click ed è un buon segnale. Il posto migliore da cui partire è una discovery call. Una conversazione rilassata dove mi parli del tuo progetto e capiamo insieme se ha senso lavorare insieme. Nessun impegno, nessuna pressione.</p>
-            <p class="text-extra">Compila il form e ti rispondo entro 48 ore per fissare una data e un orario. Raccontami del tuo progetto, dove sei adesso e dove vorresti arrivare.</p>
+        <h2 class="home-titolo">Dicono di me</h2>
+
+        <ul class="home-recensioni-lista">
+          <li>
+            <blockquote>[La frase di un cliente]</blockquote>
+            <p>[Nome], [Attività]</p>
+          </li>
+          <li>
+            <blockquote>[La frase di un cliente]</blockquote>
+            <p>[Nome], [Attività]</p>
+          </li>
+          <li>
+            <blockquote>[La frase di un cliente]</blockquote>
+            <p>[Nome], [Attività]</p>
+          </li>
+          <li>
+            <blockquote>[La frase di un cliente]</blockquote>
+            <p>[Nome], [Attività]</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- contatti -->
+
+    <section class="home-sezione" id="form">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-12 col-xl-6">
+            <h2 class="home-titolo">Facciamoci<br>una <em>chiacchierata</em></h2>
+            <p class="home-testo">Se hai letto fin qui, qualcosa ha fatto click: è un buon segnale. Il punto di partenza è una chiamata conoscitiva, una conversazione tranquilla in cui mi racconti il tuo progetto e capiamo se è il caso di lavorare insieme. Nessun impegno, nessuna pressione.</p>
+            <p class="home-testo">Compila il modulo e ti rispondo entro 48 ore per fissare giorno e ora. Preferisci scrivermi?</p>
+            <a href="mailto:info@laurapasquali.it" class="home-contatti-email">info@laurapasquali.it</a>
           </div>
 
+          <div class="col-12 col-xl-6">
+            <form class="home-modulo">
+              <div class="home-modulo-campi">
 
-        <!-- form contatti: su mobile viene dopo, su desktop è a sinistra -->
-            
-          <div class="col-12 col-xl-5 offset-xl-1 form-box"> 
-             <form>           
-                <h1>Invia una richiesta</h1>
+                <div class="home-modulo-intero">
+                  <label for="nome">Nome e Cognome <span aria-hidden="true">*</span></label>
+                  <input type="text" id="nome" name="nome" autocomplete="name" required>
+                </div>
 
-                    <div class="form-field">
-                    <input type="text" name="nome" placeholder="Il tuo nome e cognome" required>
-                    </div>
+                <div class="home-modulo-intero">
+                  <label for="email">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
 
-                    <div class="form-field">
-                    <input type="email" name="email" placeholder="La tua E-mail" required>
-                    </div>
+                <div>
+                  <label for="attivita">Nome dell'attività</label>
+                  <input type="text" id="attivita" name="attivita" autocomplete="organization">
+                </div>
 
-                    <div class="form-field">
-                    <input type="text" name="azienda" placeholder="Nome dell'azienda">
-                    </div>
+                <div>
+                  <label for="sito">Sito web, se lo hai</label>
+                  <input type="url" id="sito" name="sito" autocomplete="url">
+                </div>
 
-                    <div class="form-field">
-                    <input type="url" name="sito" placeholder="Hai un sito web?">
-                    </div>
+                <div class="home-modulo-intero">
+                  <label for="messaggio">Raccontami del tuo progetto <span aria-hidden="true">*</span></label>
+                  <textarea id="messaggio" name="messaggio" placeholder="Dove sei adesso e dove vorresti arrivare" required></textarea>
+                </div>
 
-                    <div class="form-field">
-                    <textarea name="messaggio" rows="5" placeholder="Raccontami del tuo progetto" required></textarea>
-                    </div>	
+                <div class="home-modulo-intero home-modulo-privacy">
+                  <input type="checkbox" id="privacy" name="privacy" required>
+                  <label for="privacy">Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta. <span aria-hidden="true">*</span></label>
+                </div>
 
-                    <div class="form-field">
-                      <button type="submit">INVIA</button>		
-                    </div>
-            </form> 
-            
-		     </div> 
+                <div class="home-modulo-intero">
+                  <button type="submit" class="home-btn">Invia la richiesta</button>
+                  <p class="home-modulo-nota">* Campi obbligatori</p>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
         </div>
       </div>
     </section>
 
+
+    <!-- domande frequenti -->
+
+    <section class="home-sezione">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-12 col-xl-4">
+            <h2 class="home-titolo">Domande<br><em>frequenti</em></h2>
+            <p class="home-testo">Le cose che i clienti mi chiedono più spesso prima di iniziare.</p>
+          </div>
+
+          <div class="col-12 col-xl-7 offset-xl-1">
+            <div class="home-faq-lista">
+
+              <details>
+                <summary>Quanto costa un progetto?</summary>
+                <p>Dipende da cosa ti serve. Dopo la chiamata conoscitiva ti mando una proposta chiara, con tempi, costi e tutto quello che è incluso.</p>
+              </details>
+
+              <details>
+                <summary>Quanto tempo ci vuole?</summary>
+                <p>In media [X–Y settimane]. I tempi dipendono anche da quanto rapidamente approvi ogni passaggio.</p>
+              </details>
+
+              <details>
+                <summary>Il logo poi è mio?</summary>
+                <p>Sì. Alla consegna ricevi tutti i file, e la cessione dei diritti è scritta nel contratto.</p>
+              </details>
+
+              <details>
+                <summary>E se dopo due revisioni qualcosa non mi convince?</summary>
+                <p>Le modifiche in più le concordiamo prima, con un costo chiaro, così non ci sono sorprese.</p>
+              </details>
+
+              <details>
+                <summary>Cos'è il brand manual?</summary>
+                <p>È la guida del tuo brand: spiega come usare logo, colori e caratteri. Puoi consultarlo quando vuoi e passarlo a chi lavora con te, dalla tipografia a chi cura i tuoi social o il tuo sito.</p>
+              </details>
+
+              <details>
+                <summary>Lavori solo in Lunigiana?</summary>
+                <p>No. Lavoro in Lunigiana e in provincia di Massa Carrara, e da remoto in tutta Italia, con chiamate e file condivisi online.</p>
+              </details>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <!-- footer -->
 
+  <!-- footer -->
   <footer class="footer">
     <div class="container-fluid">
       <div class="footer-content">
 
-        
         <div class="footer-logo">
-          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer"/>
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" />
         </div>
 
         <hr class="footer-line">
 
-        
-        <div class="footer-social">
-          <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
-            <img src="img/behance.png" alt="Behance" />
-          </a>
-          <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <img src="img/linkedin.png" alt="LinkedIn" />
-          </a>
-        </div>
+        <div class="footer-bottom">
 
-        <!-- torna su -->
-        <a href="#hero" class="footer-top">Torna su ↑</a>
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+
+          <a href="#hero" class="footer-top">Torna su ↑</a>
+
+        </div>
 
       </div>
     </div>
   </footer>
 
 
-
-
-
-
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
 
   <script>
     /* ---- MENU HAMBURGER ---- */
@@ -438,7 +503,7 @@
       slides.forEach((slide, i) => slide.classList.toggle('attiva', i === indice));
     }
 
-    // scorrimento automatico ogni 4 secondi
+    // scorrimento automatico
     function avviaAutoplay() {
       timerSlider = setInterval(() => {
         const fine = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
@@ -461,9 +526,6 @@
     aggiornaAttiva();
     avviaAutoplay();
   </script>
-     
-      
-  </body>
- 
 
+</body>
 </html>

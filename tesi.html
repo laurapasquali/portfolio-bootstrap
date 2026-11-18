@@ -1,0 +1,341 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dal Progetto alla Traccia - Laura.P-Graphic Designer</title>
+  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+<script>
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+    <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          </a>
+        </div>
+
+
+        
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoreremo insieme</a></li>
+            </ul>
+
+             <!-- Bottone CTA dentro hamburger -->
+          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+          </nav>
+
+          <!-- Bottone CTA visibile su desktop -->
+          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          
+
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+     <!--titolo progetto -->
+
+    <section class="progetto-header" id="top">
+      <div class="container-fluid">
+
+        <ul class="progetto-tag">
+          <li>Tesi di laurea</li>
+          <li>Ricerca</li>
+          <li>Editorial design</li>
+          <li>Rebrand concept</li>
+        </ul>
+
+        <h1>Dal progetto alla traccia</h1>
+
+        <p class="progetto-intro">Perché alcune identità visive durano decenni e altre spariscono come rumore di fondo?</p>
+
+        <p class="progetto-contesto">Istituto Pantheon Design &amp; Technology, 2026</p>
+
+        <img src="img/tesi/copertina.jpg" alt="La copertina della tesi stampata: fondo nero e punto rosso" class="progetto-copertina" />
+
+      </div>
+    </section>
+
+
+    <!-- capitolo 1 -->
+
+    <section class="progetto-blocco capitolo">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-12 col-xl-4">
+           
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-xl-4">
+            <h2>Traccia o rumore</h2>
+          </div>
+          <div class="col-12 col-xl-7 offset-xl-1 capitolo-testo">
+            <p>Il verde di Borotalco è lo stesso da più di un secolo: oggi è semplicemente il colore del talco. Molti brand di skincare recenti, invece, si somigliano. Tolto il nome, non resta niente da ricordare.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- capitolo 2 -->
+
+    <section class="progetto-blocco capitolo">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-12 col-xl-4">
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-xl-4">
+            <h2>Il metodo</h2>
+          </div>
+          <div class="col-12 col-xl-7 offset-xl-1 capitolo-testo">
+            <p>Ho costruito una griglia di analisi e l'ho applicata a sette brand: tre storici, Borotalco, Felce Azzurra e Marvis, e quattro recenti, The Ordinary, Byoma, Skin First e Sol de Janeiro. La prova più chiara è anche la più semplice: coprire il logo e vedere cosa resta.</p>
+          </div>
+        </div>
+
+        <ol class="livelli">
+          <li>
+            <span class="livello-numero">Livello 1</span>
+            <h3>Funzionale</h3>
+            <p>Perché è nato?</p>
+          </li>
+          <li>
+            <span class="livello-numero">Livello 2</span>
+            <h3>Formale</h3>
+            <p>Com'è fatto?</p>
+          </li>
+          <li>
+            <span class="livello-numero">Livello 3</span>
+            <h3>Culturale</h3>
+            <p>Cosa porta con sé?</p>
+          </li>
+          <li>
+            <span class="livello-numero">Livello 4</span>
+            <h3>Resistenza</h3>
+            <p>Regge senza il suo logo?</p>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+
+   
+      <!-- immagine larga 1 -->
+          <section class="progetto-galleria">
+            <div class="container-fluid">
+              <div class="progetto-img-larga">
+                <img src="img/tesi/campioni.jpg" alt="brand campioni" />
+              </div>
+            </div>
+          </section>
+
+
+       <section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo">
+            <h2>Tolto il logo,<br>cosa resta?</h2>
+            <p>Gli stessi pack senza logo: gli storici si riconoscono ancora, i contemporanei quasi tutti no.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola">
+            <img src="img/tesi/pack-nologo.jpg" alt="test pack senza logo" />
+          </div>
+
+
+        <!-- capitolo 3 -->
+
+    <section class="progetto-blocco capitolo">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-12 col-xl-4">
+        
+          </div>
+        </div>
+
+        
+        <div class="row">
+          <div class="col-12 col-xl-4">
+            <h2>La Risposta</h2>
+          </div>
+          <div class="col-12 col-xl-7 offset-xl-1 capitolo-testo">
+            <p>Non è la bellezza a far durare un’identità, e nemmeno la qualità del progetto. Un colore o una forma diventano traccia quando nascono da un bisogno reale, restano coerenti nel tempo e non somigliano a nessun altro.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+<!-- immagine larga 1 -->
+          <section class="progetto-galleria">
+            <div class="container-fluid">
+              <div class="progetto-img-larga">
+                <img src="img/tesi/banner-identita.jpg" alt="banner identità" />
+              </div>
+            </div>
+          </section>
+
+
+<section class="progetto-blocco">
+      <div class="container-fluid">
+        <div class="row align-items-center g-4">
+
+          <div class="col-12 col-xl-6 progetto-testo">
+            <h2>L'applicazione</h2>
+            <p>Skin First nasce per fare chiarezza sulla skincare, ma il suo pack sembra quello di un laboratorio qualsiasi. Il concept lo sposta da «sono scientifico» a «sono qui per orientarti», con tre segni propri: una forma che ricorda la beuta, la scala delle sei fasi della routine e un pattern che richiama la trama della pelle. Il nuovo pack si riconosce anche senza logo.</p>
+          </div>
+
+          <div class="col-12 col-xl-6 progetto-img-singola">
+            <img src="img/tesi/protocollo-skinfirst.jpg" alt="protocollo skin first originale" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!--immagini affiancate 2 -->
+    <section class="progetto-galleria coppia-1">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/tesi/BOOSTER MOCKUP OK.jpg" alt="booster mockup" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/tesi/DET + TONICO.jpg" alt="detergente e tonico mockup" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+     <!--immagini affiancate 3 -->
+    <section class="progetto-galleria coppia-1">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-12 col-md-6">
+            <img src="img/tesi/TUTTI.jpg" alt="dettaglio mockup" />
+          </div>
+          <div class="col-12 col-md-6">
+            <img src="img/tesi/dettaglio 1.jpg" alt="dettaglio mockup" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- navigazione tra progetti -->
+  <nav class="progetto-nav">
+    <div class="container-fluid">
+      <div class="progetto-nav-content">
+
+        <a href="progetti.html" class="progetto-nav-link nav-prev">
+          <span class="nav-freccia">←</span>
+          <span>Torna al portfolio</span>
+        </a>
+
+        <a href="shampoococcole.html" class="progetto-nav-link nav-next">
+          <span>Shampoo & Coccole</span>
+          <span class="nav-freccia">→</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  </main>
+
+
+  <!-- footer -->
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer"/>
+        </div>
+
+        <hr class="footer-line">
+
+         <div class="footer-bottom">
+
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+
+          <a href="#hero" class="footer-top">Torna su ↑</a>
+
+        </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const element = document.getElementById("menu");
+      element.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
