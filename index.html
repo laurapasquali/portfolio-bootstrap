@@ -72,7 +72,7 @@
 
     <!-- hero -->
 
-    <section class="home-hero" id="hero">
+    <section class="home-hero home-grana" id="hero">
       <div class="container-fluid">
 
         <div class="row align-items-center">
@@ -118,42 +118,80 @@
     <!-- manifesto -->
 
     <section class="home-manifesto">
+      <img src="img/decorazioni/semicerchioarancione.svg" alt="" aria-hidden="true" class="home-manifesto-semicerchio" />
       <div class="container-fluid">
         <p>Tra due attività che offrono la stessa cosa, vai da quella che ti ispira di più.<br>Se si somigliano, scegli a caso.<br>Ed è proprio il limite dei loghi fatti con l'IA: si somigliano tutti.<br>Il tuo cliente decide in pochi secondi e premia chi si distingue.</p>
         <h2>Io progetto quei pochi secondi.</h2>
         <p>Poi la tua immagine passa nelle tue mani, con tutte le istruzioni per usarla.</p>
+      </div>
+      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="home-manifesto-stella" />
+    </section>
+
+
+    <!-- progetti -->
+
+    <section class="home-sezione home-progetti">
+      <div class="container-fluid">
+
+        <div class="home-progetti-testata">
+          <h2 class="home-titolo">Dai un'occhiata<br>ai miei <em>progetti</em></h2>
+          <a href="progetti.html" class="home-btn">Vedi tutti i progetti</a>
+        </div>
+
+        <!-- lo slider usa le classi e il JavaScript che c'erano già -->
+        <div class="progetti-slider" id="progettiSlider">
+          <a href="oodal-festival.html" class="progetto-slide">
+            <img src="img/oodal.png" alt="Oodal Festival">
+          </a>
+          <a href="raw.html" class="progetto-slide">
+            <img src="img/raw.jpg" alt="Raw">
+          </a>
+          <a href="shampoococcole.html" class="progetto-slide">
+            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole">
+          </a>
+          <a href="locandamagno.html" class="progetto-slide">
+            <img src="img/locandamagno.jpg" alt="Locanda Magno">
+          </a>
+          <a href="eltoros.html" class="progetto-slide">
+            <img src="img/eltoros.png" alt="El Toros">
+          </a>
+          <a href="golosandia.html" class="progetto-slide">
+            <img src="img/golosandia/cupholder.jpg" alt="Golosandia">
+          </a>
+        </div>
+
+        <div class="slider-nav">
+          <button class="slider-btn" onclick="scorriSlider(-1)" aria-label="Precedente">←</button>
+          <button class="slider-btn" onclick="scorriSlider(1)" aria-label="Successivo">→</button>
+        </div>
+
       </div>
     </section>
 
 
     <!-- più di un bel logo -->
 
-    <section class="home-sezione">
+    <section class="home-sezione home-grana">
       <div class="container-fluid">
 
-        <h2 class="home-titolo">Più di un <em>bel logo</em>.</h2>
-        <p class="home-testo">Un bel logo è solo l'inizio. Quello che conta è come lo userai domani, con la tipografia, sui social, sull'insegna.</p>
+        <h2 class="home-titolo">Più di un <em>bel logo</em></h2>
+        <p class="home-testo home-testo-unito">Quello che conta è come userai la tua immagine domani: con la tipografia, sui social, sull'insegna.</p>
 
         <ul class="home-plus-schede">
           <li>
+            <img src="img/decorazioni/cerchioarancione.svg" alt="" aria-hidden="true" class="home-plus-icona" />
             <h3>Impari a usare la tua immagine in autonomia</h3>
-            <p>Ricevi il brand manual, una call in cui ti spiego tutto e, se vuoi, i template Canva già pronti.</p>
+            <p>Ricevi il brand manual, una call in cui ti spiego tutto e, se vuoi, i template Canva già pronti. Non dovrai chiamarmi per ogni volantino.</p>
           </li>
           <li>
-            <h3>Conosco attività come la tua</h3>
-            <p>Ho lavorato con chi accoglie e con piccole attività: B&amp;B, ristoranti, bistrot, artigiani e liberi professionisti.</p>
-          </li>
-          <li>
+            <img src="img/decorazioni/cerchioverde.svg" alt="" aria-hidden="true" class="home-plus-icona" />
             <h3>Rispetto quello che hai già costruito</h3>
             <p>Se rinnovi la tua immagine, parto da ciò che i tuoi clienti riconoscono e lo porto con te nel nuovo.</p>
           </li>
           <li>
+            <img src="img/decorazioni/cerchionavy.svg" alt="" aria-hidden="true" class="home-plus-icona" />
             <h3>So cosa succede dopo lo schermo</h3>
             <p>Ho imparato il mestiere seguendo i progetti fino alla stampa, anche in grande formato. I file che ti consegno funzionano davvero, dalla tipografia all'insegnista.</p>
-          </li>
-          <li>
-            <h3>Nessuna sorpresa</h3>
-            <p>Tempi, costi e passaggi sono chiari dall'inizio, e si va avanti solo quando approvi.</p>
           </li>
         </ul>
 
@@ -188,7 +226,7 @@
 
     <!-- come lavoreremo insieme -->
 
-    <section class="home-sezione" id="come-lavoro">
+    <section class="home-sezione home-grana" id="come-lavoro">
       <div class="container-fluid">
         <div class="row">
 
@@ -237,47 +275,6 @@
           </div>
 
         </div>
-      </div>
-    </section>
-
-
-    <!-- progetti -->
-
-    <section class="home-sezione">
-      <div class="container-fluid">
-
-        <div class="home-progetti-testata">
-          <h2 class="home-titolo">Dai un'occhiata<br>ai miei <em>progetti</em></h2>
-          <a href="progetti.html" class="home-btn">Vedi tutti i progetti</a>
-        </div>
-
-        <!-- lo slider usa le classi e il JavaScript che c'erano già -->
-        <div class="progetti-slider" id="progettiSlider">
-          <a href="oodal-festival.html" class="progetto-slide">
-            <img src="img/oodal.png" alt="Oodal Festival">
-          </a>
-          <a href="raw.html" class="progetto-slide">
-            <img src="img/raw.jpg" alt="Raw">
-          </a>
-          <a href="shampoococcole.html" class="progetto-slide">
-            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole">
-          </a>
-          <a href="locandamagno.html" class="progetto-slide">
-            <img src="img/locandamagno.jpg" alt="Locanda Magno">
-          </a>
-          <a href="eltoros.html" class="progetto-slide">
-            <img src="img/eltoros.png" alt="El Toros">
-          </a>
-          <a href="golosandia.html" class="progetto-slide">
-            <img src="img/golosandia/cupholder.jpg" alt="Golosandia">
-          </a>
-        </div>
-
-        <div class="slider-nav">
-          <button class="slider-btn" onclick="scorriSlider(-1)" aria-label="Precedente">←</button>
-          <button class="slider-btn" onclick="scorriSlider(1)" aria-label="Successivo">→</button>
-        </div>
-
       </div>
     </section>
 
@@ -375,7 +372,7 @@
 
     <!-- domande frequenti -->
 
-    <section class="home-sezione">
+    <section class="home-sezione home-grana">
       <div class="container-fluid">
         <div class="row">
 
@@ -475,7 +472,6 @@
     /* ---- SLIDER PROGETTI ---- */
     const slider = document.getElementById('progettiSlider');
     const slides = slider.querySelectorAll('.progetto-slide');
-    let timerSlider;
 
     // scorre di una slide (direzione: 1 = avanti, -1 = indietro)
     function scorriSlider(direzione) {
@@ -484,16 +480,15 @@
       slider.scrollBy({ left: passo * direzione, behavior: 'smooth' });
     }
 
-    // trova la slide più vicina al centro e le assegna la classe .attiva
+    // trova la slide più vicina al bordo sinistro (allineata al titolo) e le assegna la classe .attiva
     function aggiornaAttiva() {
       const box = slider.getBoundingClientRect();
-      const centro = box.left + box.width / 2;
       let indice = 0;
       let minDist = Infinity;
 
       slides.forEach((slide, i) => {
         const rs = slide.getBoundingClientRect();
-        const dist = Math.abs(centro - (rs.left + rs.width / 2));
+        const dist = Math.abs(box.left - rs.left);
         if (dist < minDist) {
           minDist = dist;
           indice = i;
@@ -503,28 +498,9 @@
       slides.forEach((slide, i) => slide.classList.toggle('attiva', i === indice));
     }
 
-    // scorrimento automatico
-    function avviaAutoplay() {
-      timerSlider = setInterval(() => {
-        const fine = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
-        if (fine) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scorriSlider(1);
-        }
-      }, 2000);
-    }
-
-    function fermaAutoplay() {
-      clearInterval(timerSlider);
-    }
-
     slider.addEventListener('scroll', aggiornaAttiva);
-    slider.addEventListener('mouseenter', fermaAutoplay);
-    slider.addEventListener('mouseleave', avviaAutoplay);
 
     aggiornaAttiva();
-    avviaAutoplay();
   </script>
 
 </body>

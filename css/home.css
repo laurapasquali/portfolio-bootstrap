@@ -38,6 +38,14 @@
   padding-right: 1.25rem;
 }
 
+/* grana: texture ripetuta sopra il colore di fondo della sezione.
+   background-image, non background, così il colore resta */
+.home-grana {
+  background-image: url('../img/decorazioni/grana.svg');
+  background-repeat: repeat;
+  background-size: 512px 512px;   /* il riquadro è 256px: a 512px la grana è "zoomata" 2 volte */
+}
+
 /* titoli delle sezioni: la parola in <em> va in corsivo terracotta */
 .home-titolo {
   font-family: var(--font-display);
@@ -232,9 +240,29 @@
 
 .home-manifesto {
   background-color: var(--burgundy);
-  padding-top: 4rem;
+  padding-top: 0;
   padding-bottom: 4rem;
   text-align: center;
+  position: relative;   /* riferimento per la stella nell'angolo */
+}
+
+/* semicerchio decorativo appeso al bordo alto della sezione:
+   per questo la sezione non ha padding sopra */
+.home-manifesto-semicerchio {
+  display: block;
+  width: 10rem;
+  height: auto;
+  margin: 0 auto 2.5rem;
+}
+
+/* stella decorativa nell'angolo in basso a destra:
+   sta nel padding sotto, quindi non copre il testo */
+.home-manifesto-stella {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.5rem;
+  height: auto;
 }
 
 .home-manifesto .container-fluid {
@@ -261,7 +289,7 @@
 }
 
 
-/* più di un bel logo: cinque schede */
+/* più di un bel logo: tre schede, impilate su telefono */
 
 .home-plus-schede {
   display: grid;
@@ -276,6 +304,15 @@
   border: 2px solid var(--burgundy);
   border-radius: 20px;
   padding: 1.75rem 1.5rem;
+  background-color: var(--base);   /* copre la grana: i box restano lisci */
+}
+
+/* icona decorativa sopra il titolo della scheda */
+.home-plus-icona {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
 }
 
 .home-plus-schede h3 {
@@ -448,6 +485,12 @@
 
 
 /* progetti: titolo e bottone, poi lo slider di style.css */
+
+/* sicurezza: se lo slider dovesse uscire dalla sezione,
+   la parte in più viene tagliata e la pagina non scorre in orizzontale */
+.home-progetti {
+  overflow-x: clip;
+}
 
 .home-progetti-testata {
   display: flex;
@@ -700,7 +743,7 @@
   }
 
   .home-plus-schede {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .home-recensioni-lista li {
@@ -746,6 +789,12 @@
 
   .home-testo {
     font-size: 1.15rem;
+  }
+
+  /* paragrafo su una riga sola: solo su desktop, dove ci sta */
+  .home-testo-unito {
+    max-width: none;
+    white-space: nowrap;
   }
 
   .home-btn,
@@ -800,8 +849,18 @@
   /* manifesto */
 
   .home-manifesto {
-    padding-top: 7rem;
     padding-bottom: 7rem;
+  }
+
+  .home-manifesto-semicerchio {
+    width: 16rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .home-manifesto-stella {
+    right: 2rem;
+    bottom: 2rem;
+    width: 5rem;
   }
 
   .home-manifesto p {
@@ -814,21 +873,15 @@
   }
 
 
-  /* più di un bel logo: tre schede sopra, due più larghe sotto */
+  /* più di un bel logo: le tre colonne arrivano dal tablet, qui solo spazi */
 
   .home-plus-schede {
-    grid-template-columns: repeat(6, 1fr);
     gap: 1.75rem;
     margin-top: 4rem;
   }
 
   .home-plus-schede li {
-    grid-column: span 2;
     padding: 3rem 2.5rem;
-  }
-
-  .home-plus-schede li:nth-child(n+4) {
-    grid-column: span 3;
   }
 
   .home-plus-schede h3 {
