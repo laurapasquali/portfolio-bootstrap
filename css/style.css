@@ -10,9 +10,9 @@
    e su desktop (1200px, il breakpoint xl di Bootstrap).
 
    Ordine delle sezioni, uguale in tutti e tre i blocchi:
-   header e menu, striscia, hero, about me, step,
-   portfolio, form, footer, pagina progetti,
-   pagina progetto singolo, pagina about me, pagina contatti.
+   header e menu, slider dei progetti, form, footer,
+   pagina progetti, pagina progetto singolo,
+   pagina about me, pagina contatti.
    ===================================================== */
 
 
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/fonts/Lora.ttf') format('opentype');
+  src: url('../assets/fonts/Lora.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -211,285 +211,7 @@ header {
 }
  
  
-/* hero */
- 
-/* la hero è la prima sezione: il padding sopra la fa partire sotto la navbar fissa */
-
-.hero-parole {
-  font-family: var(--font-body);
-  font-size: var(--p-size);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--base);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.hero-sep {
-  color: var(--verde);
-  padding: 0 0.3rem;
-}
-
-
-
-.hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding-top: calc(var(--nav-height) + 2rem);
-  padding-bottom: 3rem;
-  background-color: var(--burgundy);
-}
- 
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  color: var(--base);
-  margin-bottom: 1.5rem;
-  line-height: 0.9;
-  text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
- 
-.imghero {
-  display: flex;
-  justify-content: center;
-}
- 
-.imghero img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
- 
-.hero-ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  padding-bottom: 2rem;
-}
- 
-.scrivimi {
-  background-color: var(--verde);
-  color: var(--base);
-  border: none;
-  border-radius: 12px;
-  padding: 0.85em 2em;
-  font-family: var(--font-display);
-  font-size: var(--p-size);
-  cursor: pointer;
-  transition: background var(--transition);
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
- 
-.scrivimi:hover {
-  background-color: var(--navy);
-  color: var(--base);
-}
- 
-.scopricomelavoro {
-  background-color: transparent;
-  color: var(--verde);
-  border: 3px solid var(--verde);
-  border-radius: 12px;
-  padding: 0.85em 2em;
-  font-family: var(--font-display);
-  font-size: var(--p-size);
-  cursor: pointer;
-  transition: background var(--transition);
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
- 
-.scopricomelavoro:hover {
-  background-color: var(--navy);
-  border-color: var(--navy);
-  color: var(--base);
-}
- 
- 
-/* manifesto (home): testo centrato dopo la hero */
- 
-.manifesto {
-  background-color: var(--base);
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
- 
-.manifesto p {
-  font-family: var(--font-body);
-  font-size: var(--p-size);
-  color: var(--burgundy);
-  line-height: 1.5;
-  text-align: center;
-  max-width: 45rem;
-  margin: 0 auto 1.25rem;
-}
- 
-.manifesto p:last-child {
-  margin-bottom: 0;
-}
- 
- 
-/* about me (home) */
- 
-.aboutme {
-  padding-top: 2.5rem;
-  padding-bottom: 3rem;
-  background-color: var(--base);
-}
- 
-.aboutme h1 {
-  color: var(--burgundy);
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  margin-bottom: 1.5rem;
-  line-height: 0.9;
-}
- 
-.aboutme p {
-  font-size: var(--p-size);
-  color: var(--burgundy);
-  padding-bottom: 2rem;
-  line-height: 1.1;
-  text-align: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
- 
-.aboutme-img {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
- 
-.aboutme-img img:not(.logo-loop) {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
- 
- 
-/* logo che ruota in loop */
- 
-@keyframes ruota {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
- 
-.aboutme .aboutme-img img.logo-loop {
-  position: absolute;
-  top: -35px;
-  left: 15px;
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  z-index: 2;
-  transform-origin: 50% 50%;
-  animation: ruota 12s linear infinite;
-}
- 
- 
-/* step come lavoreremo */
- 
-.step {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  background-color: var(--burgundy);
-}
- 
-.step-title {
-  text-align: center;
-}
- 
-.step-title h1 {
-  color: var(--base);
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  line-height: 0.9;
-  margin-bottom: 1rem;
-}
- 
-.step-title p {
-  font-size: var(--p-size);
-  color: var(--base);
-  line-height: 1.1;
-}
- 
-.step-card {
-  background-color: var(--base);
-  border-radius: 12px;
-  padding: 1.5rem;
-  height: 100%;
-}
- 
-.step-card-descrizione h1 {
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  margin-bottom: 1rem;
-  line-height: 0.9;
-  text-align: left;
-  color: var(--burgundy);
-}
- 
-.step-card-descrizione h3 {
-  font-family: var(--font-display);
-  font-size: var(--h3-size);
-  line-height: 0.9;
-  text-align: left;
-  color: var(--base);
-}
- 
-.step-card-descrizione p {
-  font-size: var(--p-size);
-  text-align: left;
-  line-height: 1.1;
-  color: var(--burgundy);
-}
- 
- 
-/* portfolio (home) */
- 
-.portfolio {
-  background-color: var(--base);
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-}
- 
-.portfolio .container-fluid {
-  padding-left: 10%;
-  padding-right: 10%;
-}
- 
-.portfolio-title h1 {
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  color: var(--burgundy);
-  margin-bottom: 1.5rem;
-  line-height: 0.9;
-  text-align: center;
-}
- 
-.portfolio-title p {
-  font-size: var(--p-size);
-  color: var(--burgundy);
-  padding-bottom: 0.5rem;
-  line-height: 1.1;
-  text-align: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
+/* slider dei progetti */
  
 .progetti-slider {
   display: flex;
@@ -548,70 +270,6 @@ header {
 .slider-btn:hover {
   background: var(--terracotta);
   color: var(--base);
-}
- 
-.portfolio-cta {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
- 
-.guardaimieiprogetti {
-  background-color: transparent;
-  color: var(--terracotta);
-  border: 3px solid var(--terracotta);
-  border-radius: 12px;
-  padding: 0.85em 2em;
-  font-family: var(--font-display);
-  font-size: var(--p-size);
-  cursor: pointer;
-  transition: background var(--transition);
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
- 
-.guardaimieiprogetti:hover {
-  background-color: var(--terracotta);
-  border-color: var(--base);
-  color: var(--base);
-}
- 
- 
-/* striscia animata */
- 
-.striscia {
-  background-color: var(--verde);
-  padding: 1rem 0;
-  overflow: hidden;
-}
- 
-.striscia-gruppo {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--base);
-  white-space: nowrap;
-  padding-right: 1rem;
-}
- 
-.striscia-sep {
-  color: var(--base);
-  padding: 0 1rem;
-}
- 
-@keyframes scorriStriscia {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
- 
-.striscia-traccia {
-  display: flex;
-  width: max-content;
-  animation: scorriStriscia 25s linear infinite;
-}
- 
-.striscia-traccia:hover {
-  animation-play-state: paused;
 }
  
  
@@ -852,7 +510,7 @@ header {
 .progetto-cover {
   position: absolute;
   inset: 0;
-  background-color: rgba(103, 22, 19, 0.85);   /* --burgundy all'85% */
+  background-color: color-mix(in srgb, var(--burgundy) 85%, transparent);   /* --burgundy all'85% */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1257,36 +915,10 @@ header {
  
 @media (min-width: 768px) {
  
-  /* hero */
- 
-  .hero {
-    padding-top: calc(var(--nav-height) + 3rem);
-  }
- 
-  .hero h1 {
-    font-size: 4rem;
-  }
- 
-  .hero-ctas {
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
-  }
- 
-  .scrivimi,
-  .scopricomelavoro {
-    font-size: 1rem;
-  }
- 
- 
-  /* portfolio (home) */
+  /* slider dei progetti */
  
   .progetto-slide img {
     height: 400px;
-  }
- 
-  .guardaimieiprogetti {
-    font-size: 1rem;
   }
  
 }
@@ -1362,179 +994,7 @@ header {
   }
  
  
-  /* hero */
-
-  .hero-parole {
-    text-align: left;
-    font-size: 0.875rem;
-    letter-spacing: 0.12em;
-    margin-bottom: 1.5rem;
-  }
- 
-  .hero .container-fluid {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
- 
-  .hero h1 {
-    text-align: left;
-    font-size: 5rem;
-    padding-left: 0;
-  }
- 
-  .hero-ctas {
-    justify-content: flex-start;
-    margin: 0;
-    padding-top: 2rem;
-  }
- 
-  .scrivimi,
-  .scopricomelavoro {
-    font-size: 1.5rem;
-  }
- 
- 
-  /* manifesto (home) */
- 
-  .manifesto {
-    padding-top: 6rem;
-  }
- 
-  .manifesto p {
-    font-size: 1.25rem;
-    margin-bottom: 1.75rem;
-  }
- 
- 
-  /* about me (home) */
- 
-  .aboutme .container-fluid {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
-  }
- 
-  .aboutme h1 {
-    font-size: 4rem;
-    text-align: left;
-  }
- 
-  .aboutme p {
-    font-size: 1.5rem;
-    text-align: left;
-    padding: 2rem 0 0;
-  }
- 
-  .aboutme .aboutme-img img.logo-loop {
-    top: -100px;
-    left: 530px;
-    width: 280px;
-    height: 280px;
-  }
- 
- 
-  /* step come lavoreremo */
- 
-  .step {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
- 
-  .step .container-fluid {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
- 
-  .step-title {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 3rem;
-  }
- 
-  .step-title h1 {
-    font-size: 4rem;
-  }
- 
-  .step-title p {
-    font-size: 1.5rem;
-    padding-right: 6rem;
-  }
- 
-  .step-card {
-    padding: 2.5rem;
-  }
- 
-  .step-card-descrizione h1 {
-    font-size: 4rem;
-  }
- 
-  .step-card-descrizione h3 {
-    font-size: 2.5rem;
-  }
- 
-  .step-card-descrizione p {
-    font-size: 1.5rem;
-  }
- 
-  /* la cover copre la card e sparisce al passaggio del mouse */
- 
-  .step-card-wrap {
-    position: relative;
-    height: 340px;
-  }
- 
-  .step-card-cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--terracotta);
-    border-radius: 12px;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: opacity var(--transition);
-  }
- 
-  .step-card-cover h1 {
-    font-family: var(--font-display);
-    font-size: 6rem;
-    line-height: 0.9;
-    color: var(--base);
-    margin-bottom: 6rem;
-  }
- 
-  .step-card-cover h3 {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    line-height: 0.9;
-    text-align: left;
-    color: var(--base);
-  }
- 
-  .step-card-wrap:hover .step-card-cover {
-    opacity: 0;
-  }
- 
- 
-  /* portfolio (home) */
- 
-  .portfolio {
-    padding-top: 6rem;
-  }
- 
-  .portfolio-title h1 {
-    font-size: 5rem;
-    padding-bottom: 1.5rem;
-  }
- 
-  .portfolio-title p {
-    font-size: 1.5rem;
-    padding-bottom: 3rem;
-  }
+  /* slider dei progetti */
  
   .progetti-slider {
     width: 100vw;
@@ -1557,25 +1017,6 @@ header {
  
   .progetto-slide img {
     height: 600px;
-  }
- 
-  .guardaimieiprogetti {
-    font-size: 1.5rem;
-  }
- 
- 
-  /* striscia animata */
- 
-  .striscia {
-    padding: 1.5rem 0;
-  }
- 
-  .striscia-gruppo {
-    font-size: 1.5rem;
-  }
- 
-  .striscia-traccia {
-    animation-duration: 20s;
   }
  
  
@@ -1876,20 +1317,3 @@ header {
   }
  
 }
- 
- 
-/* =====================================================
-   MOVIMENTO RIDOTTO
-   Chi ha attivato "riduci movimento" nel sistema
-   vede la striscia e il logo fermi.
-   ===================================================== */
- 
-@media (prefers-reduced-motion: reduce) {
- 
-  .striscia-traccia,
-  .aboutme .aboutme-img img.logo-loop {
-    animation: none;
-  }
- 
-}
- 

@@ -23,7 +23,7 @@ Sito vetrina con portfolio (laurapasquali.it). Lo sviluppo io, Laura: sono una g
 - Pagine progetto: `tesi.html`, `locandamagno.html`, `oodal-festival.html`, `eltoros.html`, `raw.html`, `golosandia.html`, `shampoococcole.html`. Usano le classi `progetto-…` di `style.css`.
 - `css/style.css`: stili comuni a tutto il sito (variabili, font, navbar, footer, pagine interne, slider dei progetti).
 - `css/home.css`: stili della sola home. Tutte le sue classi iniziano con `home-`.
-- `assets/fonts/`: MonteCrysto (titoli) e Geist (testo), caricati con `@font-face` in `style.css`.
+- `assets/fonts/`: Lora (titoli) e Geist (testo), caricati con `@font-face` in `style.css`.
 - `img/`: immagini, con una sottocartella per progetto.
 
 ## Regole del CSS
