@@ -775,9 +775,11 @@
     margin-bottom: 2.5rem;
   }
 
+  /* il bordo destro della foto coincide con quello di "Prenota una call" */
   .home-hero .home-foto {
-    width: 92%;
-    margin: 0;
+    width: 85%;
+    margin: 0 0 0 auto;
+    top: 2rem;
   }
 
   .home-servizi {
