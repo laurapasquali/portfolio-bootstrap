@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacchetti brand identity e restyling del logo | Laura Pasquali</title>
+  <meta name="description" content="Tre percorsi chiari, con tempi, approvazioni e brand manual. Per attività in Lunigiana, a Massa Carrara e in tutta Italia." />
+
+  <link rel="canonical" href="https://laurapasquali.it/pacchetti.html" />
+
+  <!-- anteprima per i social (Open Graph). og:image: DA SOSTITUIRE con l'immagine 1200x630 quando è pronta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Laura Pasquali" />
+  <meta property="og:title" content="Pacchetti brand identity e restyling del logo | Laura Pasquali" />
+  <meta property="og:description" content="Tre percorsi chiari, con tempi, approvazioni e brand manual. Per attività in Lunigiana, a Massa Carrara e in tutta Italia." />
+  <meta property="og:url" content="https://laurapasquali.it/pacchetti.html" />
+  <meta property="og:image" content="https://laurapasquali.it/img/anteprima-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+  />
+
+  <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
+          </a>
+        </div>
+
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">Chi sono</a></li>
+              <li><a href="pacchetti.html" aria-current="page">Pacchetti</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoro</a></li>
+            </ul>
+
+            <!-- bottone dentro il menu a tendina (mobile) -->
+            <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata</a>
+          </nav>
+
+          <!-- bottone visibile su desktop -->
+          <a href="index.html#form" class="prenotaunacall">Prenota una chiamata</a>
+
+          <button class="toggleMenu" onclick="toggleMenu()">
+            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- 1. apertura -->
+
+    <section class="pack-sezione pack-apertura" id="hero">
+      <div class="row align-items-center">
+
+        <div class="col-12 col-md-7">
+          <p class="pack-etichetta">Pacchetti</p>
+          <h1 class="pack-titolo">Tre percorsi, scelti in base a <em>dove ti trovi</em>.</h1>
+          <p class="pack-testo">Ogni pacchetto è un punto di partenza, non una gabbia: lo adattiamo insieme a quello che ti serve davvero. Il prezzo esatto è nella proposta che ricevi prima della firma.</p>
+        </div>
+
+        <div class="col-12 col-md-5">
+          <!-- come nella hero della home: le copertine dei progetti si alternano (script in fondo);
+               senza JavaScript resta visibile la prima -->
+          <div class="pack-foto">
+            <div class="pack-galleria" id="packGalleria" role="img" aria-label="Copertine di alcuni progetti di Laura Pasquali">
+              <img src="img/oodal-festival/1.jpg" alt="" aria-hidden="true" class="visibile" width="1920" height="1080" />
+              <img src="img/raw.jpg" alt="" aria-hidden="true" width="1920" height="1080" />
+              <img src="img/poderecerri/copertinahome.png" alt="" aria-hidden="true" class="progetto-slide-zoom" width="5254" height="3503" />
+              <img src="img/locandamagno/1.jpg" alt="" aria-hidden="true" width="1920" height="1080" />
+              <img src="img/shampoococcole/9.jpg" alt="" aria-hidden="true" width="2500" height="2500" />
+              <img src="img/golosandia/8.jpg" alt="" aria-hidden="true" width="1920" height="1080" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 2. i pacchetti -->
+
+    <section class="pack-sezione pack-senza-grana">
+
+      <div class="pack-gruppo">
+        <h2 class="pack-titolo">Parti da <em>zero</em></h2>
+
+        <div class="pack-schede">
+
+          <article class="pack-scheda pack-scheda-terracotta">
+            <h3 class="pack-nome">Brand Basics</h3>
+            <p class="pack-tempi">2-4 settimane</p>
+            <p class="pack-perchi">Per chi parte da zero e vuole le basi fatte bene.</p>
+            <ul class="pack-incluso">
+              <li>Strategia essenziale: i tuoi clienti, i concorrenti, l'obiettivo</li>
+              <li>2 moodboard</li>
+              <li>Logo orizzontale, verticale e versione ridotta</li>
+              <li>Colori e caratteri</li>
+              <li>Brand manual essenziale</li>
+              <li>2 giri di revisione</li>
+              <li>Call finale e 30 giorni di supporto</li>
+            </ul>
+            <p class="pack-prezzo">1.200 €</p>
+            <a href="index.html#form" class="pack-bottone">Parliamone</a>
+          </article>
+
+          <article class="pack-scheda pack-scheda-oliva pack-scheda-consigliata">
+            <p class="pack-consigliato">Consigliato</p>
+            <h3 class="pack-nome">Brand Completo</h3>
+            <p class="pack-tempi">4-6 settimane</p>
+            <p class="pack-perchi">Per chi parte da zero e vuole un'immagine pronta per ogni uso, social compresi.</p>
+            <ul class="pack-incluso">
+              <li>Strategia completa, con tono di voce e payoff</li>
+              <li>2-3 moodboard</li>
+              <li>Logo in tutte le varianti</li>
+              <li>Icone o pattern, se servono</li>
+              <li>Brand manual completo</li>
+              <li>Kit Canva incluso (da solo costa 400 €)</li>
+              <li>3 giri di revisione</li>
+              <li>Call finale e 30 giorni di supporto</li>
+            </ul>
+            <p class="pack-prezzo">2.500 €</p>
+            <a href="index.html#form" class="pack-bottone">Parliamone</a>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="pack-gruppo">
+        <h2 class="pack-titolo">Hai già un'immagine da <em>rinnovare</em></h2>
+
+        <article class="pack-scheda pack-scheda-blu pack-scheda-larga">
+          <h3 class="pack-nome">Restyling</h3>
+          <p class="pack-tempi">2-5 settimane</p>
+          <p class="pack-perchi">Per chi ha già un'attività e vuole rinnovarla senza perdere ciò che i clienti riconoscono.</p>
+
+          <!-- due elenchi: uno sotto l'altro su telefono, affiancati dai 768px -->
+          <div class="pack-elenchi">
+            <div>
+              <h4 class="pack-sottotitolo">Sempre incluso</h4>
+              <ul class="pack-incluso">
+                <li>Analisi del logo attuale</li>
+                <li>Logo ridisegnato, con le sue varianti</li>
+                <li>Colori e caratteri aggiornati</li>
+                <li>Brand manual</li>
+                <li>2 o 3 giri di revisione</li>
+                <li>Call finale e 30 giorni di supporto</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="pack-sottotitolo">In base al livello di restyling</h4>
+              <ul class="pack-incluso pack-incluso-pallini">
+                <li>Strategia completa, con tono di voce</li>
+                <li>Tutte le varianti del logo</li>
+                <li>Kit Canva</li>
+                <li>Piano di passaggio</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="pack-passaggio">Restyling leggero o completo? Lo capiamo insieme prima del preventivo, analizzando la tua immagine attuale. E se durante il lavoro decidi di rinnovare tutto, passi al livello completo pagando solo la differenza.</p>
+          <p class="pack-prezzo">da 1.500 a 2.500 €</p>
+          <p class="pack-prezzo-nota">Il livello lo scegliamo insieme prima del preventivo, guardando la tua immagine attuale.</p>
+          <a href="index.html#form" class="pack-bottone">Parliamone</a>
+        </article>
+      </div>
+
+      <p class="pack-nota">Prezzi IVA non applicabile, regime forfettario.</p>
+
+    </section>
+
+
+    <!-- 4. le aggiunte -->
+
+    <section class="pack-sezione">
+      <h2 class="pack-titolo">Le <em>aggiunte</em></h2>
+      <p class="pack-testo">Da aggiungere a qualsiasi pacchetto, quando ti servono.</p>
+
+      <ul class="pack-aggiunte">
+        <li>
+          <span class="pack-forma pack-forma-cerchio-terracotta" aria-hidden="true"></span>
+          <h3>Kit Canva</h3>
+          <p>Da 6 a 10 template per post, storie e menù, con colori e caratteri già impostati e gli elementi importanti bloccati, così resti sempre coerente.</p>
+          <p class="pack-aggiunta-prezzo">400 €</p>
+        </li>
+        <li>
+          <span class="pack-forma pack-forma-arco-oliva" aria-hidden="true"></span>
+          <h3>Sito web</h3>
+          <p>Un sito vetrina da 1 a 5 pagine, costruito sulla tua nuova immagine, per presentare la tua attività e farti trovare. Non comprende il negozio online. Puoi richiederlo anche senza un pacchetto.</p>
+          <p class="pack-aggiunta-prezzo">Da 1.300 €</p>
+          <p class="pack-aggiunta-nota">Dominio e abbonamento della piattaforma sono a carico tuo: li scegliamo insieme in base a come userai il sito.</p>
+        </li>
+        <li>
+          <span class="pack-forma pack-forma-cerchio-blu" aria-hidden="true"></span>
+          <h3>Applicazioni</h3>
+          <p>Menù, insegna, biglietti da visita, packaging.</p>
+          <p class="pack-aggiunta-prezzo">Su preventivo</p>
+        </li>
+        <li>
+          <span class="pack-forma pack-forma-mezzo-bordeaux" aria-hidden="true"></span>
+          <h3>Supervisione di stampa</h3>
+          <p>Preparo i file e parlo io con la tipografia, così il risultato è quello che hai approvato.</p>
+          <p class="pack-aggiunta-prezzo">Su preventivo</p>
+        </li>
+      </ul>
+
+      <div class="pack-riquadri">
+        <div class="pack-riquadro">
+          <h3>Come si paga</h3>
+          <p>In tre momenti, uno per fase: 40% alla firma, 30% quando scegli la moodboard, 30% alla consegna.</p>
+          <div class="pack-barra" aria-hidden="true">
+            <span class="pack-barra-terracotta"></span>
+            <span class="pack-barra-oliva"></span>
+            <span class="pack-barra-blu"></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="pack-nota">I tempi partono dalla firma e valgono se a ogni passaggio mi rispondi entro 3-5 giorni lavorativi.</p>
+    </section>
+
+
+    <!-- 5. la coppia giusta -->
+
+    <section class="pack-sezione pack-sezione-scura pack-senza-grana">
+      <h2 class="pack-titolo">Come capire se siamo la <em>coppia giusta</em></h2>
+      <p class="pack-testo pack-testo-largo">Lavoro per passaggi, con tempi e approvazioni chiari. È il modo migliore che <span class="pack-riga-unita">conosco per arrivare a un risultato di cui essere fieri, e ti aiuta a capire se fa per te.</span></p>
+
+      <div class="pack-coppia">
+        <div class="pack-colonna">
+          <h3>È il percorso giusto se</h3>
+          <ul class="pack-pallini pack-pallini-oliva">
+            <li>Vuoi un'immagine coerente ovunque, non solo un logo.</li>
+            <li>Ti trovi bene a lavorare un passaggio alla volta, con tempi e approvazioni chiari.</li>
+            <li>Vedi il tuo brand come un investimento per la tua attività.</li>
+          </ul>
+        </div>
+        <div class="pack-colonna">
+          <h3>Forse ti serve altro se</h3>
+          <ul class="pack-pallini pack-pallini-terracotta">
+            <li>Ti serve un logo in pochi giorni.</li>
+            <li>Preferisci cambiare direzione a ogni revisione.</li>
+            <li>Ti basta il file del logo, senza istruzioni per usarlo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 6. domande frequenti -->
+
+    <!-- stessa struttura della home: titolo a sinistra, domande a destra su desktop -->
+    <section class="pack-sezione">
+      <div class="row">
+
+        <div class="col-12 col-xl-4">
+          <h2 class="pack-titolo">Domande<br><em>frequenti</em></h2>
+          <p class="pack-testo">Le cose che i clienti mi chiedono più spesso prima di iniziare.</p>
+        </div>
+
+        <div class="col-12 col-xl-7 offset-xl-1">
+          <div class="pack-faq">
+            <details open>
+              <summary>Quante proposte di logo mi presenti?</summary>
+              <p>Prima ti presento due o tre moodboard, per trovare insieme l'atmosfera giusta. Poi almeno una proposta di logo sviluppata con le sue varianti; se dal lavoro nascono più idee valide, te le mostro.</p>
+            </details>
+            <details>
+              <summary>E se durante il restyling ci accorgiamo che serve cambiare tutto?</summary>
+              <p>Il livello lo scegliamo insieme prima della firma, dopo aver analizzato la tua immagine attuale, così il prezzo è chiaro fin dall'inizio. Se poi, a lavoro iniziato, decidi di andare oltre, passi al restyling completo pagando solo la differenza: il lavoro già fatto non si perde.</p>
+            </details>
+            <details>
+              <summary>E se dopo i giri di revisione qualcosa non mi convince?</summary>
+              <p>Le modifiche in più le concordiamo prima, con un preventivo chiaro in base al tipo di intervento, così non ci sono sorprese.</p>
+            </details>
+            <details>
+              <summary>Cos'è il brand manual?</summary>
+              <p>È la guida del tuo brand: spiega come usare logo, colori e caratteri. Puoi consultarlo quando vuoi e passarlo a chi lavora con te, dalla tipografia a chi cura i tuoi social o il tuo sito.</p>
+            </details>
+            <details>
+              <summary>Potrò creare da solo i post per i social?</summary>
+              <p>Sì: con il kit Canva ricevi template già pronti, con i tuoi colori e caratteri e gli elementi importanti bloccati, così resti sempre coerente.</p>
+            </details>
+            <details>
+              <summary>Su quale piattaforma realizzi il sito?</summary>
+              <p>Dipende da come lo userai. Se ti serve un sito vetrina curato, da aggiornare di rado, scelgo una piattaforma che dà più libertà di design. Se invece vuoi aggiornarlo spesso da solo, o ti servono un blog o le prenotazioni online, scelgo una piattaforma più semplice da gestire. Ne parliamo nella chiamata conoscitiva: dominio e abbonamento sono intestati a te, così il sito resta sempre tuo.</p>
+            </details>
+            <details>
+              <summary>Mi segui anche dopo la consegna?</summary>
+              <p>Sì. Per i 30 giorni dopo la consegna sono qui per qualsiasi domanda sull'uso dei file. Se poi hai bisogno di un aiuto continuativo, per grafiche social, menù stagionali o volantini per gli eventi, possiamo organizzarci a ore o con un pacchetto mensile. Ne parliamo nella chiamata.</p>
+            </details>
+            <details>
+              <summary>Il logo poi è mio?</summary>
+              <p>Sì. Alla consegna ricevi tutti i file, e la cessione dei diritti è scritta nel contratto.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 7. invito finale -->
+
+    <section class="pack-sezione pack-sezione-bordeaux pack-sezione-terracotta">
+      <img src="img/decorazioni/semicerchioburgundy.svg" alt="" aria-hidden="true" class="pack-mezzo-sole" width="917" height="459" />
+      <h2 class="pack-titolo">Non sai quale <em>scegliere</em>?</h2>
+      <p class="pack-testo">Scrivimi lo stesso: ne parliamo nella chiamata conoscitiva, senza impegno.</p>
+      <a href="index.html#form" class="pack-bottone">Prenota una chiamata</a>
+      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="pack-stella" width="417" height="417" loading="lazy" />
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" width="1522" height="330" loading="lazy" />
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" width="30" height="30" loading="lazy" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" loading="lazy" />
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- torna su: resta fisso in basso a destra mentre la pagina scorre -->
+  <a href="#" class="torna-su" aria-label="Torna a inizio pagina">↑</a>
+
+  <!-- anno del copyright: si aggiorna da solo; se lo script non parte resta quello scritto nel footer.
+       Torna su: scorrimento morbido con Lenis; senza JavaScript il link # porta comunque in cima -->
+  <script>
+    {
+      const anno = document.getElementById('anno');
+      if (anno) anno.textContent = new Date().getFullYear();
+
+      const tornaSu = document.querySelector('.torna-su');
+      if (tornaSu) {
+        tornaSu.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          // chi ha attivato "riduci movimento" torna su con un salto, senza animazione
+          const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (typeof lenis !== 'undefined') {
+            lenis.scrollTo(0, { immediate: ridotto });
+          } else {
+            window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
+          }
+        });
+      }
+    }
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+
+  <script>
+    /* ---- MENU HAMBURGER ---- */
+    function toggleMenu() {
+      const element = document.getElementById("menu");
+      element.classList.toggle("open");
+    }
+
+
+    /* ---- APERTURA: LE COPERTINE DEI PROGETTI SI ALTERNANO (come nella home) ---- */
+    {
+      const fotoApertura = document.querySelectorAll('#packGalleria img');
+      // chi ha attivato "riduci movimento" vede solo la prima copertina, ferma
+      const movimentoRidotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!movimentoRidotto && fotoApertura.length > 1) {
+        let corrente = 0;
+        setInterval(() => {
+          const successiva = (corrente + 1) % fotoApertura.length;
+          // la precedente resta piena sotto, la nuova compare sopra in dissolvenza
+          fotoApertura.forEach((foto) => foto.classList.remove('precedente'));
+          fotoApertura[corrente].classList.remove('visibile');
+          fotoApertura[corrente].classList.add('precedente');
+          fotoApertura[successiva].classList.add('visibile');
+          corrente = successiva;
+        }, 1800);
+      }
+    }
+  </script>
+
+</body>
+</html>

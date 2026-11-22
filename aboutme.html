@@ -1,9 +1,23 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>about me - Laura.P-Graphic Designer</title>
-  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+  <title>Chi sono | Laura Pasquali, graphic designer ad Aulla (MS)</title>
+  <meta name="description" content="Graphic designer di Aulla, in Lunigiana: identità visive coerenti e riconoscibili per piccole attività." />
+
+  <link rel="canonical" href="https://laurapasquali.it/aboutme.html" />
+
+  <!-- anteprima per i social (Open Graph). og:image: DA SOSTITUIRE con l'immagine 1200x630 quando è pronta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Laura Pasquali" />
+  <meta property="og:title" content="Chi sono | Laura Pasquali, graphic designer ad Aulla (MS)" />
+  <meta property="og:description" content="Graphic designer di Aulla, in Lunigiana: identità visive coerenti e riconoscibili per piccole attività." />
+  <meta property="og:url" content="https://laurapasquali.it/aboutme.html" />
+  <meta property="og:image" content="https://laurapasquali.it/img/anteprima-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
 
@@ -13,129 +27,276 @@
         crossorigin="anonymous"
   />
 
+  <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-<script>
-  const lenis = new Lenis();
-  function raf(time) {
-    lenis.raf(time);
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
   </script>
 
 </head>
 
 <body>
-    <header>
+
+  <header>
     <div class="container-full">
       <div class="flex">
 
         <div class="logo">
           <a href="index.html">
-          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
-           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+            <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
           </a>
         </div>
 
-
-        
         <div class="menubottom">
           <nav id="menu" class="menu">
             <ul>
-              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="aboutme.html" aria-current="page">Chi sono</a></li>
+              <li><a href="pacchetti.html">Pacchetti</a></li>
               <li><a href="progetti.html">Progetti</a></li>
-              <li><a href="index.html#come-lavoro">Come lavoreremo insieme</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoro</a></li>
             </ul>
 
-             <!-- Bottone CTA dentro hamburger -->
-          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+            <!-- bottone dentro il menu a tendina (mobile) -->
+            <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata</a>
           </nav>
 
-          <!-- Bottone CTA visibile su desktop -->
-          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
-          
+          <!-- bottone visibile su desktop -->
+          <a href="index.html#form" class="prenotaunacall">Prenota una chiamata</a>
 
           <button class="toggleMenu" onclick="toggleMenu()">
-            <img src="img/iconmenu.png" alt="Menu" />
+            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
           </button>
-
         </div>
+
       </div>
     </div>
   </header>
 
 
   <main>
-     <section class="chisono">
-      <div class="container-fluid">
-        <div class="row align-items-center">
 
-          <!-- Testo: su mobile prima, su desktop a sinistra-->
-          <div class="col-12 col-xl-6 chi-sono-text">
-            <h1>Ciao,<br class="d-none d-xl-block"> sono Laura</h1>
-            <p>Progetto identità visive, loghi, brand, restyling, per chi ha un'idea a cui tiene davvero e vuole che si veda al primo sguardo.<br><br>
-                Il design, per me, è la cosa che parla prima delle parole. Un colore, una forma, un carattere raccontano chi sei ancora prima che qualcuno legga una riga di testo, e mi appassiona da sempre quel momento esatto in cui un'immagine dice tutto in un istante.<br><br>
-                Ci sono arrivata studiando, con la testa e le mani dentro il design, e oggi ho fatto di questa passione il mio mestiere: lavoro come graphic designer freelance con piccole attività e con persone che stanno costruendo qualcosa di loro: un locale da aprire, un evento da ricordare, un brand da far nascere o a cui ridare vita.<br><br>
-                Quello che mi distingue non è solo ciò che consegno, ma come lo consegno. Non ti lascio con una cartella di file e un "in bocca al lupo", ma ti spiego ogni scelta e ti guido su come usare la tua nuova identità nel mondo reale, perché un brand funziona solo se sai come portarlo con te sui social, sull'insegna, nel biglietto da visita che lasci a un cliente.<br><br>
-                Lavoro con cura e con metodo, un passo alla volta, senza sorprese. Mi piace capire davvero il progetto prima di disegnare, e costruire insieme la direzione: così il risultato non è "bello e basta", ma tuo.
-                </p>
-          </div>
+    <!-- 1. apertura -->
 
-          <!-- Immagine: su mobile viene dopo, su desktop è a destra -->
-          <div class="col-12 col-xl-5 offset-xl-1 chi-sono-img">
-            <img src="img/chisono.jpg" alt="Ciao sono Laura" />
-          </div>
+    <section class="about-sezione about-sezione-scura about-apertura" id="hero">
+      <div class="row align-items-center">
 
+        <div class="col-12 col-md-6">
+          <p class="about-etichetta">Chi sono</p>
+          <h1 class="about-titolo">Ciao, sono <em>Laura</em>.</h1>
+          <p class="about-testo">Sono una graphic designer di Aulla, in Lunigiana. Aiuto ristoranti, B&B, botteghe e piccole attività a costruire un’identità coerente e riconoscibile, e a usarla in autonomia.</p>
         </div>
+
+        <div class="col-12 col-md-6">
+          <figure class="about-figura">
+            <div class="about-foto">
+              <img src="img/decorazioni/cerchioarancione.svg" alt="" aria-hidden="true" class="about-foto-sole" width="558" height="558" />
+              <img src="img/decorazioni/arcoverde.svg" alt="" aria-hidden="true" class="about-foto-arco" width="500" height="750" />
+              <img src="img/aboutme2.jpg" alt="Laura Pasquali con la sua cagnolina Nina" class="about-ritratto" width="1920" height="1279" />
+            </div>
+            <figcaption class="about-didascalia">In studio siamo in due: io e Nina, la mia assistente a quattro zampe, sempre al mio fianco mentre lavoro.</figcaption>
+          </figure>
+        </div>
+
       </div>
     </section>
 
 
-    <!-- CTA Prenota una call -->
-    <section class="progetti-cta-aboutme">
-      <div class="container-fluid">
-        <h2>Se cerchi qualcuno che tratti il tuo progetto con la stessa attenzione con cui lo tratti tu, sei nel posto giusto.</h2>
-       <a href="contatti.html" class="prenota-cta">Prenota una call</a>
+    <!-- 2. la mia storia -->
+
+    <section class="about-sezione about-sezione-scura about-senza-grana">
+      <div class="about-colonna-storia">
+        <h2 class="about-titolo">Hai costruito qualcosa in cui <em>credere</em>.</h2>
+        <p class="about-testo">Ci hai messo tempo, fatica e passione, e conosci il tuo lavoro meglio di chiunque altro. Ma quando devi raccontarlo, tra insegna, menù e social, qualcosa non torna: l'immagine non è all'altezza di quello che offri.</p>
+        <p class="about-evidenza">Ora costruiamo il brand che lo fa credere anche agli altri.</p>
+        <p class="about-testo">Io parto da lì: ascolto la tua attività, capisco cosa la rende diversa e la traduco in un'identità coerente, dal logo all'ultimo volantino. So cosa vuol dire avere le idee chiare su quello che fai e confuse su come raccontarlo: il mio lavoro è rimetterle in ordine.</p>
       </div>
     </section>
 
+
+    <!-- 3. missione -->
+
+    <section class="about-sezione about-sezione-bordeaux">
+      <img src="img/decorazioni/semicerchioarancione.svg" alt="" aria-hidden="true" class="about-mezzo-sole" width="917" height="459" loading="lazy" />
+      <div class="about-colonna-missione">
+        <h2 class="about-etichetta">Cosa faccio, e perché</h2>
+        <p class="about-missione-frase">Faccio in modo che chi ha una piccola attività, dal ristorante al B&B alla bottega, non si senta mai perso quando deve raccontarsi: trasformo le sue idee in un’identità chiara, riconoscibile e fatta per durare, e gli lascio gli strumenti per usarla in autonomia.</p>
+      </div>
+      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="about-stella about-stella-sinistra" width="417" height="417" loading="lazy" />
+    </section>
+
+
+    <!-- 4. in cosa credo -->
+
+    <section class="about-sezione about-senza-grana">
+      <h2 class="about-titolo">In cosa <em>credo</em></h2>
+
+      <ul class="about-valori">
+        <li>
+          <span class="about-forma about-forma-cerchio-terracotta" aria-hidden="true"></span>
+          <h3>Un logo non basta</h3>
+          <p>Un'identità funziona quando è coerente ovunque: sull'insegna, sul menù, sul profilo Instagram, sul biglietto da visita.</p>
+        </li>
+        <li>
+          <span class="about-forma about-forma-arco-oliva" aria-hidden="true"></span>
+          <h3>Un'identità tua nasce dall'ascolto</h3>
+          <p>Prima di disegnare ascolto la tua storia: è l'unico modo per creare qualcosa che ti somigli e non sia la copia di nessun altro. Ed è la parte che l'IA non sa fare.</p>
+        </li>
+        <li>
+          <span class="about-forma about-forma-mezzo-bordeaux" aria-hidden="true"></span>
+          <h3>La chiarezza viene prima di tutto</h3>
+          <p>Tempi, costi e passaggi sempre dichiarati.</p>
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- 5. esperienza -->
+
+    <section class="about-sezione about-sezione-scura">
+      <div class="row">
+
+        <div class="col-12 col-md-5">
+          <h2 class="about-titolo">Esperienza</h2>
+          <p class="about-testo">Amo la carta, la stampa e le cose fatte a mano. Quando un progetto lo chiede, le porto con me: un lettering, una carta speciale, una stampa curata.</p>
+
+          <div class="about-trio" aria-hidden="true">
+            <span class="about-trio-arco"></span>
+            <span class="about-trio-cerchio"></span>
+            <span class="about-trio-mezzo"></span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 offset-md-1">
+          <ul class="about-percorso">
+            <li>
+              <span class="about-anno">Oggi</span>
+              <div>
+                <h3>Graphic designer freelance</h3>
+                <p>Brand identity e restyling per piccole attività, in Lunigiana e da remoto.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about-anno">2024-2025</span>
+              <div>
+                <h3>Premio Lunezia</h3>
+                <p>Logo celebrativo per i trent'anni del premio e materiali per gli eventi.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about-anno">2024-2025</span>
+              <div>
+                <h3>Nuts Italia</h3>
+                <p>Immagine coordinata adattata ai punti vendita della catena: social, campagne e grafiche in negozio.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about-anno">2023-2026</span>
+              <div>
+                <h3>Istituto Pantheon Design &amp; Technology, Roma</h3>
+                <p>Laurea triennale in Graphic Design, 110 e lode.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about-anno">2021-2023</span>
+              <div>
+                <h3>PED Srl</h3>
+                <p>Loghi, identità e stampati per attività commerciali, dal primo incontro alla stampa.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 6. invito finale -->
+
+    <section class="about-sezione about-sezione-bordeaux about-sezione-navy">
+      <img src="img/decorazioni/semicerchioverde.svg" alt="" aria-hidden="true" class="about-mezzo-sole" width="917" height="459" loading="lazy" />
+      <h2 class="about-titolo">Raccontami il tuo progetto</h2>
+      <p class="about-testo">Il punto di partenza è una chiamata conoscitiva: mi racconti dove sei adesso e dove vorresti arrivare.</p>
+      <a href="index.html#form" class="about-bottone">Prenota una chiamata</a>
+      <img src="img/decorazioni/stellaarancione.svg" alt="" aria-hidden="true" class="about-stella about-stella-destra" width="417" height="417" loading="lazy" />
+    </section>
 
   </main>
 
 
-
-   <!-- footer -->
+  <!-- footer -->
   <footer class="footer">
     <div class="container-fluid">
       <div class="footer-content">
 
         <div class="footer-logo">
-          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer" />
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" width="1522" height="330" loading="lazy" />
         </div>
 
-        <div class="footer-social">
-          <a href="#" target="_blank" rel="noopener" aria-label="Behance">
-            <img src="img/behance.png" alt="Behance" />
-          </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <img src="img/linkedin.png" alt="LinkedIn" />
-          </a>
-        </div>
+        <hr class="footer-line">
 
-        <a href="#top" class="footer-top">Torna su ↑</a>
+        <div class="footer-bottom">
+
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" width="30" height="30" loading="lazy" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" loading="lazy" />
+            </a>
+          </div>
+
+        </div>
 
       </div>
     </div>
   </footer>
 
+  <!-- torna su: resta fisso in basso a destra mentre la pagina scorre -->
+  <a href="#" class="torna-su" aria-label="Torna a inizio pagina">↑</a>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+  <!-- anno del copyright: si aggiorna da solo; se lo script non parte resta quello scritto nel footer.
+       Torna su: scorrimento morbido con Lenis; senza JavaScript il link # porta comunque in cima -->
+  <script>
+    {
+      const anno = document.getElementById('anno');
+      if (anno) anno.textContent = new Date().getFullYear();
+
+      const tornaSu = document.querySelector('.torna-su');
+      if (tornaSu) {
+        tornaSu.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          // chi ha attivato "riduci movimento" torna su con un salto, senza animazione
+          const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (typeof lenis !== 'undefined') {
+            lenis.scrollTo(0, { immediate: ridotto });
+          } else {
+            window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
+          }
+        });
+      }
+    }
   </script>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+
   <script>
+    /* ---- MENU HAMBURGER ---- */
     function toggleMenu() {
       const element = document.getElementById("menu");
       element.classList.toggle("open");

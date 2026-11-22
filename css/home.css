@@ -195,8 +195,39 @@
   gap: 0.75rem;
 }
 
+/* galleria della hero: le copertine sono sovrapposte e si alternano in dissolvenza.
+   overflow: hidden serve anche alla copertina zoomata di Podere i Cerri */
+.home-hero-galleria {
+  position: relative;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  border: 4px solid var(--verde);   /* cornice: le copertine stanno dentro */
+}
+
+.home-hero-galleria img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* la nuova copertina sta sopra e compare; la precedente resta piena sotto */
+.home-hero-galleria img.visibile {
+  opacity: 1;
+  z-index: 2;
+}
+
+.home-hero-galleria img.precedente {
+  opacity: 1;
+  z-index: 1;
+  transition: none;
+}
+
 .home-hero .home-foto {
-  width: 80%;
+  width: 70%;
   margin: 3.5rem auto 1rem;
 }
 
@@ -341,13 +372,19 @@
 }
 
 .home-about .home-foto {
-  width: 80%;
+  width: 90%;
   margin: 1rem auto 3.5rem;
 }
 
-/* il rettangolo dietro qui gira dall'altra parte */
+/* qui niente rettangolo navy dietro la foto (resta solo nella hero) */
 .home-about .home-foto::before {
-  transform: rotate(-9deg) scale(1.03);
+  content: none;
+}
+
+/* la foto resta intera, con la sua proporzione: niente taglio in 5:6.
+   :not esclude il logo, che è un'altra img dentro .home-foto */
+.home-about .home-foto img:not(.home-about-logo) {
+  aspect-ratio: auto;
 }
 
 /* il logo che ruota, sull'angolo in alto a destra della foto.
@@ -355,9 +392,9 @@
    che altrimenti gli darebbe la larghezza della foto */
 .home-foto .home-about-logo {
   position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 36%;
+  top: 4%;
+  right: 4%;
+  width: 25%;
   height: auto;
   aspect-ratio: 1 / 1;
   animation: home-ruota 12s linear infinite;
@@ -566,7 +603,7 @@
 .home-contatti-email {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--burgundy);
+  color: var(--terracotta);
 }
 
 /* il modulo: su un fondo più chiaro della pagina */
@@ -735,7 +772,12 @@
 
   .home-hero .home-foto,
   .home-about .home-foto {
-    width: 60%;
+    width: 50%;
+  }
+
+  /* la foto di chi sono è orizzontale: qui può essere più larga */
+  .home-about .home-foto {
+    width: 75%;
   }
 
   .home-manifesto h2 {
@@ -826,7 +868,7 @@
 
   /* il bordo destro della foto coincide con quello di "Prenota una call" */
   .home-hero .home-foto {
-    width: 85%;
+    width: 72%;
     margin: 0 0 0 auto;
     top: 2rem;
   }
@@ -897,7 +939,7 @@
   /* chi sono */
 
   .home-about .home-foto {
-    width: 82%;
+    width: 100%;
     margin: 0;
   }
 

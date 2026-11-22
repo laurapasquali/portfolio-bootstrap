@@ -1,9 +1,23 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contattami - Laura.P-Graphic Designer</title>
-  <meta name="description" content="Creo identità visive per chi vuole smettere di sembrare come tutti gli altri." />
+  <title>Contatti | Laura Pasquali, graphic designer ad Aulla (MS)</title>
+  <meta name="description" content="Raccontami il tuo progetto: scrivimi dal modulo o a info@laurapasquali.it e fissiamo una chiamata conoscitiva, senza impegno." />
+
+  <link rel="canonical" href="https://laurapasquali.it/contatti.html" />
+
+  <!-- anteprima per i social (Open Graph). og:image: DA SOSTITUIRE con l'immagine 1200x630 quando è pronta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Laura Pasquali" />
+  <meta property="og:title" content="Contatti | Laura Pasquali, graphic designer ad Aulla (MS)" />
+  <meta property="og:description" content="Raccontami il tuo progetto: scrivimi dal modulo o a info@laurapasquali.it e fissiamo una chiamata conoscitiva, senza impegno." />
+  <meta property="og:url" content="https://laurapasquali.it/contatti.html" />
+  <meta property="og:image" content="https://laurapasquali.it/img/anteprima-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
 
@@ -34,8 +48,8 @@
 
         <div class="logo">
           <a href="index.html">
-          <img src="img/logo-nav-mobile.png" alt="Laura.P Graphic Designer" class="d-block d-xl-none logo-mobile"/>
-           <img src="img/logo-nav.png" alt="Laura.P Graphic Designer" class="d-none d-xl-block logo-desktop" />
+          <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile"/>
+           <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
           </a>
         </div>
 
@@ -44,24 +58,25 @@
         <div class="menubottom">
           <nav id="menu" class="menu">
             <ul>
-              <li><a href="aboutme.html">About me</a></li>
+              <li><a href="aboutme.html">Chi sono</a></li>
+              <li><a href="pacchetti.html">Pacchetti</a></li>
               <li><a href="progetti.html">Progetti</a></li>
-              <li><a href="index.html#come-lavoro">Come lavoreremo insieme</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoro</a></li>
             </ul>
 
              <!-- Bottone CTA dentro hamburger -->
-          <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+          <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata</a>
           </nav>
 
           <!-- Bottone CTA visibile su desktop -->
-          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          <a href="index.html#form" class="prenotaunacall">Prenota una chiamata</a>
           
 
           
 
           <!-- Hamburger -->
           <button class="toggleMenu" onclick="toggleMenu()">
-            <img src="img/iconmenu.png" alt="Menu" />
+            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
           </button>
 
         </div>
@@ -90,7 +105,7 @@
           <div class="col-12 col-xl-5 offset-xl-1 form-box order-2 order-xl-2"> 
              <form>           
 
-                <h1>Invia una richiesta</h1>
+                <h2>Invia una richiesta</h2>
 
                     <div class="form-field">
                     <input type="text" name="nome" placeholder="Il tuo nome e cognome" required>
@@ -154,29 +169,58 @@
     <div class="container-fluid">
       <div class="footer-content">
 
-        
         <div class="footer-logo">
-          <img src="img/logo-footer.png" alt="Laura.P Graphic Designer" />
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" width="1522" height="330" />
         </div>
 
         <hr class="footer-line">
 
-        
-        <div class="footer-social">
-          <a href="#" target="_blank" rel="noopener" aria-label="Behance">
-            <img src="img/behance.png" alt="Instagram" />
-          </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <img src="img/linkedin.png" alt="LinkedIn" />
-          </a>
-        </div>
+        <div class="footer-bottom">
 
-        <!-- torna su -->
-        <a href="#hero" class="footer-top">Torna su ↑</a>
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" width="30" height="30" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" />
+            </a>
+          </div>
+
+        </div>
 
       </div>
     </div>
   </footer>
+
+  <!-- torna su: resta fisso in basso a destra mentre la pagina scorre -->
+  <a href="#" class="torna-su" aria-label="Torna a inizio pagina">↑</a>
+
+  <!-- anno del copyright: si aggiorna da solo; se lo script non parte resta quello scritto nel footer.
+       Torna su: scorrimento morbido con Lenis; senza JavaScript il link # porta comunque in cima -->
+  <script>
+    {
+      const anno = document.getElementById('anno');
+      if (anno) anno.textContent = new Date().getFullYear();
+
+      const tornaSu = document.querySelector('.torna-su');
+      if (tornaSu) {
+        tornaSu.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          // chi ha attivato "riduci movimento" torna su con un salto, senza animazione
+          const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (typeof lenis !== 'undefined') {
+            lenis.scrollTo(0, { immediate: ridotto });
+          } else {
+            window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
+          }
+        });
+      }
+    }
+  </script>
 
 
 

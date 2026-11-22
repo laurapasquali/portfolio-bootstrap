@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laura Pasquali - Graphic Designer</title>
-  <meta name="description" content="Creo loghi e identità visive per piccole attività e liberi professionisti che vogliono smettere di somigliare a tutti gli altri. In Lunigiana, Massa Carrara e da remoto." />
+  <title>Graphic designer in Lunigiana e Massa Carrara | Laura Pasquali</title>
+  <meta name="description" content="Loghi, identità visive e restyling per ristoranti, B&amp;B, botteghe e piccole attività. Graphic designer ad Aulla, in Lunigiana: lavoro in provincia di Massa Carrara e da remoto." />
+
+  <link rel="canonical" href="https://laurapasquali.it/" />
+
+  <!-- anteprima per i social (Open Graph). og:image: DA SOSTITUIRE con l'immagine 1200x630 quando è pronta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Laura Pasquali" />
+  <meta property="og:title" content="Graphic designer in Lunigiana e Massa Carrara | Laura Pasquali" />
+  <meta property="og:description" content="Loghi, identità visive e restyling per ristoranti, B&amp;B, botteghe e piccole attività. Graphic designer ad Aulla, in Lunigiana: lavoro in provincia di Massa Carrara e da remoto." />
+  <meta property="og:url" content="https://laurapasquali.it/" />
+  <meta property="og:image" content="https://laurapasquali.it/img/anteprima-social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <link rel="stylesheet" href="https://use.typekit.net/gie3nlr.css">
 
@@ -28,6 +41,33 @@
     requestAnimationFrame(raf);
   </script>
 
+  <!-- dati strutturati per i motori di ricerca: chi sono, dove lavoro, come contattarmi -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Laura Pasquali, graphic designer",
+    "url": "https://laurapasquali.it/",
+    "email": "info@laurapasquali.it",
+    "telephone": "+39 345 6193701",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aulla",
+      "addressRegion": "MS",
+      "addressCountry": "IT"
+    },
+    "areaServed": [
+      { "@type": "Place", "name": "Lunigiana" },
+      { "@type": "AdministrativeArea", "name": "Provincia di Massa-Carrara" },
+      { "@type": "Country", "name": "Italia" }
+    ],
+    "sameAs": [
+      "https://www.behance.net/laurapasquali1",
+      "https://www.linkedin.com/in/laura-pasquali"
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -39,27 +79,28 @@
         <div class="logo">
           <a href="index.html">
             <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
-            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
           </a>
         </div>
 
         <div class="menubottom">
           <nav id="menu" class="menu">
             <ul>
-              <li><a href="aboutme.html">About me</a></li>
-              <li><a href="#come-lavoro">Come lavoreremo insieme</a></li>
+              <li><a href="aboutme.html">Chi sono</a></li>
+              <li><a href="pacchetti.html">Pacchetti</a></li>
               <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="#come-lavoro">Come lavoro</a></li>
             </ul>
 
             <!-- bottone dentro il menu a tendina (mobile) -->
-            <a href="contatti.html" class="prenotaunacalltendina">Prenota una call</a>
+            <a href="#form" class="prenotaunacalltendina">Prenota una chiamata</a>
           </nav>
 
           <!-- bottone visibile su desktop -->
-          <a href="contatti.html" class="prenotaunacall">Prenota una call</a>
+          <a href="#form" class="prenotaunacall">Prenota una chiamata</a>
 
           <button class="toggleMenu" onclick="toggleMenu()">
-            <img src="img/iconmenu.png" alt="Menu" />
+            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
           </button>
         </div>
 
@@ -94,7 +135,11 @@
 
           <div class="col-12 col-xl-5 offset-xl-1">
             <div class="home-foto">
-              <img src="img/hero.jpg" alt="Laura al lavoro su un progetto di identità visiva" />
+              <!-- le copertine dello slider si alternano qui (le aggiunge lo script in fondo);
+                   hero.jpg resta come riserva se JavaScript non parte -->
+              <div class="home-hero-galleria" id="heroGalleria" role="img" aria-label="Copertine di alcuni progetti di Laura Pasquali">
+                <img src="img/hero.jpg" alt="" class="visibile" aria-hidden="true" />
+              </div>
             </div>
           </div>
 
@@ -118,19 +163,19 @@
     <!-- manifesto -->
 
     <section class="home-manifesto">
-      <img src="img/decorazioni/semicerchioarancione.svg" alt="" aria-hidden="true" class="home-manifesto-semicerchio" />
+      <img src="img/decorazioni/semicerchioarancione.svg" alt="" aria-hidden="true" class="home-manifesto-semicerchio" width="917" height="459" />
       <div class="container-fluid">
         <p>Tra due attività che offrono la stessa cosa, vai da quella che ti ispira di più.<br>Se si somigliano, scegli a caso.<br>Ed è proprio il limite dei loghi fatti con l'IA: si somigliano tutti.<br>Il tuo cliente decide in pochi secondi e premia chi si distingue.</p>
         <h2>Io progetto quei pochi secondi.</h2>
         <p>Poi la tua immagine passa nelle tue mani, con tutte le istruzioni per usarla.</p>
       </div>
-      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="home-manifesto-stella" />
+      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="home-manifesto-stella" width="417" height="417" />
     </section>
 
 
     <!-- progetti -->
 
-    <section class="home-sezione home-progetti">
+    <section class="home-sezione home-progetti" id="progetti">
       <div class="container-fluid">
 
         <div class="home-progetti-testata">
@@ -141,23 +186,50 @@
         <!-- lo slider usa le classi e il JavaScript che c'erano già -->
         <div class="progetti-slider" id="progettiSlider">
           <a href="oodal-festival.html" class="progetto-slide">
-            <img src="img/oodal.png" alt="Oodal Festival">
+            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival" width="1920" height="1080" loading="lazy">
           </a>
           <a href="raw.html" class="progetto-slide">
-            <img src="img/raw.jpg" alt="Raw">
+            <img src="img/raw.jpg" alt="Raw" width="1920" height="1080" loading="lazy">
           </a>
+          <a href="podere-i-cerri.html" class="progetto-slide">
+            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
+          </a>
+
+            <a href="locandamagno.html" class="progetto-slide">
+            <img src="img/locandamagno/1.jpg" alt="Locanda Magno" width="1920" height="1080" loading="lazy">
+          </a>
+        
           <a href="shampoococcole.html" class="progetto-slide">
-            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole">
+            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
           </a>
-          <a href="locandamagno.html" class="progetto-slide">
-            <img src="img/locandamagno.jpg" alt="Locanda Magno">
-          </a>
-          <a href="eltoros.html" class="progetto-slide">
-            <img src="img/eltoros.png" alt="El Toros">
-          </a>
+          
           <a href="golosandia.html" class="progetto-slide">
-            <img src="img/golosandia/cupholder.jpg" alt="Golosandia">
+            <img src="img/golosandia/8.jpg" alt="Golosandia" width="1920" height="1080" loading="lazy">
           </a>
+
+
+          <a href="oodal-festival.html" class="progetto-slide">
+            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival" width="1920" height="1080" loading="lazy">
+          </a>
+          <a href="raw.html" class="progetto-slide">
+            <img src="img/raw.jpg" alt="Raw" width="1920" height="1080" loading="lazy">
+          </a>
+          <a href="podere-i-cerri.html" class="progetto-slide">
+            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
+          </a>
+
+            <a href="locandamagno.html" class="progetto-slide">
+            <img src="img/locandamagno/1.jpg" alt="Locanda Magno" width="1920" height="1080" loading="lazy">
+          </a>
+        
+          <a href="shampoococcole.html" class="progetto-slide">
+            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
+          </a>
+          
+          <a href="golosandia.html" class="progetto-slide">
+            <img src="img/golosandia/8.jpg" alt="Golosandia" width="1920" height="1080" loading="lazy">
+          </a>
+      
         </div>
 
         <div class="slider-nav">
@@ -179,17 +251,17 @@
 
         <ul class="home-plus-schede">
           <li>
-            <img src="img/decorazioni/cerchioarancione.svg" alt="" aria-hidden="true" class="home-plus-icona" />
+            <img src="img/decorazioni/cerchioarancione.svg" alt="" aria-hidden="true" class="home-plus-icona" width="558" height="558" loading="lazy" />
             <h3>Impari a usare la tua immagine in autonomia</h3>
             <p>Ricevi il brand manual, una call in cui ti spiego tutto e, se vuoi, i template Canva già pronti. Non dovrai chiamarmi per ogni volantino.</p>
           </li>
           <li>
-            <img src="img/decorazioni/cerchioverde.svg" alt="" aria-hidden="true" class="home-plus-icona" />
+            <img src="img/decorazioni/cerchioverde.svg" alt="" aria-hidden="true" class="home-plus-icona" width="558" height="558" loading="lazy" />
             <h3>Rispetto quello che hai già costruito</h3>
             <p>Se rinnovi la tua immagine, parto da ciò che i tuoi clienti riconoscono e lo porto con te nel nuovo.</p>
           </li>
           <li>
-            <img src="img/decorazioni/cerchionavy.svg" alt="" aria-hidden="true" class="home-plus-icona" />
+            <img src="img/decorazioni/cerchionavy.svg" alt="" aria-hidden="true" class="home-plus-icona" width="558" height="558" loading="lazy" />
             <h3>So cosa succede dopo lo schermo</h3>
             <p>Ho imparato il mestiere seguendo i progetti fino alla stampa, anche in grande formato. I file che ti consegno funzionano davvero, dalla tipografia all'insegnista.</p>
           </li>
@@ -207,8 +279,8 @@
 
           <div class="col-12 col-xl-5">
             <div class="home-foto">
-              <img src="img/imgaboutme.jpg" alt="Laura Pasquali, graphic designer" />
-              <img src="img/logo-cerchio.png" alt="" class="home-about-logo" />
+              <img src="img/imgaboutme.png" alt="Laura Pasquali, graphic designer" width="2087" height="2344" loading="lazy" />
+              <img src="img/logo-cerchio.png" alt="" class="home-about-logo" aria-hidden="true" width="1182" height="1182" loading="lazy" />
             </div>
           </div>
 
@@ -281,6 +353,8 @@
 
     <!-- recensioni -->
 
+    <!-- SEZIONE RECENSIONI: da riattivare quando ci sono le testimonianze -->
+    <!--
     <section class="home-sezione home-recensioni">
       <div class="container-fluid">
 
@@ -307,6 +381,7 @@
 
       </div>
     </section>
+    -->
 
 
     <!-- contatti -->
@@ -430,7 +505,7 @@
       <div class="footer-content">
 
         <div class="footer-logo">
-          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" />
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" width="1522" height="330" loading="lazy" />
         </div>
 
         <hr class="footer-line">
@@ -439,22 +514,48 @@
 
           <p class="footer-piva">P.iva 01506470457</p>
 
+          <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
+
           <div class="footer-social">
             <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
-              <img src="img/behance.png" alt="Behance" />
+              <img src="img/behance.png" alt="Behance" width="30" height="30" loading="lazy" />
             </a>
             <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <img src="img/linkedin.png" alt="LinkedIn" />
+              <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" loading="lazy" />
             </a>
           </div>
-
-          <a href="#hero" class="footer-top">Torna su ↑</a>
 
         </div>
 
       </div>
     </div>
   </footer>
+
+  <!-- torna su: resta fisso in basso a destra mentre la pagina scorre -->
+  <a href="#" class="torna-su" aria-label="Torna a inizio pagina">↑</a>
+
+  <!-- anno del copyright: si aggiorna da solo; se lo script non parte resta quello scritto nel footer.
+       Torna su: scorrimento morbido con Lenis; senza JavaScript il link # porta comunque in cima -->
+  <script>
+    {
+      const anno = document.getElementById('anno');
+      if (anno) anno.textContent = new Date().getFullYear();
+
+      const tornaSu = document.querySelector('.torna-su');
+      if (tornaSu) {
+        tornaSu.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          // chi ha attivato "riduci movimento" torna su con un salto, senza animazione
+          const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (typeof lenis !== 'undefined') {
+            lenis.scrollTo(0, { immediate: ridotto });
+          } else {
+            window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
+          }
+        });
+      }
+    }
+  </script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -475,6 +576,16 @@
 
     // scorre di una slide (direzione: 1 = avanti, -1 = indietro)
     function scorriSlider(direzione) {
+      // se si va avanti ed è già in fondo, riparte dal primo progetto.
+      // "In fondo" vuol dire: lo scorrimento è al massimo (10px di margine
+      // per gli arrotondamenti) oppure l'ultima slide è quella attiva
+      const inFondo = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
+      const ultimaAttiva = slides[slides.length - 1].classList.contains('attiva');
+      if (direzione === 1 && (inFondo || ultimaAttiva)) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+
       const passo = slides[1].getBoundingClientRect().left
                   - slides[0].getBoundingClientRect().left;
       slider.scrollBy({ left: passo * direzione, behavior: 'smooth' });
@@ -501,6 +612,47 @@
     slider.addEventListener('scroll', aggiornaAttiva);
 
     aggiornaAttiva();
+
+
+    /* ---- HERO: LE COPERTINE DELLO SLIDER SI ALTERNANO ---- */
+    const galleria = document.getElementById('heroGalleria');
+
+    // prende le copertine dallo slider, una sola volta ciascuna (lo slider le ha doppie)
+    const copertine = [];
+    slides.forEach((slide) => {
+      const img = slide.querySelector('img');
+      const giaPresente = copertine.some((c) => c.getAttribute('src') === img.getAttribute('src'));
+      if (!giaPresente) copertine.push(img);
+    });
+
+    // sostituisce hero.jpg con le copertine (alt vuoto: la galleria ha già la sua descrizione)
+    galleria.innerHTML = '';
+    const fotoHero = copertine.map((originale, i) => {
+      const foto = document.createElement('img');
+      // data-hero sull'immagine dello slider = un'immagine diversa solo per la hero
+      foto.src = originale.dataset.hero || originale.getAttribute('src');
+      foto.alt = '';
+      if (originale.classList.contains('progetto-slide-zoom')) foto.classList.add('progetto-slide-zoom');
+      if (i === 0) foto.classList.add('visibile');
+      galleria.appendChild(foto);
+      return foto;
+    });
+
+    // chi ha attivato "riduci movimento" vede solo la prima copertina, ferma
+    const movimentoRidotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!movimentoRidotto && fotoHero.length > 1) {
+      let corrente = 0;
+      setInterval(() => {
+        const successiva = (corrente + 1) % fotoHero.length;
+        // la precedente resta piena sotto, la nuova compare sopra in dissolvenza
+        fotoHero.forEach((foto) => foto.classList.remove('precedente'));
+        fotoHero[corrente].classList.remove('visibile');
+        fotoHero[corrente].classList.add('precedente');
+        fotoHero[successiva].classList.add('visibile');
+        corrente = successiva;
+      }, 1800);
+    }
   </script>
 
 </body>
