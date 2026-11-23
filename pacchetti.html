@@ -51,8 +51,7 @@
 
         <div class="logo">
           <a href="index.html">
-            <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
-            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="logo-mobile" width="1522" height="330" />
           </a>
         </div>
 
@@ -67,13 +66,23 @@
 
             <!-- bottone dentro il menu a tendina (mobile) -->
             <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata</a>
+
+            <!-- social in fondo al menu a tendina (mobile e tablet) -->
+            <div class="menu-social">
+              <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+                <img src="img/behance.png" alt="Behance" width="30" height="30" />
+              </a>
+              <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" />
+              </a>
+            </div>
           </nav>
 
           <!-- bottone visibile su desktop -->
           <a href="index.html#form" class="prenotaunacall">Prenota una chiamata</a>
 
-          <button class="toggleMenu" onclick="toggleMenu()">
-            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
+          <button class="toggleMenu" onclick="toggleMenu()" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu">
+            <img src="img/decorazioni/puntiverdi.svg" alt="" width="317" height="67" />
           </button>
         </div>
 
@@ -118,90 +127,84 @@
 
     <section class="pack-sezione pack-senza-grana">
 
-      <div class="pack-gruppo">
-        <h2 class="pack-titolo">Parti da <em>zero</em></h2>
+      <h2 class="pack-titolo">Scegli in base a <em>dove ti trovi</em></h2>
 
-        <div class="pack-schede">
+      <!-- tre schede affiancate dai 768px, una sotto l'altra su telefono.
+           Ogni scheda: fascia colorata con il nome, poi il corpo con il resto -->
+      <div class="pack-schede">
 
-          <article class="pack-scheda pack-scheda-terracotta">
-            <h3 class="pack-nome">Brand Basics</h3>
-            <p class="pack-tempi">2-4 settimane</p>
-            <p class="pack-perchi">Per chi parte da zero e vuole le basi fatte bene.</p>
+        <article class="pack-scheda pack-scheda-terracotta">
+          <h3 class="pack-nome">Da Zero</h3>
+          <div class="pack-scheda-corpo">
+            <p class="pack-categoria">Branding</p>
+            <p class="pack-perchi">Un'attività nuova, o che non ha mai avuto un'immagine curata.</p>
+            <p class="pack-partenza">Si parte da zero.</p>
             <ul class="pack-incluso">
-              <li>Strategia essenziale: i tuoi clienti, i concorrenti, l'obiettivo</li>
-              <li>2 moodboard</li>
-              <li>Logo orizzontale, verticale e versione ridotta</li>
-              <li>Colori e caratteri</li>
-              <li>Brand manual essenziale</li>
-              <li>2 giri di revisione</li>
-              <li>Call finale e 30 giorni di supporto</li>
-            </ul>
-            <p class="pack-prezzo">1.200 €</p>
-            <a href="index.html#form" class="pack-bottone">Parliamone</a>
-          </article>
-
-          <article class="pack-scheda pack-scheda-oliva pack-scheda-consigliata">
-            <p class="pack-consigliato">Consigliato</p>
-            <h3 class="pack-nome">Brand Completo</h3>
-            <p class="pack-tempi">4-6 settimane</p>
-            <p class="pack-perchi">Per chi parte da zero e vuole un'immagine pronta per ogni uso, social compresi.</p>
-            <ul class="pack-incluso">
-              <li>Strategia completa, con tono di voce e payoff</li>
+              <li>Chiamata, analisi di pubblico e concorrenti</li>
               <li>2-3 moodboard</li>
-              <li>Logo in tutte le varianti</li>
-              <li>Icone o pattern, se servono</li>
+              <li>1 proposta di logo sviluppata, con le sue varianti</li>
+              <li>Logo, palette, caratteri ed elementi grafici</li>
+              <li>Logo orizzontale, verticale e ridotto per social e web</li>
+              <li>2 giri di revisione</li>
               <li>Brand manual completo</li>
-              <li>Kit Canva incluso (da solo costa 400 €)</li>
-              <li>3 giri di revisione</li>
-              <li>Call finale e 30 giorni di supporto</li>
+              <li>Progettazione del biglietto da visita</li>
+              <li>File per stampa e web, e call finale</li>
             </ul>
-            <p class="pack-prezzo">2.500 €</p>
+            <p class="pack-tempi">4-5 settimane</p>
+            <p class="pack-prezzo">1.900 €</p>
             <a href="index.html#form" class="pack-bottone">Parliamone</a>
-          </article>
-
-        </div>
-      </div>
-
-      <div class="pack-gruppo">
-        <h2 class="pack-titolo">Hai già un'immagine da <em>rinnovare</em></h2>
-
-        <article class="pack-scheda pack-scheda-blu pack-scheda-larga">
-          <h3 class="pack-nome">Restyling</h3>
-          <p class="pack-tempi">2-5 settimane</p>
-          <p class="pack-perchi">Per chi ha già un'attività e vuole rinnovarla senza perdere ciò che i clienti riconoscono.</p>
-
-          <!-- due elenchi: uno sotto l'altro su telefono, affiancati dai 768px -->
-          <div class="pack-elenchi">
-            <div>
-              <h4 class="pack-sottotitolo">Sempre incluso</h4>
-              <ul class="pack-incluso">
-                <li>Analisi del logo attuale</li>
-                <li>Logo ridisegnato, con le sue varianti</li>
-                <li>Colori e caratteri aggiornati</li>
-                <li>Brand manual</li>
-                <li>2 o 3 giri di revisione</li>
-                <li>Call finale e 30 giorni di supporto</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="pack-sottotitolo">In base al livello di restyling</h4>
-              <ul class="pack-incluso pack-incluso-pallini">
-                <li>Strategia completa, con tono di voce</li>
-                <li>Tutte le varianti del logo</li>
-                <li>Kit Canva</li>
-                <li>Piano di passaggio</li>
-              </ul>
-            </div>
           </div>
-
-          <p class="pack-passaggio">Restyling leggero o completo? Lo capiamo insieme prima del preventivo, analizzando la tua immagine attuale. E se durante il lavoro decidi di rinnovare tutto, passi al livello completo pagando solo la differenza.</p>
-          <p class="pack-prezzo">da 1.500 a 2.500 €</p>
-          <p class="pack-prezzo-nota">Il livello lo scegliamo insieme prima del preventivo, guardando la tua immagine attuale.</p>
-          <a href="index.html#form" class="pack-bottone">Parliamone</a>
         </article>
+
+        <article class="pack-scheda pack-scheda-oliva">
+          <h3 class="pack-nome">Una Rinfrescata</h3>
+          <div class="pack-scheda-corpo">
+            <p class="pack-categoria">Restyling</p>
+            <p class="pack-perchi">Chi ha un logo che i clienti riconoscono, ma invecchiato o usato in modo incoerente.</p>
+            <p class="pack-partenza">Si parte da quello che c'è, per tenerlo.</p>
+            <ul class="pack-incluso">
+              <li>Analisi dell'identità attuale: cosa riconoscono i clienti, cosa non funziona</li>
+              <li>1 proposta di logo ridisegnato, tenendo i segni riconoscibili</li>
+              <li>Palette e caratteri sistemati</li>
+              <li>Logo orizzontale, verticale e ridotto per social e web</li>
+              <li>2 giri di revisione</li>
+              <li>Mini brand manual</li>
+              <li>Progettazione del biglietto da visita</li>
+              <li>File per stampa e web, e call finale</li>
+            </ul>
+            <p class="pack-tempi">2-3 settimane</p>
+            <p class="pack-prezzo">1.100 €</p>
+            <a href="index.html#form" class="pack-bottone">Parliamone</a>
+          </div>
+        </article>
+
+        <article class="pack-scheda pack-scheda-blu">
+          <h3 class="pack-nome">Cambio Look</h3>
+          <div class="pack-scheda-corpo">
+            <p class="pack-categoria">Rebranding</p>
+            <p class="pack-perchi">Chi ha un'immagine che non lo rappresenta più, perché sono cambiati l'attività, il pubblico o le ambizioni.</p>
+            <p class="pack-partenza">Si parte da quello che c'è, per superarlo.</p>
+            <ul class="pack-incluso">
+              <li>Analisi dell'identità attuale, del pubblico e dei concorrenti</li>
+              <li>2-3 moodboard</li>
+              <li>1 proposta di nuovo logo sviluppata, con le sue varianti</li>
+              <li>Logo, palette, caratteri ed elementi grafici</li>
+              <li>Logo orizzontale, verticale e ridotto per social e web</li>
+              <li>2 giri di revisione</li>
+              <li>Brand manual completo</li>
+              <li>Progettazione del biglietto da visita</li>
+              <li>Piano di passaggio dal vecchio al nuovo</li>
+              <li>File per stampa e web, e call finale</li>
+            </ul>
+            <p class="pack-tempi">4-5 settimane</p>
+            <p class="pack-prezzo">2.000 €</p>
+            <a href="index.html#form" class="pack-bottone">Parliamone</a>
+          </div>
+        </article>
+
       </div>
 
-      <p class="pack-nota">Prezzi IVA non applicabile, regime forfettario.</p>
+      <p class="pack-nota">Se durante il lavoro ti accorgi che, più di una rinfrescata, serve un cambio di look, passi al Cambio Look pagando solo la differenza. Se dal lavoro nascono più idee valide per il logo, te le mostro. Prezzi IVA non applicabile, regime forfettario.</p>
 
     </section>
 
@@ -214,36 +217,42 @@
 
       <ul class="pack-aggiunte">
         <li>
-          <span class="pack-forma pack-forma-cerchio-terracotta" aria-hidden="true"></span>
-          <h3>Kit Canva</h3>
-          <p>Da 6 a 10 template per post, storie e menù, con colori e caratteri già impostati e gli elementi importanti bloccati, così resti sempre coerente.</p>
-          <p class="pack-aggiunta-prezzo">400 €</p>
-        </li>
-        <li>
           <span class="pack-forma pack-forma-arco-oliva" aria-hidden="true"></span>
-          <h3>Sito web</h3>
-          <p>Un sito vetrina da 1 a 5 pagine, costruito sulla tua nuova immagine, per presentare la tua attività e farti trovare. Non comprende il negozio online. Puoi richiederlo anche senza un pacchetto.</p>
-          <p class="pack-aggiunta-prezzo">Da 1.300 €</p>
+          <h3>Sito vetrina</h3>
+          <p>Da 1 a 5 pagine, costruito sulla tua nuova immagine, per presentare la tua attività e farti trovare. Non comprende il negozio online.</p>
+          <p class="pack-tempi">2-4 settimane</p>
+          <p class="pack-aggiunta-prezzo">1.300 €<span class="pack-aggiunta-sconto">oppure 1.200 € insieme a un pacchetto</span></p>
           <p class="pack-aggiunta-nota">Dominio e abbonamento della piattaforma sono a carico tuo: li scegliamo insieme in base a come userai il sito.</p>
         </li>
         <li>
-          <span class="pack-forma pack-forma-cerchio-blu" aria-hidden="true"></span>
-          <h3>Applicazioni</h3>
-          <p>Menù, insegna, biglietti da visita, packaging.</p>
-          <p class="pack-aggiunta-prezzo">Su preventivo</p>
+          <span class="pack-forma pack-forma-cerchio-terracotta" aria-hidden="true"></span>
+          <h3>Kit Canva</h3>
+          <p>Da 6 a 10 template per post, storie e menù, con colori e caratteri già impostati e gli elementi importanti bloccati, così resti sempre coerente.</p>
+          <p class="pack-aggiunta-prezzo">250 €<span class="pack-aggiunta-sconto">oppure 200 € insieme a un pacchetto</span></p>
         </li>
         <li>
-          <span class="pack-forma pack-forma-mezzo-bordeaux" aria-hidden="true"></span>
-          <h3>Supervisione di stampa</h3>
-          <p>Preparo i file e parlo io con la tipografia, così il risultato è quello che hai approvato.</p>
+          <span class="pack-forma pack-forma-cerchio-blu" aria-hidden="true"></span>
+          <h3>Applicativi</h3>
+          <p>Tutto quello che porta la tua immagine nel mondo reale, coerente con il tuo brand.</p>
+          <ul class="pack-incluso">
+            <li>Grafica per l'insegna</li>
+            <li>Menù</li>
+            <li>Brochure e pieghevoli</li>
+            <li>Volantini e locandine</li>
+            <li>Etichette e packaging</li>
+          </ul>
           <p class="pack-aggiunta-prezzo">Su preventivo</p>
+          <p class="pack-aggiunta-nota">Il prezzo dipende da formato e contenuti: mi scrivi cosa ti serve e ti rispondo con un preventivo gratuito entro due giorni lavorativi. Il prezzo copre la progettazione, mentre stampa, produzione e posa sono escluse. Li realizzo anche se la tua identità non l'ho creata io, basta avere i file del logo.</p>
+          <a href="index.html#form" class="pack-bottone">Chiedi un preventivo</a>
         </li>
       </ul>
+
+      <p class="pack-nota">Se aggiungi un servizio a un pacchetto, il prezzo complessivo viene ricalcolato e lo trovi nella proposta, prima della firma.</p>
 
       <div class="pack-riquadri">
         <div class="pack-riquadro">
           <h3>Come si paga</h3>
-          <p>In tre momenti, uno per fase: 40% alla firma, 30% quando scegli la moodboard, 30% alla consegna.</p>
+          <p>In tre momenti, uno per fase: 40% alla firma, 30% quando approvi la direzione, 30% alla consegna.</p>
           <div class="pack-barra" aria-hidden="true">
             <span class="pack-barra-terracotta"></span>
             <span class="pack-barra-oliva"></span>
@@ -298,11 +307,11 @@
           <div class="pack-faq">
             <details open>
               <summary>Quante proposte di logo mi presenti?</summary>
-              <p>Prima ti presento due o tre moodboard, per trovare insieme l'atmosfera giusta. Poi almeno una proposta di logo sviluppata con le sue varianti; se dal lavoro nascono più idee valide, te le mostro.</p>
+              <p>In Da Zero e Cambio Look ti presento prima due o tre moodboard, per trovare insieme l'atmosfera giusta. Poi una proposta di logo sviluppata con le sue varianti; se dal lavoro nascono più idee valide, te le mostro.</p>
             </details>
             <details>
-              <summary>E se durante il restyling ci accorgiamo che serve cambiare tutto?</summary>
-              <p>Il livello lo scegliamo insieme prima della firma, dopo aver analizzato la tua immagine attuale, così il prezzo è chiaro fin dall'inizio. Se poi, a lavoro iniziato, decidi di andare oltre, passi al restyling completo pagando solo la differenza: il lavoro già fatto non si perde.</p>
+              <summary>E se con Una Rinfrescata ci accorgiamo che serve cambiare tutto?</summary>
+              <p>Il pacchetto lo scegliamo insieme prima della firma, dopo aver guardato la tua immagine attuale. Se poi, a lavoro iniziato, decidi di andare oltre, passi al Cambio Look pagando solo la differenza: il lavoro già fatto non si perde.</p>
             </details>
             <details>
               <summary>E se dopo i giri di revisione qualcosa non mi convince?</summary>
@@ -363,6 +372,8 @@
 
           <p class="footer-piva">P.iva 01506470457</p>
 
+          <a href="mailto:info@laurapasquali.it" class="footer-email">info@laurapasquali.it</a>
+
           <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
 
           <div class="footer-social">
@@ -413,10 +424,24 @@
 
   <script>
     /* ---- MENU HAMBURGER ---- */
+    /* ogni link del menu a tendina (le voci e il bottone "Prenota una chiamata") chiude il menu:
+       sulla home il form e "Come lavoro" sono nella stessa pagina e il menu aperto li coprirebbe */
+    document.querySelectorAll("#menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (document.getElementById("menu").classList.contains("open")) toggleMenu();
+      });
+    });
+
+    /* apre e chiude il menu; aggiorna anche il nome del bottone per i lettori di schermo
+       (puntini da chiuso, X da aperto: lo scambio lo fa il CSS) */
     function toggleMenu() {
-      const element = document.getElementById("menu");
-      element.classList.toggle("open");
+      const menu = document.getElementById("menu");
+      const bottone = document.querySelector(".toggleMenu");
+      const aperto = menu.classList.toggle("open");
+      bottone.setAttribute("aria-expanded", aperto);
+      bottone.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
     }
+
 
 
     /* ---- APERTURA: LE COPERTINE DEI PROGETTI SI ALTERNANO (come nella home) ---- */

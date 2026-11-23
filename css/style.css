@@ -124,44 +124,58 @@ header {
 }
  
  
-/* menu mobile che si apre con .open */
- 
+/* menu mobile e tablet che si apre con .open: un pannello bordeaux
+   largo un terzo della pagina, attaccato a destra, alto tutto lo schermo.
+   Parte dall'alto e copre anche la navbar dietro ai puntini; il padding sopra
+   fa partire le voci sotto la navbar. Il bottone dei puntini sta sopra (z-index 1).
+   overflow-y: se le voci non ci stanno (telefono in orizzontale), il pannello scorre */
+
 .menu {
   display: none;
   position: absolute;
-  top: var(--nav-height);
-  left: 0;
+  top: 0;
   right: 0;
-  background: var(--base);
-  padding: 1.5em 0;
-}
- 
-.menu.open {
-  display: block;
+  width: calc(100% / 3);
+  min-width: max-content;   /* mai più stretto del bottone: "Prenota una chiamata" resta su una riga */
   height: 100vh;
+  overflow-y: auto;
+  background: var(--burgundy);
+  padding: calc(var(--nav-height) + 1.5em) 0 1.5em;
 }
- 
+
+/* colonna flex: serve al margin-top: auto che porta i social in fondo */
+.menu.open {
+  display: flex;
+  flex-direction: column;
+}
+
+/* niente gap: lo spazio tra le voci lo dà il padding dei link, così le linee restano a metà */
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0;
 }
- 
+
 .menu li {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
- 
+
+/* linea crema tra una voce e l'altra (non sopra la prima) */
+.menu li + li {
+  border-top: 1px solid var(--base);
+}
+
 .menu a {
   display: block;
   padding: 0.75em 1.25em;
   font-family: var(--font-body);
   font-size: var(--h3-size);
-  color: var(--burgundy);
+  color: var(--base);
   transition: color var(--transition);
   text-decoration: none;
 }
@@ -175,28 +189,56 @@ header {
   color: var(--terracotta);
 }
  
+/* largo quanto il testo e allineato a sinistra come le voci.
+   Il margine destro fisso (non auto) entra nella larghezza minima del pannello,
+   così il bottone non tocca mai il bordo destro */
 .prenotaunacalltendina {
   display: block;
-  width: 50%;
-  margin: 1rem auto 0;
+  width: fit-content;
+  margin: 1rem 1.25rem 0 1.25rem;
   text-align: center;
   padding: 0.6em 1em;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: color var(--transition);
+  transition: background-color var(--transition);
   text-decoration: none;
 }
- 
+
 .menu .prenotaunacalltendina {
   color: var(--base);
-  background: var(--navy);
+  background: var(--terracotta);
   font-family: var(--font-display);
   font-size: 1rem;
 }
- 
+
 .menu .prenotaunacalltendina:hover {
-  color: var(--burgundy);
+  background: var(--navy);
+  color: var(--base);
+}
+
+/* social in fondo al menu: margin-top: auto prende tutto lo spazio libero sopra di loro */
+.menu-social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  margin-top: auto;
+  padding: 1.5rem 1.25rem 0;
+}
+
+.menu-social a {
+  padding: 0;
+}
+
+.menu-social img {
+  height: 22px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition);
+}
+
+.menu-social a:hover img {
+  opacity: 0.7;
 }
  
  
@@ -211,16 +253,48 @@ header {
  
 /* hamburger: visibile solo su mobile */
  
+/* sfondo trasparente: da aperto si vede il bordeaux del menu che sta sotto.
+   position e z-index lo mettono sopra il pannello, altrimenti il pannello lo coprirebbe */
 .toggleMenu {
   display: block;
-  background: var(--base);
+  position: relative;
+  z-index: 1;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
 }
+
+/* menu aperto: i puntini spariscono e al loro posto compare una X crema.
+   ~ prende il bottone che viene dopo il menu nello stesso contenitore;
+   "/ ''" nasconde la X ai lettori di schermo, che leggono già "Chiudi il menu" */
+.menu.open ~ .toggleMenu img {
+  display: none;
+}
+
+.menu.open ~ .toggleMenu::before {
+  content: "×";
+  content: "×" / "";
+  display: block;
+  font-family: var(--font-body);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--base);
+}
+
+.toggleMenu:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+.menu.open ~ .toggleMenu:focus-visible {
+  outline-color: var(--base);
+}
  
+/* puntiverdi.svg è largo quasi 5 volte l'altezza: a 9px è largo circa 43px
+   (sul tablet torna a 12px, nel media query 768px) */
 .toggleMenu img {
-  height: 24px;
+  height: 9px;
   width: auto;
   display: block;
 }
@@ -414,8 +488,9 @@ header {
   text-align: center;
 }
 
+/* il logo è circa 4,6 volte più largo che alto: a 48px è largo circa 220px e sta nello schermo */
 .footer-logo img {
-  height: 120px;
+  height: 48px;
 }
 
 .footer-line {
@@ -426,21 +501,23 @@ header {
 }
 
 /* sotto la linea: larga quanto la linea, così i bordi coincidono.
-   su mobile le tre parti stanno una sotto l'altra, centrate */
+   su mobile le tre parti stanno una sotto l'altra, centrate, con i social sopra il copyright */
 .footer-bottom {
   width: 80%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
     "piva"
-    "legale"
-    "social";
+    "email"
+    "social"
+    "legale";
   align-items: center;
   justify-items: center;
   gap: 1.25rem 1rem;
 }
 
 .footer-piva,
+.footer-email,
 .footer-legale {
   font-family: var(--font-body);
   font-size: var(--p-size);
@@ -451,6 +528,19 @@ header {
 
 .footer-piva {
   grid-area: piva;
+}
+
+/* email: sotto la p.iva, sottolineata come il link della privacy */
+.footer-email {
+  grid-area: email;
+  text-decoration: underline;
+  transition: opacity var(--transition);
+}
+
+/* il colore va ripetuto, altrimenti all'hover vince quello dei link di Bootstrap */
+.footer-email:hover {
+  color: var(--base);
+  opacity: 0.7;
 }
 
 /* copyright e privacy, al centro */
@@ -1506,75 +1596,86 @@ header {
 }
 
 /* 2. i pacchetti */
-.pack-gruppo + .pack-gruppo {
-  margin-top: 4rem;
-}
-
 .pack-schede {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-/* la fascia colorata in alto è il bordo superiore, più spesso e colorato */
+/* la fascia colorata in alto è il nome (.pack-nome); overflow: hidden le fa seguire
+   gli angoli arrotondati. Il padding sta nel corpo, così la fascia arriva ai bordi */
 .pack-scheda {
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--base);
   border: 2px solid var(--burgundy);
-  border-top-width: 14px;
   border-radius: 24px;
-  padding: 1.75rem 1.5rem;
+  overflow: hidden;
 }
 
-.pack-scheda-terracotta {
-  border-top-color: var(--terracotta);
+.pack-scheda-terracotta .pack-nome {
+  background-color: var(--terracotta);
+  color: var(--base);
 }
 
-.pack-scheda-oliva {
-  border-top-color: var(--verde);
+.pack-scheda-oliva .pack-nome {
+  background-color: var(--verde);
+  color: var(--burgundy);
 }
 
-.pack-scheda-blu {
-  border-top-color: var(--navy);
+.pack-scheda-blu .pack-nome {
+  background-color: var(--navy);
+  color: var(--base);
 }
 
-/* la scheda consigliata: bordo più spesso */
-.pack-scheda-consigliata {
-  border-left-width: 4px;
-  border-right-width: 4px;
-  border-bottom-width: 4px;
+/* flex: 1 fa crescere il corpo fino in fondo alla scheda: serve al margin-top: auto dei tempi */
+.pack-scheda-corpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
-/* pillole e pulsante larghi quanto il loro testo, non quanto la scheda */
-.pack-consigliato,
+/* pillola dei tempi e pulsante larghi quanto il loro testo, non quanto la scheda */
 .pack-tempi,
 .pack-scheda .pack-bottone {
   align-self: flex-start;
 }
 
-.pack-consigliato {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  background-color: var(--verde);
-  border-radius: 999px;
-  padding: 0.3rem 0.9rem;
-  margin-bottom: 1rem;
-}
-
+/* il nome è la fascia colorata: sfondo e colore del testo arrivano da .pack-scheda-… */
 .pack-nome {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: normal;
   line-height: 1.1;
   color: var(--burgundy);
-  margin-bottom: 0.75rem;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
 }
 
+/* la categoria, piccola sotto la fascia */
+.pack-categoria {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
+
+/* "da dove si parte", in evidenza */
+.pack-partenza {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--terracotta);
+  margin-bottom: 1.25rem;
+}
+
+/* margin-top: auto spinge tempi, prezzo e pulsante in fondo alla scheda,
+   così nelle schede affiancate stanno alla stessa altezza */
 .pack-tempi {
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -1584,7 +1685,7 @@ header {
   border: 1px solid var(--burgundy);
   border-radius: 999px;
   padding: 0.25rem 0.8rem;
-  margin-bottom: 1rem;
+  margin: auto 0 1rem;
 }
 
 .pack-perchi {
@@ -1621,76 +1722,13 @@ header {
   color: var(--terracotta);
 }
 
-/* restyling: i due elenchi con il loro sottotitolo */
-.pack-elenchi {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem 2rem;
-}
-
-.pack-sottotitolo {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  margin-bottom: 0.9rem;
-}
-
-/* elenco con un pallino blu al posto della spunta (viene dopo, quindi vince) */
-.pack-incluso-pallini li::before {
-  content: "";
-  top: 0.45em;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--navy);
-}
-
-/* riquadro blu del restyling */
-.pack-passaggio {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--base);
-  background-color: var(--navy);
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* margin-top: auto spinge prezzo e pulsante in fondo alla scheda,
-   così nelle schede affiancate stanno alla stessa altezza */
+/* niente margin-top: auto qui, ce l'hanno i tempi che stanno sopra */
 .pack-prezzo {
   font-family: var(--font-display);
   font-size: 2rem;
   line-height: 1;
   color: var(--burgundy);
-  margin: auto 0 1.25rem;
-}
-
-/* scheda larga (restyling): prezzo e pulsante a destra */
-.pack-scheda-larga .pack-prezzo {
-  text-align: right;
-}
-
-.pack-scheda-larga .pack-bottone {
-  align-self: flex-end;
-}
-
-/* nota sotto il prezzo: più piccola e in corsivo; nella scheda larga va a destra come il prezzo */
-.pack-prezzo-nota {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-style: italic;
-  line-height: 1.4;
-  color: var(--burgundy);
-  margin: -0.5rem 0 1.25rem;
-}
-
-.pack-scheda-larga .pack-prezzo-nota {
-  text-align: right;
+  margin: 0 0 1.25rem;
 }
 
 /* 4. le aggiunte: una colonna su telefono */
@@ -1703,7 +1741,8 @@ header {
   margin: 2rem 0 0;
 }
 
-.pack-aggiunte li {
+/* > : solo le schede (figli diretti), non le voci degli elenchi che ci sono dentro */
+.pack-aggiunte > li {
   display: flex;
   flex-direction: column;
   background-color: var(--base);
@@ -1733,6 +1772,32 @@ header {
   font-family: var(--font-display);
   font-size: 1.25rem;
   margin: auto 0 0;
+}
+
+/* il prezzo insieme a un pacchetto, a capo sotto il prezzo pieno */
+.pack-aggiunta-sconto {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* i tempi del sito vetrina: .pack-aggiunte p cambierebbe la misura della pillola,
+   e qui l'auto ce l'ha già il prezzo (due auto si dividerebbero lo spazio) */
+.pack-aggiunte .pack-tempi {
+  font-size: 0.75rem;
+  margin-top: 0;
+}
+
+/* pulsante degli applicativi: largo quanto il testo, non quanto la scheda.
+   Su telefono la scritta resta su una riga; con il padding laterale ridotto
+   ci sta anche a 320px (dal tablet tornano padding e a capo normali) */
+.pack-aggiunte .pack-bottone {
+  align-self: flex-start;
+  margin-top: 1.25rem;
+  white-space: nowrap;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 /* nota sotto il prezzo: più piccola e in corsivo */
@@ -1766,12 +1831,6 @@ header {
 .pack-forma-cerchio-blu {
   border-radius: 50%;
   background-color: var(--navy);
-}
-
-.pack-forma-mezzo-bordeaux {
-  width: 18px;
-  border-radius: 0 18px 18px 0;
-  background-color: var(--burgundy);
 }
 
 .pack-riquadri {
@@ -2062,6 +2121,14 @@ header {
  
 @media (min-width: 768px) {
 
+  /* header e menu */
+
+  /* sul tablet i puntini restano alti 12px, circa 57px di larghezza */
+  .toggleMenu img {
+    height: 12px;
+  }
+
+
   /* pagina chi sono: da qui le colonne stanno affiancate */
 
   .about-foto {
@@ -2098,21 +2165,69 @@ header {
     margin: 0 0 0 auto;
   }
 
-  /* le due schede da zero affiancate, larghe uguali (la griglia le fa anche alte uguali) */
+  /* le tre schede affiancate, larghe uguali (la griglia le fa anche alte uguali) */
   .pack-schede {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  /* restyling: i due elenchi affiancati */
-  .pack-elenchi {
-    grid-template-columns: repeat(2, 1fr);
+  /* colonne strette: il nome più piccolo, così resta su una riga */
+  .pack-nome {
+    font-size: 1.35rem;
+    padding: 1rem 1.25rem;
   }
 
-  /* 2x2: grid-auto-rows 1fr rende le due righe alte uguali,
-     così tutte e quattro le schede hanno la stessa altezza */
+  .pack-scheda-corpo {
+    padding: 1.25rem;
+  }
+
+  /* le tre schede affiancate. Con subgrid ogni scheda usa le stesse 8 righe della griglia
+     esterna, come le righe di una tabella: così gli elementi si allineano tra le schede
+     e le schede sono alte uguali.
+     righe: 1 forma, 2 titolo, 3 descrizione, 4 tempi o elenco,
+     5 e 6 prezzo e nota degli applicativi, 7 pulsante degli applicativi e prezzi di
+     sito e kit (sulla stessa riga), 8 nota del sito.
+     Se una scheda non ha un elemento, la sua riga resta vuota */
   .pack-aggiunte {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* row-gap 0: lo spazio tra gli elementi lo danno i loro margini, non il gap della griglia esterna */
+  .pack-aggiunte > li {
+    display: grid;
+    grid-row: span 8;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  /* la descrizione non ha classe: va da sola nella prima riga libera, la 3 */
+  .pack-aggiunte .pack-forma              { grid-row: 1; }
+  .pack-aggiunte h3                       { grid-row: 2; }
+  .pack-aggiunte .pack-tempi,
+  .pack-aggiunte .pack-incluso            { grid-row: 4; }
+  .pack-aggiunte .pack-aggiunta-prezzo    { grid-row: 7; margin-top: 0; }
+  .pack-aggiunte .pack-aggiunta-nota      { grid-row: 8; }
+  /* align-self center: il pulsante sta a metà altezza della riga 7,
+     cioè al centro delle scritte di prezzo delle altre due schede */
+  .pack-aggiunte .pack-bottone            { grid-row: 7; margin-top: 0; align-self: center; }
+
+  /* la scheda con il pulsante (applicativi): prezzo e nota stanno sopra il pulsante.
+     Lo spazio sopra il pulsante sta sotto la nota, così pulsante e prezzi partono
+     dalla stessa quota nella riga 7 */
+  .pack-aggiunte > li:has(.pack-bottone) .pack-aggiunta-prezzo { grid-row: 5; }
+  .pack-aggiunte > li:has(.pack-bottone) .pack-aggiunta-nota   { grid-row: 6; margin-bottom: 1.25rem; }
+
+  /* in una griglia pillola e pulsante si allargherebbero a tutta la scheda */
+  .pack-aggiunte .pack-tempi,
+  .pack-aggiunte .pack-bottone {
+    justify-self: start;
+  }
+
+  /* colonne strette: il pulsante torna al padding di sempre e può andare a capo,
+     altrimenti uscirebbe dalla scheda */
+  .pack-aggiunte .pack-bottone {
+    white-space: normal;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   /* .pack-riquadri resta a una colonna: "Come si paga" è da solo e prende tutta la larghezza */
@@ -2142,25 +2257,41 @@ header {
     height: 60px;
   }
  
-  .menu {
+  /* il pannello torna una riga nella navbar: si annullano larghezza, altezza, sfondo e linee del mobile.
+     .menu.open serve se il menu è stato aperto su mobile e poi la finestra si allarga */
+  .menu,
+  .menu.open {
     display: block;
     position: static;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    overflow-y: visible;
     background: none;
     padding: 0;
   }
- 
+
+  .menu-social {
+    display: none;
+  }
+
   .menu ul {
     flex-direction: row;
     gap: 0;
   }
- 
+
   .menu li {
     width: auto;
   }
- 
+
+  .menu li + li {
+    border-top: none;
+  }
+
   .menu a {
     padding: 0.5rem 1.25rem;
     font-size: var(--h3-size);
+    color: var(--burgundy);
   }
  
   .prenotaunacall {
@@ -2269,13 +2400,21 @@ header {
     border-top-width: 4px;
   }
 
-  /* su desktop una riga sola: p.iva a sinistra, copyright e privacy al centro, social a destra */
+  /* su desktop: p.iva ed email una sotto l'altra a sinistra, copyright e privacy al centro,
+     social a destra. Centro e destra occupano due righe, così restano a metà altezza */
   .footer-bottom {
     grid-template-columns: 1fr auto 1fr;
-    grid-template-areas: "piva legale social";
+    grid-template-areas:
+      "piva  legale social"
+      "email legale social";
+    row-gap: 0.35rem;
   }
 
   .footer-piva {
+    justify-self: start;
+  }
+
+  .footer-email {
     justify-self: start;
   }
 
@@ -2288,6 +2427,7 @@ header {
   }
 
   .footer-piva,
+  .footer-email,
   .footer-legale {
     font-size: 1rem;
   }
@@ -2653,20 +2793,17 @@ header {
     white-space: nowrap;
   }
 
-  .pack-scheda {
-    padding: 2.5rem 2.25rem;
+  .pack-scheda-corpo {
+    padding: 2rem 1.75rem;
   }
 
   .pack-nome {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    padding: 1.5rem 1.75rem;
   }
 
   .pack-prezzo {
     font-size: 2.5rem;
-  }
-
-  .pack-aggiunte {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   /* su desktop l'elenco sta di fianco al titolo: niente spazio sopra */

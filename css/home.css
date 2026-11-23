@@ -507,7 +507,8 @@
   margin: 0;
 }
 
-/* la nota verde sotto alcuni passaggi */
+/* la nota verde sotto alcuni passaggi.
+   Su telefono più spazio a sinistra della scritta (1.6em); dal tablet torna a 1em */
 .home-passo-nota {
   display: inline-block;
   font-family: var(--font-body);
@@ -516,7 +517,7 @@
   color: var(--burgundy);
   background-color: var(--verde);
   border-radius: 999px;
-  padding: 0.3em 1em;
+  padding: 0.3em 1em 0.3em 1.6em;
   margin-top: 0.75rem;
 }
 
@@ -599,12 +600,6 @@
 
 
 /* contatti */
-
-.home-contatti-email {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--terracotta);
-}
 
 /* il modulo: su un fondo più chiaro della pagina */
 .home-modulo {
@@ -786,6 +781,11 @@
 
   .home-plus-schede {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* come lavoreremo insieme: lo spazio a sinistra della nota torna uguale a quello a destra */
+  .home-passo-nota {
+    padding-left: 1em;
   }
 
   .home-recensioni-lista li {
@@ -1015,10 +1015,6 @@
 
 
   /* contatti */
-
-  .home-contatti-email {
-    font-size: 1.15rem;
-  }
 
   .home-modulo {
     padding: 3rem;

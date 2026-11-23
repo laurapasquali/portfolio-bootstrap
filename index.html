@@ -78,8 +78,7 @@
 
         <div class="logo">
           <a href="index.html">
-            <img src="img/logo-nav-mobile.png" alt="Laura Pasquali Graphic Designer" class="d-block d-xl-none logo-mobile" />
-            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="d-none d-xl-block logo-desktop" width="1522" height="330" />
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="logo-mobile" width="1522" height="330" />
           </a>
         </div>
 
@@ -94,13 +93,23 @@
 
             <!-- bottone dentro il menu a tendina (mobile) -->
             <a href="#form" class="prenotaunacalltendina">Prenota una chiamata</a>
+
+            <!-- social in fondo al menu a tendina (mobile e tablet) -->
+            <div class="menu-social">
+              <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+                <img src="img/behance.png" alt="Behance" width="30" height="30" />
+              </a>
+              <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" />
+              </a>
+            </div>
           </nav>
 
           <!-- bottone visibile su desktop -->
           <a href="#form" class="prenotaunacall">Prenota una chiamata</a>
 
-          <button class="toggleMenu" onclick="toggleMenu()">
-            <img src="img/iconmenu.png" alt="Menu" width="50" height="50" />
+          <button class="toggleMenu" onclick="toggleMenu()" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu">
+            <img src="img/decorazioni/puntiverdi.svg" alt="" width="317" height="67" />
           </button>
         </div>
 
@@ -308,7 +317,7 @@
 
             <div class="home-paga">
               <h3>Come si paga</h3>
-              <p>In tre momenti: 40% alla firma, 30% quando approvi il logo, 30% alla consegna. Sono in regime forfettario: in fattura non c'è IVA.</p>
+              <p>In tre momenti: 40% alla firma, 30% quando approvi la direzione, 30% alla consegna. Sono in regime forfettario: in fattura non c'è IVA.</p>
             </div>
 
             <a href="pacchetti.html" class="home-btn">Scopri i pacchetti</a>
@@ -324,7 +333,7 @@
               <li>
                 <span class="home-passo-numero" aria-hidden="true">2</span>
                 <h3>Analisi e Moodboard</h3>
-                <p>Prima di disegnare, traduciamo in immagini quello che il tuo brand deve trasmettere. Ti presento due o tre moodboard, ognuna con un'atmosfera diversa: sei tu a sapere quale racconta meglio la tua attività ai tuoi clienti. E se le idee sono ancora confuse, vederle ti aiuta a riconoscerle.</p>
+                <p>Prima di disegnare, traduciamo in immagini quello che il tuo brand deve trasmettere. Ti presento due o tre moodboard, ognuna con un'atmosfera diversa: sei tu a sapere quale racconta meglio la tua attività ai tuoi clienti. E se le idee sono ancora confuse, vederle ti aiuta a riconoscerle. In Una Rinfrescata, al posto delle moodboard, partiamo dall'analisi di ciò che i tuoi clienti già riconoscono.</p>
                 <span class="home-passo-nota">Si parte quando ne scegli una</span>
               </li>
               <li>
@@ -393,8 +402,7 @@
           <div class="col-12 col-xl-6">
             <h2 class="home-titolo">Facciamoci<br>una <em>chiacchierata</em></h2>
             <p class="home-testo">Se hai letto fin qui, qualcosa ha fatto click: è un buon segnale. Il punto di partenza è una chiamata conoscitiva, una conversazione tranquilla in cui mi racconti il tuo progetto e capiamo se è il caso di lavorare insieme. Nessun impegno, nessuna pressione.</p>
-            <p class="home-testo">Compila il modulo e ti rispondo entro 48 ore per fissare giorno e ora. Preferisci scrivermi?</p>
-            <a href="mailto:info@laurapasquali.it" class="home-contatti-email">info@laurapasquali.it</a>
+            <p class="home-testo">Compila il modulo e ti rispondo entro 48 ore per fissare giorno e ora.</p>
           </div>
 
           <div class="col-12 col-xl-6">
@@ -461,12 +469,12 @@
 
               <details>
                 <summary>Quanto costa un progetto?</summary>
-                <p>Dipende da cosa ti serve. Dopo la chiamata conoscitiva ti mando una proposta chiara, con tempi, costi e tutto quello che è incluso.</p>
+                <p>Dipende da dove parti: Da Zero costa 1.900 €, Una Rinfrescata 1.100 €, Cambio Look 2.000 €. Il prezzo esatto, con eventuali aggiunte, è nella proposta che ricevi prima della firma.</p>
               </details>
 
               <details>
                 <summary>Quanto tempo ci vuole?</summary>
-                <p>In media [X–Y settimane]. I tempi dipendono anche da quanto rapidamente approvi ogni passaggio.</p>
+                <p>Una Rinfrescata richiede 2-3 settimane, Da Zero e Cambio Look 4-5. I tempi dipendono anche da quanto rapidamente mi dai un riscontro a ogni passaggio. Hai una scadenza vicina, come un'apertura o un evento? Dimmelo nella chiamata conoscitiva.</p>
               </details>
 
               <details>
@@ -475,7 +483,7 @@
               </details>
 
               <details>
-                <summary>E se dopo due revisioni qualcosa non mi convince?</summary>
+                <summary>E se dopo due giri di revisione qualcosa non mi convince?</summary>
                 <p>Le modifiche in più le concordiamo prima, con un costo chiaro, così non ci sono sorprese.</p>
               </details>
 
@@ -513,6 +521,8 @@
         <div class="footer-bottom">
 
           <p class="footer-piva">P.iva 01506470457</p>
+
+          <a href="mailto:info@laurapasquali.it" class="footer-email">info@laurapasquali.it</a>
 
           <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
 
@@ -564,10 +574,24 @@
 
   <script>
     /* ---- MENU HAMBURGER ---- */
+    /* ogni link del menu a tendina (le voci e il bottone "Prenota una chiamata") chiude il menu:
+       sulla home il form e "Come lavoro" sono nella stessa pagina e il menu aperto li coprirebbe */
+    document.querySelectorAll("#menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (document.getElementById("menu").classList.contains("open")) toggleMenu();
+      });
+    });
+
+    /* apre e chiude il menu; aggiorna anche il nome del bottone per i lettori di schermo
+       (puntini da chiuso, X da aperto: lo scambio lo fa il CSS) */
     function toggleMenu() {
-      const element = document.getElementById("menu");
-      element.classList.toggle("open");
+      const menu = document.getElementById("menu");
+      const bottone = document.querySelector(".toggleMenu");
+      const aperto = menu.classList.toggle("open");
+      bottone.setAttribute("aria-expanded", aperto);
+      bottone.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
     }
+
 
 
     /* ---- SLIDER PROGETTI ---- */
