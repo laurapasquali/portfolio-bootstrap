@@ -20,20 +20,67 @@
 
 
  
-/* font */
+/* font: solo i pesi e gli stili usati davvero nel sito */
 
+/* Lora 400: titoli con font-weight normal, bottoni, FAQ, prezzi */
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/fonts/Lora.ttf') format('truetype');
-  font-weight: normal;
+  src: url('../assets/fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Lora 400 corsivo: <em> nei titoli, .pack-partenza */
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Lora 500: titoli h1-h3 senza font-weight (500 di Bootstrap) in contatti, progetti e pagine progetto */
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist 400: testi */
 @font-face {
   font-family: 'Geist';
   src: url('../assets/fonts/Geist-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist 400 corsivo: .about-didascalia, .pack-aggiunta-esclusione, .pack-aggiunta-nota */
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Geist 600: .home-hero-parole, .home-passo-nota */
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist 700: <strong> nei testi */
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
