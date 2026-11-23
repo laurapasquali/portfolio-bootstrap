@@ -13,7 +13,7 @@
    header e menu, slider dei progetti, form, footer,
    pagina progetti, pagina progetto singolo,
    pagina about me, pagina contatti, pagina chi sono,
-   pagina pacchetti, pagina privacy.
+   pagina pacchetti, pagina privacy, pagina grazie.
    ===================================================== */
 
 
@@ -517,7 +517,60 @@ header {
   background-color: var(--verde);
   color: var(--base);
 }
- 
+
+/* checkbox della privacy: fuori da .form-field, così non prende la larghezza dei campi */
+.form-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.form-privacy input {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--terracotta);
+}
+
+.form-privacy label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--base);
+}
+
+/* il colore va dichiarato, altrimenti il link prende il blu di Bootstrap */
+.form-privacy a,
+.form-box .form-errore a {
+  color: var(--base);
+  text-decoration: underline;
+}
+
+/* messaggio di errore sopra il bottone: compare solo con ?errore=1.
+   .form-box davanti serve a battere .form p, che centrerebbe e colorerebbe il testo */
+.form-box .form-errore {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--base);
+  text-align: left;
+  border-left: 3px solid var(--terracotta);
+  padding: 0 0 0 0.75rem;
+  margin: 0;
+}
+
+/* antispam (honeypot): il campo resta nella pagina per i bot ma esce dallo schermo.
+   Niente display: none, perché alcuni bot saltano i campi nascosti così */
+.campo-trappola {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
  
 /* footer */
  
@@ -2228,6 +2281,112 @@ header {
   border-radius: 4px;
 }
 
+
+/* pagina grazie: conferma breve e centrata dopo l'invio del modulo */
+
+/* parte sotto la navbar fissa; position: relative serve alla stella nell'angolo */
+.grazie-sezione {
+  position: relative;
+  background-color: var(--base);
+  background-image: url('../img/decorazioni/grana.svg');
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  padding: calc(var(--nav-height) + 3rem) 1.25rem 5rem;
+  text-align: center;
+}
+
+.grazie-sole {
+  display: block;
+  width: 8rem;
+  height: auto;
+  margin: 0 auto 2rem;
+}
+
+.grazie-sezione h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1-size);
+  font-weight: normal;
+  line-height: 1.05;
+  color: var(--burgundy);
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+}
+
+.grazie-sezione h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.grazie-testo {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--burgundy);
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+}
+
+/* i due bottoni affiancati; se non ci stanno vanno uno sotto l'altro */
+.grazie-bottoni {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* a pillola come quelli della pagina pacchetti, alti almeno 48px */
+.grazie-bottone,
+.grazie-bottone-contorno {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.grazie-bottone {
+  background-color: var(--terracotta);
+  border: 2px solid var(--terracotta);
+  color: var(--base);
+}
+
+/* il colore va ripetuto, altrimenti all'hover vince quello dei link di Bootstrap */
+.grazie-bottone:hover {
+  background-color: var(--navy);
+  border-color: var(--navy);
+  color: var(--base);
+}
+
+.grazie-bottone-contorno {
+  background-color: transparent;
+  border: 2px solid var(--burgundy);
+  color: var(--burgundy);
+}
+
+.grazie-bottone-contorno:hover {
+  background-color: var(--burgundy);
+  color: var(--base);
+}
+
+.grazie-bottone:focus-visible,
+.grazie-bottone-contorno:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+.grazie-stella {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 36px;
+  height: auto;
+}
+
  
 /* =====================================================
    TABLET — min-width: 768px
@@ -2934,6 +3093,32 @@ header {
 
   .privacy-testo h2 {
     font-size: 1.75rem;
+  }
+
+
+  /* pagina grazie */
+
+  .grazie-sezione {
+    padding: calc(var(--nav-height) + 6rem) 10% 7rem;
+  }
+
+  .grazie-sole {
+    width: 12rem;
+    margin-bottom: 3rem;
+  }
+
+  .grazie-sezione h1 {
+    font-size: 3.5rem;
+  }
+
+  .grazie-testo {
+    font-size: 1.15rem;
+  }
+
+  .grazie-stella {
+    right: 2rem;
+    bottom: 2rem;
+    width: 52px;
   }
 
 }

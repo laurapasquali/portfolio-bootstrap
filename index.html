@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
 
-  <script src="jsp/lenis.min.js"></script>
+  <script src="js/lenis.min.js"></script>
   <script>
     const lenis = new Lenis();
     function raf(time) {
@@ -398,8 +398,9 @@
 
     <!-- contatti -->
 
+    <!-- due ancore: #form (usata dai link del sito) sulla sezione, #contatti (usata da invia.php) sul contenitore -->
     <section class="home-sezione" id="form">
-      <div class="container-fluid">
+      <div class="container-fluid" id="contatti">
         <div class="row">
 
           <div class="col-12 col-xl-6">
@@ -409,17 +410,29 @@
           </div>
 
           <div class="col-12 col-xl-6">
-            <form class="home-modulo">
+            <form class="home-modulo" action="invia.php" method="post">
               <div class="home-modulo-campi">
+
+                <!-- antispam: campo invisibile che le persone lasciano vuoto, i bot lo compilano -->
+                <div class="campo-trappola" aria-hidden="true">
+                  <label for="sito_web">Non compilare questo campo</label>
+                  <input type="text" id="sito_web" name="sito_web" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- antispam: momento in cui si apre la pagina, lo scrive lo script in fondo -->
+                <input type="hidden" id="caricato_il" name="caricato_il" value="">
+
+                <!-- dice a invia.php su quale pagina tornare in caso di errore -->
+                <input type="hidden" name="pagina" value="home">
 
                 <div class="home-modulo-intero">
                   <label for="nome">Nome e Cognome <span aria-hidden="true">*</span></label>
-                  <input type="text" id="nome" name="nome" autocomplete="name" required>
+                  <input type="text" id="nome" name="nome" autocomplete="name" maxlength="100" required>
                 </div>
 
                 <div class="home-modulo-intero">
                   <label for="email">Email <span aria-hidden="true">*</span></label>
-                  <input type="email" id="email" name="email" autocomplete="email" required>
+                  <input type="email" id="email" name="email" autocomplete="email" maxlength="150" required>
                 </div>
 
                 <div>
@@ -434,15 +447,17 @@
 
                 <div class="home-modulo-intero">
                   <label for="messaggio">Raccontami del tuo progetto <span aria-hidden="true">*</span></label>
-                  <textarea id="messaggio" name="messaggio" placeholder="Dove sei adesso e dove vorresti arrivare" required></textarea>
+                  <textarea id="messaggio" name="messaggio" placeholder="Dove sei adesso e dove vorresti arrivare" maxlength="5000" required></textarea>
                 </div>
 
                 <div class="home-modulo-intero home-modulo-privacy">
                   <input type="checkbox" id="privacy" name="privacy" required>
-                  <label for="privacy">Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta. <span aria-hidden="true">*</span></label>
+                  <label for="privacy">Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e accetto che i miei dati vengano usati per rispondere alla mia richiesta. <span aria-hidden="true">*</span></label>
                 </div>
 
                 <div class="home-modulo-intero">
+                  <!-- compare solo se l'indirizzo contiene ?errore=1 (lo mostra lo script in fondo) -->
+                  <p class="home-modulo-errore" id="moduloErrore" role="alert" hidden>Qualcosa non ha funzionato. Riprova, oppure scrivimi direttamente a <a href="mailto:info@laurapasquali.it">info@laurapasquali.it</a>.</p>
                   <button type="submit" class="home-btn">Invia la richiesta</button>
                   <p class="home-modulo-nota">* Campi obbligatori</p>
                 </div>
@@ -571,7 +586,18 @@
     }
   </script>
 
+  <!-- modulo di contatto: segna quando si apre la pagina (antispam) e mostra l'errore se invia.php rimanda qui con ?errore=1 -->
+  <script>
+    {
+      const caricatoIl = document.getElementById('caricato_il');
+      if (caricatoIl) caricatoIl.value = Date.now();
 
+      const errore = document.getElementById('moduloErrore');
+      if (errore && new URLSearchParams(window.location.search).get('errore') === '1') {
+        errore.hidden = false;
+      }
+    }
+  </script>
 
   <script>
     /* ---- MENU HAMBURGER ---- */

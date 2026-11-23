@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messaggio ricevuto | Laura Pasquali</title>
+  <meta name="description" content="Conferma di invio del modulo di contatto del sito di Laura Pasquali, graphic designer ad Aulla." />
+
+  <!-- pagina di conferma del modulo: non deve comparire nei motori di ricerca -->
+  <meta name="robots" content="noindex" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container-full">
+      <div class="flex">
+
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo-nav.png" alt="Laura Pasquali Graphic Designer" class="logo-mobile" width="1522" height="330" />
+          </a>
+        </div>
+
+        <div class="menubottom">
+          <nav id="menu" class="menu">
+            <ul>
+              <li><a href="aboutme.html">Chi sono</a></li>
+              <li><a href="pacchetti.html">Pacchetti</a></li>
+              <li><a href="progetti.html">Progetti</a></li>
+              <li><a href="index.html#come-lavoro">Come lavoro</a></li>
+            </ul>
+
+            <!-- bottone dentro il menu a tendina (mobile) -->
+            <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata</a>
+
+            <!-- social in fondo al menu a tendina (mobile e tablet) -->
+            <div class="menu-social">
+              <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+                <img src="img/behance.png" alt="Behance" width="30" height="30" />
+              </a>
+              <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" />
+              </a>
+            </div>
+          </nav>
+
+          <!-- bottone visibile su desktop -->
+          <a href="index.html#form" class="prenotaunacall">Prenota una chiamata</a>
+
+          <button class="toggleMenu" onclick="toggleMenu()" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu">
+            <img src="img/decorazioni/puntiverdi.svg" alt="" width="317" height="67" />
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- conferma di invio: una sola sezione centrata, mezzo sole sopra e stella nell'angolo -->
+
+    <section class="grazie-sezione" id="hero">
+      <img src="img/decorazioni/semicerchioarancione.svg" alt="" aria-hidden="true" class="grazie-sole" width="917" height="459" />
+
+      <h1>Grazie, <em>ho ricevuto</em> il tuo messaggio</h1>
+      <p class="grazie-testo">Ti rispondo entro due giorni lavorativi. Se non trovi la mia risposta, dai un'occhiata anche alla cartella spam.</p>
+
+      <div class="grazie-bottoni">
+        <a href="index.html" class="grazie-bottone">Torna alla home</a>
+        <a href="progetti.html" class="grazie-bottone-contorno">Guarda i progetti</a>
+      </div>
+
+      <img src="img/decorazioni/stellaverde.svg" alt="" aria-hidden="true" class="grazie-stella" width="417" height="417" />
+    </section>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" width="1522" height="330" />
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+
+          <p class="footer-piva">P.iva 01506470457</p>
+
+          <a href="mailto:info@laurapasquali.it" class="footer-email">info@laurapasquali.it</a>
+
+          <p class="footer-legale">© <span id="anno">2026</span> Laura Pasquali · Tutti i diritti riservati<br><a href="privacy.html" class="footer-privacy">Privacy policy</a></p>
+
+          <div class="footer-social">
+            <a href="https://www.behance.net/laurapasquali1" target="_blank" rel="noopener" aria-label="Behance">
+              <img src="img/behance.png" alt="Behance" width="30" height="30" />
+            </a>
+            <a href="https://www.linkedin.com/in/laura-pasquali" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30" />
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- torna su: resta fisso in basso a destra mentre la pagina scorre -->
+  <a href="#" class="torna-su" aria-label="Torna a inizio pagina">↑</a>
+
+  <!-- anno del copyright: si aggiorna da solo; se lo script non parte resta quello scritto nel footer.
+       Torna su: scorrimento morbido con Lenis; senza JavaScript il link # porta comunque in cima -->
+  <script>
+    {
+      const anno = document.getElementById('anno');
+      if (anno) anno.textContent = new Date().getFullYear();
+
+      const tornaSu = document.querySelector('.torna-su');
+      if (tornaSu) {
+        tornaSu.addEventListener('click', (evento) => {
+          evento.preventDefault();
+          // chi ha attivato "riduci movimento" torna su con un salto, senza animazione
+          const ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (typeof lenis !== 'undefined') {
+            lenis.scrollTo(0, { immediate: ridotto });
+          } else {
+            window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
+          }
+        });
+      }
+    }
+  </script>
+
+
+
+  <script>
+    /* ---- MENU HAMBURGER ---- */
+    /* ogni link del menu a tendina (le voci e il bottone "Prenota una chiamata") chiude il menu:
+       sulla home il form e "Come lavoro" sono nella stessa pagina e il menu aperto li coprirebbe */
+    document.querySelectorAll("#menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (document.getElementById("menu").classList.contains("open")) toggleMenu();
+      });
+    });
+
+    /* apre e chiude il menu; aggiorna anche il nome del bottone per i lettori di schermo
+       (puntini da chiuso, X da aperto: lo scambio lo fa il CSS) */
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const bottone = document.querySelector(".toggleMenu");
+      const aperto = menu.classList.toggle("open");
+      bottone.setAttribute("aria-expanded", aperto);
+      bottone.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
+    }
+
+  </script>
+
+</body>
+</html>

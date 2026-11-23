@@ -23,7 +23,7 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <script src="jsp/lenis.min.js"></script>
+  <script src="js/lenis.min.js"></script>
 <script>
   const lenis = new Lenis();
   function raf(time) {
@@ -106,32 +106,58 @@
            <!-- form contatti: su mobile viene dopo, su desktop è a sinistra -->
             
           <div class="col-12 col-xl-5 offset-xl-1 form-box order-2 order-xl-2"> 
-             <form>           
+             <form action="invia.php" method="post">
 
                 <h2>Invia una richiesta</h2>
 
+                    <!-- antispam: campo invisibile che le persone lasciano vuoto, i bot lo compilano -->
+                    <div class="campo-trappola" aria-hidden="true">
+                      <label for="sito_web">Non compilare questo campo</label>
+                      <input type="text" id="sito_web" name="sito_web" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <!-- antispam: momento in cui si apre la pagina, lo scrive lo script in fondo -->
+                    <input type="hidden" id="caricato_il" name="caricato_il" value="">
+
+                    <!-- dice a invia.php su quale pagina tornare in caso di errore -->
+                    <input type="hidden" name="pagina" value="contatti">
+
+                    <!-- le label sono nascoste alla vista (visually-hidden) ma lette dai lettori di schermo -->
                     <div class="form-field">
-                    <input type="text" name="nome" placeholder="Il tuo nome e cognome" required>
+                    <label for="nome" class="visually-hidden">Nome e cognome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Il tuo nome e cognome" autocomplete="name" maxlength="100" required>
                     </div>
 
                     <div class="form-field">
-                    <input type="email" name="email" placeholder="La tua E-mail" required>
+                    <label for="email" class="visually-hidden">Email</label>
+                    <input type="email" id="email" name="email" placeholder="La tua E-mail" autocomplete="email" maxlength="150" required>
                     </div>
 
                     <div class="form-field">
-                    <input type="text" name="azienda" placeholder="Nome dell'azienda">
+                    <label for="attivita" class="visually-hidden">Nome dell'attività</label>
+                    <input type="text" id="attivita" name="attivita" placeholder="Nome dell'azienda" autocomplete="organization" maxlength="150">
                     </div>
 
                     <div class="form-field">
-                    <input type="url" name="sito" placeholder="Hai un sito web?">
+                    <label for="sito" class="visually-hidden">Sito web</label>
+                    <input type="url" id="sito" name="sito" placeholder="Hai un sito web?" autocomplete="url" maxlength="200">
                     </div>
 
                     <div class="form-field">
-                    <textarea name="messaggio" rows="5" placeholder="Raccontami del tuo progetto"></textarea>
-                    </div>	
+                    <label for="messaggio" class="visually-hidden">Raccontami del tuo progetto</label>
+                    <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontami del tuo progetto" maxlength="5000" required></textarea>
+                    </div>
+
+                    <div class="form-privacy">
+                      <input type="checkbox" id="privacy" name="privacy" required>
+                      <label for="privacy">Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e accetto che i miei dati vengano usati per rispondere alla mia richiesta.</label>
+                    </div>
+
+                    <!-- compare solo se l'indirizzo contiene ?errore=1 (lo mostra lo script in fondo) -->
+                    <p class="form-errore" id="moduloErrore" role="alert" hidden>Qualcosa non ha funzionato. Riprova, oppure scrivimi direttamente a <a href="mailto:info@laurapasquali.it">info@laurapasquali.it</a>.</p>
 
                     <div class="form-field">
-                      <button type="submit">INVIA</button>		
+                      <button type="submit">INVIA</button>
                     </div>
             </form> 
             
@@ -223,6 +249,19 @@
             window.scrollTo({ top: 0, behavior: ridotto ? 'auto' : 'smooth' });
           }
         });
+      }
+    }
+  </script>
+
+  <!-- modulo di contatto: segna quando si apre la pagina (antispam) e mostra l'errore se invia.php rimanda qui con ?errore=1 -->
+  <script>
+    {
+      const caricatoIl = document.getElementById('caricato_il');
+      if (caricatoIl) caricatoIl.value = Date.now();
+
+      const errore = document.getElementById('moduloErrore');
+      if (errore && new URLSearchParams(window.location.search).get('errore') === '1') {
+        errore.hidden = false;
       }
     }
   </script>

@@ -731,6 +731,23 @@
   margin: 1rem 0 0;
 }
 
+/* messaggio di errore sopra il bottone: compare solo con ?errore=1 nell'indirizzo */
+.home-modulo-errore {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--burgundy);
+  border-left: 3px solid var(--terracotta);
+  padding-left: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+/* il colore va dichiarato, altrimenti il link prende il blu di Bootstrap */
+.home-modulo-errore a {
+  color: inherit;
+}
+
 
 /* domande frequenti: <details> si apre e si chiude senza JavaScript */
 

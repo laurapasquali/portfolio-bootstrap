@@ -1,0 +1,9 @@
+# ---- modulo di contatto: file da non aprire dal browser ----
+
+# cartella phpmailer/: la usa solo invia.php dal server, nessuno deve aprirla dal browser
+RedirectMatch 403 ^/phpmailer(/|$)
+
+# configurazione con la password SMTP (in caso venisse caricata per sbaglio dentro public_html)
+<FilesMatch "^config-mail.*\.php$">
+  Require all denied
+</FilesMatch>
