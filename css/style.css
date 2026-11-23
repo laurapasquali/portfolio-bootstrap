@@ -1520,6 +1520,11 @@ header {
   margin: 2rem 0 0;
 }
 
+/* nota più grande, come il testo normale (sotto le aggiunte) */
+.pack-nota-grande {
+  font-size: 1rem;
+}
+
 /* pulsante a pillola, alto almeno 48px */
 .pack-bottone {
   display: inline-flex;

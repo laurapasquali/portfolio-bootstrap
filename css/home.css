@@ -443,18 +443,18 @@
   margin: 3rem 0 0;
 }
 
-.home-passi li {
+.home-passi > li {
   position: relative;
   padding-left: 3.5rem;
   padding-bottom: 2.25rem;
 }
 
-.home-passi li:last-child {
+.home-passi > li:last-child {
   padding-bottom: 0;
 }
 
 /* la linea parte sotto il cerchio e arriva al passaggio successivo */
-.home-passi li::before {
+.home-passi > li::before {
   content: "";
   position: absolute;
   left: calc(1.25rem - 1px);
@@ -464,7 +464,7 @@
   background-color: var(--burgundy);
 }
 
-.home-passi li:last-child::before {
+.home-passi > li:last-child::before {
   display: none;
 }
 
@@ -485,9 +485,9 @@
 }
 
 /* colore del cerchio passaggio per passaggio */
-.home-passi li:nth-child(2) .home-passo-numero { background-color: var(--navy); }
-.home-passi li:nth-child(3) .home-passo-numero { background-color: var(--verde); }
-.home-passi li:nth-child(4) .home-passo-numero { background-color: var(--burgundy); }
+.home-passi > li:nth-child(2) .home-passo-numero { background-color: var(--navy); }
+.home-passi > li:nth-child(3) .home-passo-numero { background-color: var(--verde); }
+.home-passi > li:nth-child(4) .home-passo-numero { background-color: var(--burgundy); }
 
 .home-passi h3 {
   font-family: var(--font-display);
@@ -505,6 +505,39 @@
   line-height: 1.5;
   color: var(--burgundy);
   margin: 0;
+}
+
+/* due paragrafi di seguito nello stesso passaggio */
+.home-passi p + p {
+  margin-top: 0.75rem;
+}
+
+/* elenco puntato dentro un passaggio: stesso corpo del testo, pallini terracotta piccoli */
+.home-passo-elenco {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0.75rem;
+}
+
+.home-passo-elenco li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--burgundy);
+}
+
+.home-passo-elenco li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--terracotta);
 }
 
 /* la nota verde sotto alcuni passaggi.
@@ -966,12 +999,12 @@
     margin-top: 0;
   }
 
-  .home-passi li {
+  .home-passi > li {
     padding-left: 4.5rem;
     padding-bottom: 2.75rem;
   }
 
-  .home-passi li::before {
+  .home-passi > li::before {
     left: calc(1.5rem - 1px);
     top: 3rem;
   }
@@ -986,7 +1019,8 @@
     font-size: 1.75rem;
   }
 
-  .home-passi p {
+  .home-passi p,
+  .home-passo-elenco li {
     font-size: 1rem;
   }
 
