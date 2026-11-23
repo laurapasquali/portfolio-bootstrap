@@ -2282,7 +2282,8 @@ header {
 }
 
 
-/* pagina grazie: conferma breve e centrata dopo l'invio del modulo */
+/* pagina grazie: conferma breve e centrata dopo l'invio del modulo.
+   Le stesse classi le usa anche 404.html */
 
 /* parte sotto la navbar fissa; position: relative serve alla stella nell'angolo */
 .grazie-sezione {
@@ -2300,6 +2301,16 @@ header {
   width: 8rem;
   height: auto;
   margin: 0 auto 2rem;
+}
+
+/* scritta piccola sopra il titolo ("Errore 404"), come .pack-etichetta */
+.grazie-etichetta {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 1rem;
 }
 
 .grazie-sezione h1 {
@@ -3105,6 +3116,10 @@ header {
   .grazie-sole {
     width: 12rem;
     margin-bottom: 3rem;
+  }
+
+  .grazie-etichetta {
+    font-size: 0.9rem;
   }
 
   .grazie-sezione h1 {
