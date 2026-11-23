@@ -19,6 +19,11 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
+  <!-- icona del sito nella scheda del browser e sulla schermata home del telefono -->
+  <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
@@ -139,9 +144,10 @@
           <div class="col-12 col-xl-5 offset-xl-1">
             <div class="home-foto">
               <!-- le copertine dello slider si alternano qui (le aggiunge lo script in fondo);
-                   hero.jpg resta come riserva se JavaScript non parte -->
+                   la copertina del primo progetto dello slider (Oodal Festival) resta come riserva
+                   se JavaScript non parte: se cambi il primo progetto, cambia anche questa -->
               <div class="home-hero-galleria" id="heroGalleria" role="img" aria-label="Copertine di alcuni progetti di Laura Pasquali">
-                <img src="img/hero.jpg" alt="" class="visibile" aria-hidden="true" />
+                <img src="img/oodal-festival/1.jpg" alt="" class="visibile" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -152,10 +158,10 @@
         <div class="home-servizi">
           <p class="home-servizi-titolo">Cosa faccio</p>
           <ul>
-            <li>Brand Identity</li>
-            <li>Loghi</li>
-            <li>Restyling</li>
-            <li>Grafiche Social</li>
+            <li>Brand identity</li>
+            <li>Restyling e rebranding</li>
+            <li>Siti vetrina</li>
+            <li>Stampati e insegne</li>
           </ul>
         </div>
 
@@ -189,48 +195,56 @@
         <!-- lo slider usa le classi e il JavaScript che c'erano già -->
         <div class="progetti-slider" id="progettiSlider">
           <a href="oodal-festival.html" class="progetto-slide">
-            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival" width="1920" height="1080" loading="lazy">
+            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival: il logo sul palco di un concerto" width="1920" height="1080" loading="lazy">
           </a>
           <a href="raw.html" class="progetto-slide">
-            <img src="img/raw.jpg" alt="Raw" width="1920" height="1080" loading="lazy">
+            <img src="img/raw.jpg" alt="Raw: biglietti di ringraziamento stampati in letterpress" width="1920" height="1080" loading="lazy">
           </a>
           <a href="podere-i-cerri.html" class="progetto-slide">
-            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
+            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri: il logo tra calici di vino" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
           </a>
 
             <a href="locandamagno.html" class="progetto-slide">
-            <img src="img/locandamagno/1.jpg" alt="Locanda Magno" width="1920" height="1080" loading="lazy">
+            <img src="img/locandamagno/1.jpg" alt="Locanda Magno: il logo su una foto del pane appena sfornato" width="1920" height="1080" loading="lazy">
+          </a>
+
+          <a href="premio-lunezia.html" class="progetto-slide">
+            <img src="img/premiolunezia/4.jpg" alt="Premio Lunezia: il logo del trentennale" width="1920" height="1080" loading="lazy">
           </a>
         
           <a href="shampoococcole.html" class="progetto-slide">
-            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
+            <img src="img/shampoo-coccole.png" alt="Shampoo &amp; Coccole: il logo su un cane avvolto in un asciugamano" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
           </a>
           
           <a href="golosandia.html" class="progetto-slide">
-            <img src="img/golosandia/8.jpg" alt="Golosandia" width="1920" height="1080" loading="lazy">
+            <img src="img/golosandia/8.jpg" alt="Golosandia: porta-bicchieri da asporto con logo e mascotte" width="1920" height="1080" loading="lazy">
           </a>
 
 
           <a href="oodal-festival.html" class="progetto-slide">
-            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival" width="1920" height="1080" loading="lazy">
+            <img src="img/oodal-festival/1.jpg" alt="Oodal Festival: il logo sul palco di un concerto" width="1920" height="1080" loading="lazy">
           </a>
           <a href="raw.html" class="progetto-slide">
-            <img src="img/raw.jpg" alt="Raw" width="1920" height="1080" loading="lazy">
+            <img src="img/raw.jpg" alt="Raw: biglietti di ringraziamento stampati in letterpress" width="1920" height="1080" loading="lazy">
           </a>
           <a href="podere-i-cerri.html" class="progetto-slide">
-            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
+            <img src="img/poderecerri/copertinahome.png" alt="Podere i Cerri: il logo tra calici di vino" class="progetto-slide-zoom" width="5254" height="3503" loading="lazy">
           </a>
 
             <a href="locandamagno.html" class="progetto-slide">
-            <img src="img/locandamagno/1.jpg" alt="Locanda Magno" width="1920" height="1080" loading="lazy">
+            <img src="img/locandamagno/1.jpg" alt="Locanda Magno: il logo su una foto del pane appena sfornato" width="1920" height="1080" loading="lazy">
+          </a>
+
+          <a href="premio-lunezia.html" class="progetto-slide">
+            <img src="img/premiolunezia/4.jpg" alt="Premio Lunezia: il logo del trentennale" width="1920" height="1080" loading="lazy">
           </a>
         
           <a href="shampoococcole.html" class="progetto-slide">
-            <img src="img/shampoo&amp;coccole.png" alt="Shampoo &amp; Coccole" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
+            <img src="img/shampoo-coccole.png" alt="Shampoo &amp; Coccole: il logo su un cane avvolto in un asciugamano" data-hero="img/shampoococcole/9.jpg" width="1920" height="1080" loading="lazy">
           </a>
           
           <a href="golosandia.html" class="progetto-slide">
-            <img src="img/golosandia/8.jpg" alt="Golosandia" width="1920" height="1080" loading="lazy">
+            <img src="img/golosandia/8.jpg" alt="Golosandia: porta-bicchieri da asporto con logo e mascotte" width="1920" height="1080" loading="lazy">
           </a>
       
         </div>
@@ -406,7 +420,7 @@
           <div class="col-12 col-xl-6">
             <h2 class="home-titolo">Facciamoci<br>una <em>chiacchierata</em></h2>
             <p class="home-testo">Se hai letto fin qui, qualcosa ha fatto click: è un buon segnale. Il punto di partenza è una chiamata conoscitiva, una conversazione tranquilla in cui mi racconti il tuo progetto e capiamo se è il caso di lavorare insieme. Nessun impegno, nessuna pressione.</p>
-            <p class="home-testo">Compila il modulo e ti rispondo entro 48 ore per fissare giorno e ora.</p>
+            <p class="home-testo">Compila il modulo e ti rispondo entro due giorni lavorativi per fissare giorno e ora.</p>
           </div>
 
           <div class="col-12 col-xl-6">
