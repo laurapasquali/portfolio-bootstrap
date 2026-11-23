@@ -1741,13 +1741,37 @@ header {
   margin: 2rem 0 0;
 }
 
-/* > : solo le schede (figli diretti), non le voci degli elenchi che ci sono dentro */
+/* > : solo le schede (figli diretti), non le voci degli elenchi che ci sono dentro.
+   Ogni scheda ha tre parti: testa, corpo, piede. Il padding sta nelle parti,
+   così il fondo del piede arriva ai bordi; overflow: hidden gli fa seguire gli angoli */
 .pack-aggiunte > li {
   display: flex;
   flex-direction: column;
   background-color: var(--base);
   border: 2px solid var(--burgundy);
   border-radius: 24px;
+  overflow: hidden;
+}
+
+/* testa: forma, titolo, descrizione, tempi. Colonna flex: serve all'align-self della pillola dei tempi */
+.pack-aggiunta-testa {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 0;
+}
+
+/* corpo: l'elenco con spunta */
+.pack-aggiunta-corpo {
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+/* piede: fondo crema scuro e linea sopra. Colonna flex: il pulsante con
+   margin-top: auto sta sempre in fondo, alla stessa altezza nelle tre schede */
+.pack-aggiunta-piede {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-scuro);
+  border-top: 1px solid var(--burgundy);
   padding: 1.5rem;
 }
 
@@ -1768,52 +1792,90 @@ header {
   margin-bottom: 1rem;
 }
 
-.pack-aggiunte .pack-aggiunta-prezzo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  margin: auto 0 0;
-}
-
-/* il prezzo insieme a un pacchetto, a capo sotto il prezzo pieno */
-.pack-aggiunta-sconto {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-}
-
-/* i tempi del sito vetrina: .pack-aggiunte p cambierebbe la misura della pillola,
-   e qui l'auto ce l'ha già il prezzo (due auto si dividerebbero lo spazio) */
+/* i tempi: .pack-aggiunte p cambierebbe la misura della pillola */
 .pack-aggiunte .pack-tempi {
   font-size: 0.75rem;
   margin-top: 0;
 }
 
-/* pulsante degli applicativi: largo quanto il testo, non quanto la scheda.
+/* l'elenco è l'ultimo elemento del corpo (o quasi): lo spazio sotto lo dà il padding */
+.pack-aggiunta-corpo .pack-incluso {
+  margin-bottom: 0;
+}
+
+/* sotto l'elenco, senza spunta: piccola e in corsivo */
+.pack-aggiunte .pack-aggiunta-esclusione {
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 1rem 0 0;
+}
+
+/* riquadro oliva con un pallino bordeaux a sinistra */
+.pack-aggiunte .pack-aggiunta-riquadro {
+  position: relative;
+  background-color: var(--verde);
+  color: var(--burgundy);
+  border-radius: 16px;
+  padding: 1rem 1.25rem 1rem 2.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.pack-aggiunta-riquadro::before {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: 1.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--burgundy);
+}
+
+.pack-aggiunte .pack-aggiunta-prezzo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+/* "Ti rispondo entro…": testo normale, poco spazio sotto */
+.pack-aggiunte .pack-aggiunta-risposta {
+  margin-bottom: 0.5rem;
+}
+
+/* nota sotto il prezzo: più piccola e in corsivo; lo spazio sotto separa dal pulsante */
+.pack-aggiunte .pack-aggiunta-nota {
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 0 1.25rem;
+}
+
+/* pulsante: largo quanto il testo e sempre in fondo al piede (margin-top: auto).
    Su telefono la scritta resta su una riga; con il padding laterale ridotto
    ci sta anche a 320px (dal tablet tornano padding e a capo normali) */
 .pack-aggiunte .pack-bottone {
   align-self: flex-start;
-  margin-top: 1.25rem;
+  margin-top: auto;
   white-space: nowrap;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-/* nota sotto il prezzo: più piccola e in corsivo */
-.pack-aggiunte .pack-aggiunta-nota {
-  font-size: 0.8rem;
-  font-style: italic;
-  line-height: 1.4;
-  margin: 0.5rem 0 0;
+/* la forma sta in un contenitore alto 36px, allineata in basso: il mezzo cerchio,
+   alto la metà, poggia sulla stessa linea dei cerchi e i titoli partono alla stessa quota */
+.pack-forma-box {
+  display: flex;
+  align-items: flex-end;
+  height: 36px;
+  margin-bottom: 1rem;
 }
 
-/* piccole forme in CSS: alte tutte 36px, così i titoli partono alla stessa quota */
+/* piccole forme in CSS */
 .pack-forma {
   display: block;
   width: 36px;
   height: 36px;
-  margin-bottom: 1rem;
 }
 
 .pack-forma-cerchio-terracotta {
@@ -1821,9 +1883,9 @@ header {
   background-color: var(--terracotta);
 }
 
+/* mezzo cerchio: alto la metà, piatto sotto */
 .pack-forma-arco-oliva {
   height: 18px;
-  margin-top: 18px;
   border-radius: 18px 18px 0 0;
   background-color: var(--verde);
 }
@@ -2180,46 +2242,19 @@ header {
     padding: 1.25rem;
   }
 
-  /* le tre schede affiancate. Con subgrid ogni scheda usa le stesse 8 righe della griglia
-     esterna, come le righe di una tabella: così gli elementi si allineano tra le schede
-     e le schede sono alte uguali.
-     righe: 1 forma, 2 titolo, 3 descrizione, 4 tempi o elenco,
-     5 e 6 prezzo e nota degli applicativi, 7 pulsante degli applicativi e prezzi di
-     sito e kit (sulla stessa riga), 8 nota del sito.
-     Se una scheda non ha un elemento, la sua riga resta vuota */
+  /* le tre schede affiancate. Con subgrid ogni scheda usa le stesse 3 righe della griglia
+     esterna (testa, corpo, piede), come le righe di una tabella: l'inizio del corpo
+     e l'inizio del piede stanno alla stessa quota nelle tre schede, e le schede sono alte uguali.
+     row-gap 0: tra le parti non c'è il gap della griglia esterna */
   .pack-aggiunte {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* row-gap 0: lo spazio tra gli elementi lo danno i loro margini, non il gap della griglia esterna */
   .pack-aggiunte > li {
     display: grid;
-    grid-row: span 8;
+    grid-row: span 3;
     grid-template-rows: subgrid;
     row-gap: 0;
-  }
-
-  /* la descrizione non ha classe: va da sola nella prima riga libera, la 3 */
-  .pack-aggiunte .pack-forma              { grid-row: 1; }
-  .pack-aggiunte h3                       { grid-row: 2; }
-  .pack-aggiunte .pack-tempi,
-  .pack-aggiunte .pack-incluso            { grid-row: 4; }
-  .pack-aggiunte .pack-aggiunta-prezzo    { grid-row: 7; margin-top: 0; }
-  .pack-aggiunte .pack-aggiunta-nota      { grid-row: 8; }
-  /* align-self center: il pulsante sta a metà altezza della riga 7,
-     cioè al centro delle scritte di prezzo delle altre due schede */
-  .pack-aggiunte .pack-bottone            { grid-row: 7; margin-top: 0; align-self: center; }
-
-  /* la scheda con il pulsante (applicativi): prezzo e nota stanno sopra il pulsante.
-     Lo spazio sopra il pulsante sta sotto la nota, così pulsante e prezzi partono
-     dalla stessa quota nella riga 7 */
-  .pack-aggiunte > li:has(.pack-bottone) .pack-aggiunta-prezzo { grid-row: 5; }
-  .pack-aggiunte > li:has(.pack-bottone) .pack-aggiunta-nota   { grid-row: 6; margin-bottom: 1.25rem; }
-
-  /* in una griglia pillola e pulsante si allargherebbero a tutta la scheda */
-  .pack-aggiunte .pack-tempi,
-  .pack-aggiunte .pack-bottone {
-    justify-self: start;
   }
 
   /* colonne strette: il pulsante torna al padding di sempre e può andare a capo,

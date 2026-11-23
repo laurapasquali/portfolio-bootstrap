@@ -676,7 +676,10 @@
   margin: 0;
 }
 
-.home-modulo-privacy a {
+/* link dentro il testo (privacy nel modulo, pagina Pacchetti nelle domande frequenti):
+   bordeaux e sottolineati, invece del blu di Bootstrap */
+.home-modulo-privacy a,
+.home-faq-lista a {
   color: var(--burgundy);
 }
 
