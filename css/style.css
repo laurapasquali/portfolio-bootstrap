@@ -148,9 +148,10 @@ header {
   z-index: 100;
 }
  
+/* margini laterali come le sezioni: 1.25rem su mobile, 10% su desktop */
 .container-full {
   height: 100%;
-  padding: 0 10%;
+  padding: 0 1.25rem;
 }
  
 .flex {
@@ -2369,7 +2370,11 @@ header {
  
  
   /* header e menu */
- 
+
+  .container-full {
+    padding: 0 10%;
+  }
+
   .logo img {
     height: 60px;
   }
