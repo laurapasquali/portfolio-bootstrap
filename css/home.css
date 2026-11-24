@@ -634,10 +634,11 @@
 
 /* contatti */
 
-/* il modulo: su un fondo più chiaro della pagina */
+/* il modulo: un riquadro navy sul fondo crema della sezione.
+   Dentro: testi crema, campi crema con testo bordeaux, bottone crema.
+   Contrasti: crema su navy 6,8:1, bordeaux su crema 12,9:1 */
 .home-modulo {
-  background-color: #fffcf8;
-  border: 1px solid var(--burgundy);
+  background-color: var(--navy);
   border-radius: 24px;
   padding: 2rem 1.5rem;
   margin-top: 2.5rem;
@@ -653,10 +654,11 @@
   display: block;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--burgundy);
+  color: var(--base);
   margin-bottom: 0.4rem;
 }
 
+/* campi chiari sul navy: si vedono come fogli, il testo resta bordeaux */
 .home-modulo input[type="text"],
 .home-modulo input[type="email"],
 .home-modulo input[type="url"],
@@ -666,8 +668,8 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--burgundy);
-  background-color: transparent;
-  border: 1px solid var(--burgundy);
+  background-color: var(--base);
+  border: 1px solid var(--base);
   border-radius: 8px;
   padding: 0.65rem 0.9rem;
 }
@@ -677,15 +679,19 @@
   resize: vertical;
 }
 
+/* al 70% il placeholder arriva a 5,4:1 sul crema */
 .home-modulo ::placeholder {
   color: var(--burgundy);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
-/* il campo attivo si vede anche navigando con la tastiera */
+/* contorno di focus crema, visibile sul navy (il terracotta non si vedrebbe):
+   campi, checkbox, link e bottone */
 .home-modulo input:focus-visible,
-.home-modulo textarea:focus-visible {
-  outline: 2px solid var(--terracotta);
+.home-modulo textarea:focus-visible,
+.home-modulo a:focus-visible,
+.home-modulo button:focus-visible {
+  outline: 2px solid var(--base);
   outline-offset: 2px;
 }
 
@@ -700,7 +706,7 @@
   width: 1.1rem;
   height: 1.1rem;
   margin-top: 0.15rem;
-  accent-color: var(--terracotta);
+  accent-color: var(--base);
 }
 
 .home-modulo .home-modulo-privacy label {
@@ -709,9 +715,12 @@
   margin: 0;
 }
 
-/* link dentro il testo (privacy nel modulo, pagina Pacchetti nelle domande frequenti):
-   bordeaux e sottolineati, invece del blu di Bootstrap */
-.home-modulo-privacy a,
+/* link dentro il testo: il colore va dichiarato, altrimenti prendono il blu di Bootstrap.
+   Privacy nel modulo: crema sul navy. Pagina Pacchetti nelle domande frequenti: bordeaux */
+.home-modulo-privacy a {
+  color: var(--base);
+}
+
 .home-faq-lista a {
   color: var(--burgundy);
 }
@@ -723,11 +732,23 @@
   border: none;
 }
 
+/* bottone crema con testo navy; al passaggio del mouse bordeaux con testo crema */
+.home-modulo .home-btn {
+  background-color: var(--base);
+  color: var(--navy);
+}
+
+.home-modulo .home-btn:hover {
+  background-color: var(--burgundy);
+  color: var(--base);
+}
+
+/* all'85% la nota resta sopra 4,5:1 (5,4:1) */
 .home-modulo-nota {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--burgundy);
-  opacity: 0.75;
+  color: var(--base);
+  opacity: 0.85;
   margin: 1rem 0 0;
 }
 
@@ -737,8 +758,8 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
-  color: var(--burgundy);
-  border-left: 3px solid var(--terracotta);
+  color: var(--base);
+  border-left: 3px solid var(--base);
   padding-left: 0.75rem;
   margin: 0 0 1rem;
 }
@@ -746,88 +767,6 @@
 /* il colore va dichiarato, altrimenti il link prende il blu di Bootstrap */
 .home-modulo-errore a {
   color: inherit;
-}
-
-/* sezione del modulo su fondo navy: testi crema, campi chiari, bottone crema.
-   Contrasti: crema su navy 6,8:1, bordeaux su crema 12,9:1 */
-.home-sezione-navy {
-  background-color: var(--navy);
-}
-
-.home-sezione-navy .home-titolo,
-.home-sezione-navy .home-testo {
-  color: var(--base);
-}
-
-/* terracotta schiarito: il terracotta pieno sul navy si leggerebbe poco (1,6:1).
-   Al 50% il contrasto è 3,4:1, sufficiente per un titolo grande */
-.home-sezione-navy .home-titolo em {
-  color: color-mix(in srgb, var(--terracotta) 50%, var(--base));
-}
-
-.home-sezione-navy .home-modulo {
-  background-color: transparent;
-  border-color: var(--base);
-}
-
-.home-sezione-navy .home-modulo label {
-  color: var(--base);
-}
-
-/* campi chiari sul navy: si vedono come fogli, il testo resta bordeaux */
-.home-sezione-navy .home-modulo input[type="text"],
-.home-sezione-navy .home-modulo input[type="email"],
-.home-sezione-navy .home-modulo input[type="url"],
-.home-sezione-navy .home-modulo textarea {
-  background-color: var(--base);
-  border-color: var(--base);
-  color: var(--burgundy);
-}
-
-/* al 70% il placeholder arriva a 5,4:1 sul crema */
-.home-sezione-navy .home-modulo ::placeholder {
-  opacity: 0.7;
-}
-
-.home-sezione-navy .home-modulo-privacy input {
-  accent-color: var(--base);
-}
-
-.home-sezione-navy .home-modulo-privacy a {
-  color: var(--base);
-}
-
-/* all'85% la nota resta sopra 4,5:1 (5,4:1) */
-.home-sezione-navy .home-modulo-nota {
-  color: var(--base);
-  opacity: 0.85;
-}
-
-.home-sezione-navy .home-modulo-errore {
-  color: var(--base);
-  border-left-color: var(--base);
-}
-
-/* bottone crema con testo navy; al passaggio del mouse bordeaux con testo crema */
-.home-sezione-navy .home-btn {
-  background-color: var(--base);
-  border-color: var(--base);
-  color: var(--navy);
-}
-
-.home-sezione-navy .home-btn:hover {
-  background-color: var(--burgundy);
-  border-color: var(--burgundy);
-  color: var(--base);
-}
-
-/* contorno di focus crema: il terracotta sul navy non si vedrebbe */
-.home-sezione-navy .home-modulo input:focus-visible,
-.home-sezione-navy .home-modulo textarea:focus-visible,
-.home-sezione-navy a:focus-visible,
-.home-sezione-navy button:focus-visible {
-  outline: 2px solid var(--base);
-  outline-offset: 2px;
 }
 
 
