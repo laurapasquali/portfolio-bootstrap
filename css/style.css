@@ -102,7 +102,7 @@
   --h3-size:  1rem;     /* 16px */
   --p-size:   0.75rem;  /* 12px */
  
-  --nav-height: 76px;   /* navbar mobile: riquadro di 64px + 12px di margine sopra (desktop: 132px) */
+  --nav-height: 128px;   /* navbar mobile: riquadro di 116px + 12px di margine sopra (desktop: 160px) */
   --transition: 0.3s ease;
 }
  
@@ -138,53 +138,58 @@ html {
  
 /* header */
 
-/* mobile e tablet: un riquadro crema scuro staccato dai bordi (12px), fisso in alto mentre si scorre.
-   --nav-height (76px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
-   Il menu a tendina si apre dentro lo stesso riquadro, che si allunga verso il basso */
+/* mobile e tablet: un riquadro bordeaux staccato dai bordi (12px), fisso in alto mentre si scorre.
+   Tutto centrato in colonna: logo, linea crema, bottone del menu; il menu aperto compare sotto,
+   dentro lo stesso riquadro, che si allunga verso il basso.
+   --nav-height (128px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
+   Contrasti sul bordeaux: crema 12,9:1; terracotta (hover e focus) 3,0:1, sotto 4,5:1 */
 header {
   position: fixed;
   top: 12px;
   left: 12px;
   right: 12px;
   z-index: 100;
-  background: var(--base-scuro);
+  background: var(--burgundy);
   border-radius: 16px;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--burgundy) 15%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--burgundy) 25%, transparent);
 }
 
-/* 8px dentro il riquadro: logo e puntini stanno a 20px (1.25rem) dal bordo dello schermo,
+/* 8px dentro il riquadro: le linee arrivano a 20px (1.25rem) dal bordo dello schermo,
    come i testi delle sezioni (12px + 8px) */
 .container-full {
   padding: 0 calc(1.25rem - 12px);
 }
 
-/* prima riga: logo a sinistra, puntini a destra. Il menu aperto va a capo e prende la riga intera */
+/* colonna centrata: logo, bottone, menu */
 .flex {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
-/* la riga del logo è alta quanto il riquadro chiuso (76px - 12px di margine = 64px) */
+/* riga del logo, con la linea crema sotto (64px, linea compresa) */
 .logo {
   display: flex;
   align-items: center;
-  height: calc(var(--nav-height) - 12px);
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid var(--base);
 }
 
+/* logo crema (logo-footer.png): il file ha spazio vuoto sopra e sotto la scritta */
 .logo-mobile {
-  height: 40px;
+  height: 44px;
 }
 
 /* il contenitore di menu e bottone non fa da scatola: menu e bottone
-   si dispongono direttamente nel riquadro (bottone accanto al logo, menu sotto) */
+   si dispongono direttamente nella colonna del riquadro */
 .menubottom {
   display: contents;
 }
 
 
-/* menu a tendina: nascosto finché non si tocca il bottone, poi si apre sotto il logo.
+/* menu a tendina: nascosto finché non si tocca il bottone, poi si apre sotto il bottone.
    order: 3 lo manda dopo il bottone, anche se nell'HTML viene prima.
    max-height e overflow-y: se le voci non ci stanno (telefono in orizzontale), il menu scorre */
 .menu {
@@ -193,13 +198,14 @@ header {
   width: 100%;
   max-height: calc(100svh - var(--nav-height) - 24px);
   overflow-y: auto;
-  border-top: 1px solid var(--burgundy);
-  padding: 0.5rem 0 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--base) 30%, transparent);
+  padding: 0.25rem 0 1.25rem;
 }
 
 .menu.open {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* niente gap: lo spazio tra le voci lo dà il padding dei link, così le linee restano a metà */
@@ -207,20 +213,21 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0;
 }
 
 .menu li {
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
-/* linea bordeaux tra una voce e l'altra (non sopra la prima) */
+/* linea crema leggera tra una voce e l'altra (non sopra la prima) */
 .menu li + li {
-  border-top: 1px solid var(--burgundy);
+  border-top: 1px solid color-mix(in srgb, var(--base) 30%, transparent);
 }
 
 .menu a {
@@ -228,33 +235,34 @@ header {
   padding: 0.75em 0;
   font-family: var(--font-body);
   font-size: var(--h3-size);
-  color: var(--burgundy);
+  color: var(--base);
   transition: color var(--transition);
   text-decoration: none;
 }
 
-.menu a:hover {
+/* hover e focus da tastiera: terracotta (contrasto 3,0:1 sul bordeaux) e, col focus, un contorno crema */
+.menu a:hover,
+.menu a:focus-visible {
   color: var(--terracotta);
 }
 
-/* la voce della pagina in cui ci si trova: sottolineata
-   (il terracotta su crema sarebbe sotto 4,5:1 per un testo così piccolo) */
+.menu a:focus-visible {
+  outline: 2px solid var(--base);
+  outline-offset: 2px;
+}
+
+/* la voce della pagina in cui ci si trova: crema e sottolineata
+   (il terracotta sul bordeaux da solo non basterebbe a segnalarla) */
 .menu a[aria-current="page"] {
   text-decoration: underline;
   text-underline-offset: 0.35em;
 }
 
-/* contorno di focus da tastiera */
-.menu a:focus-visible {
-  outline: 2px solid var(--burgundy);
-  outline-offset: 2px;
-}
-
-/* "Prenota una chiamata": nel menu a tendina è un bottone terracotta, largo quanto il testo */
+/* "Prenota una chiamata": nel menu a tendina è un bottone terracotta centrato */
 .menu .prenotaunacalltendina {
   display: block;
   width: fit-content;
-  margin: 1rem 0 0;
+  margin: 1rem auto 0;
   padding: 0.6em 1em;
   border-radius: 12px;
   background: var(--terracotta);
@@ -266,7 +274,8 @@ header {
   transition: background-color var(--transition);
 }
 
-.menu .prenotaunacalltendina:hover {
+.menu .prenotaunacalltendina:hover,
+.menu .prenotaunacalltendina:focus-visible {
   background: var(--navy);
   color: var(--base);
 }
@@ -276,13 +285,12 @@ header {
   display: none;
 }
 
-/* social in fondo al menu. Le icone sono crema: stanno in un cerchio bordeaux
-   (sul fondo crema non si vedrebbero), largo 44px per toccarle comodamente */
+/* social in fondo al menu: icone crema, area da toccare di 44px */
 .menu-social {
   display: flex;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  padding-top: 1.25rem;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 1rem;
 }
 
 .menu-social a {
@@ -292,64 +300,78 @@ header {
   width: 44px;
   height: 44px;
   padding: 0;
-  border-radius: 50%;
-  background: var(--burgundy);
   transition: opacity var(--transition);
 }
 
 .menu-social a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .menu-social img {
-  height: 20px;
+  height: 22px;
   width: auto;
   display: block;
 }
 
 
-/* bottone del menu (puntini): visibile su mobile e tablet, area da toccare di almeno 44px */
+/* bottone del menu: due lineette crema (hamburger), area da toccare di 44px.
+   Sta in una riga di 52px sotto la linea del logo */
 .toggleMenu {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  margin: 4px 0;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
 }
 
-/* menu aperto: i puntini spariscono e al loro posto compare una X bordeaux.
-   ~ prende il bottone che viene dopo il menu nello stesso contenitore;
-   "/ ''" nasconde la X ai lettori di schermo, che leggono già "Chiudi il menu" */
-.menu.open ~ .toggleMenu img {
-  display: none;
-}
-
-.menu.open ~ .toggleMenu::before {
-  content: "×";
-  content: "×" / "";
-  display: block;
-  font-family: var(--font-body);
-  font-size: 2.25rem;
-  line-height: 1;
-  color: var(--burgundy);
-}
-
 .toggleMenu:focus-visible {
-  outline: 2px solid var(--burgundy);
+  outline: 2px solid var(--base);
   outline-offset: 2px;
   border-radius: 8px;
 }
 
-/* puntiverdi.svg è largo quasi 5 volte l'altezza: a 9px è largo circa 43px
-   (sul tablet torna a 12px, nel media query 768px) */
-.toggleMenu img {
-  height: 9px;
-  width: auto;
+/* le due lineette sono i ::before e ::after di uno span vuoto */
+.menu-icona {
+  position: relative;
   display: block;
+  width: 24px;
+  height: 10px;
+}
+
+.menu-icona::before,
+.menu-icona::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--base);
+  transition: top var(--transition), transform var(--transition);
+}
+
+.menu-icona::before {
+  top: 0;
+}
+
+.menu-icona::after {
+  top: 8px;
+}
+
+/* menu aperto (aria-expanded="true", lo imposta js/menu.js): le lineette si incrociano in una X */
+.toggleMenu[aria-expanded="true"] .menu-icona::before {
+  top: 4px;
+  transform: rotate(45deg);
+}
+
+.toggleMenu[aria-expanded="true"] .menu-icona::after {
+  top: 4px;
+  transform: rotate(-45deg);
 }
 
 
@@ -2266,14 +2288,6 @@ header {
  
 @media (min-width: 768px) {
 
-  /* header e menu */
-
-  /* sul tablet i puntini restano alti 12px, circa 57px di larghezza */
-  .toggleMenu img {
-    height: 12px;
-  }
-
-
   /* pagina chi sono: da qui le colonne stanno affiancate */
 
   .about-foto {
@@ -2367,22 +2381,21 @@ header {
  
 @media (min-width: 1200px) {
  
-  /* altezza della navbar desktop: riga del logo (80px, linea compresa) + riga delle voci (52px).
+  /* altezza della navbar desktop: riga del logo (104px, linea compresa) + riga delle voci (56px).
      Cambiando la variabile si aggiornano da sole l'altezza dell'header e tutti i calc() che la usano */
   :root {
-    --nav-height: 132px;
+    --nav-height: 160px;
   }
 
 
-  /* header e menu: tutto centrato, attaccato al bordo alto e largo tutta la pagina.
-     In alto il logo, poi una linea bordeaux da un bordo all'altro, sotto le voci in una riga
+  /* header e menu: sfondo bordeaux, attaccato al bordo alto e largo tutta la pagina.
+     In alto il logo centrato, poi una linea crema da un bordo all'altro, sotto le voci in una riga
      con spazio uguale tra loro. "Prenota una chiamata" è l'ultima voce, in terracotta con la freccia */
 
   header {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--base);
     border-radius: 0;
     box-shadow: none;
   }
@@ -2391,20 +2404,13 @@ header {
     padding: 0;
   }
 
-  .flex {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
   .logo {
-    width: 100%;
-    height: 80px;
-    justify-content: center;
-    border-bottom: 1px solid var(--burgundy);
+    height: 104px;
   }
 
+  /* 72px: il file del logo ha spazio vuoto sopra e sotto, la scritta risulta alta circa 46px */
   .logo img {
-    height: 48px;
+    height: 72px;
   }
 
   /* il menu torna una riga sotto la linea.
@@ -2415,10 +2421,9 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2.75rem;
+    gap: 2.5rem;
     order: 0;
-    width: 100%;
-    height: 52px;
+    height: 56px;
     max-height: none;
     overflow: visible;
     border-top: none;
@@ -2426,9 +2431,9 @@ header {
   }
 
   .menu ul {
+    width: auto;
     flex-direction: row;
-    align-items: center;
-    gap: 2.75rem;
+    gap: 2.5rem;
   }
 
   .menu li {
@@ -2439,45 +2444,39 @@ header {
     border-top: none;
   }
 
-  /* voci in maiuscolo piccolo, con le lettere distanziate */
+  /* voci come prima di questa modifica: Geist, 1rem, peso normale, senza maiuscolo */
   .menu a {
-    padding: 0.25rem 0;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    padding: 0.5rem 0;
   }
 
   .menu-social {
     display: none;
   }
 
-  /* "Prenota una chiamata": non più un bottone, ma l'ultima voce della riga,
-     con lo stesso stile delle altre ma in terracotta.
-     Contrasto: terracotta su crema circa 4,3:1, sotto il 4,5:1 per i testi piccoli */
+  /* "Prenota una chiamata": l'ultima voce della riga, con lo stesso stile delle altre ma in terracotta.
+     Contrasto: terracotta sul bordeaux 3,0:1, sotto il 4,5:1 */
   .menu .prenotaunacalltendina {
     display: inline-flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.4em;
     margin: 0;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
     border-radius: 0;
     background: none;
     color: var(--terracotta);
     font-family: var(--font-body);
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: var(--h3-size);
   }
 
-  .menu .prenotaunacalltendina:hover {
+  .menu .prenotaunacalltendina:hover,
+  .menu .prenotaunacalltendina:focus-visible {
     background: none;
-    color: var(--burgundy);
+    color: var(--base);
   }
 
   /* la freccia si sposta un poco al passaggio del mouse */
   .menu-freccia {
     display: inline-block;
-    letter-spacing: 0;
     transition: transform var(--transition);
   }
 
@@ -2485,7 +2484,7 @@ header {
     transform: translateX(3px);
   }
 
-  /* il bottone dei puntini non serve su desktop */
+  /* il bottone del menu non serve su desktop */
   .toggleMenu {
     display: none;
   }

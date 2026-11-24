@@ -5,7 +5,8 @@
      nella stessa pagina e il menu aperto li coprirebbe
    - il tasto Esc lo chiude e riporta il focus sul bottone
    Il bottone dice ai lettori di schermo se il menu è aperto (aria-expanded)
-   e cosa fa (aria-label). Puntini da chiuso, X da aperto: lo scambio lo fa il CSS
+   e cosa fa (aria-label). Due lineette da chiuso, X da aperto: lo scambio lo fa il CSS,
+   guardando aria-expanded
    ===================================================== */
 
 function toggleMenu() {

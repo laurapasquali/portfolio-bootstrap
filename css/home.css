@@ -180,58 +180,41 @@
   color: var(--terracotta);
 }
 
-/* parola animata del titolo (la crea js/hero.js): le cinque parole stanno sovrapposte
-   nella stessa cella della griglia, così lo spazio è sempre quello della più lunga
-   ("riconosciuto") e il titolo non salta */
-.home-hero-parole-animate {
+/* parola animata del titolo (la crea js/hero.js), come a macchina da scrivere.
+   "misura" (la parola più lunga, invisibile) e "scritta" (le lettere che compaiono, con il cursore)
+   stanno sovrapposte nella stessa cella della griglia: lo spazio resta sempre quello
+   della parola più lunga e il titolo non salta */
+.home-hero-macchina {
   display: inline-grid;
 }
 
-/* la "penna": una maschera sfumata che scorre da sinistra a destra.
-   La maschera è larga 2,5 volte la parola: a posizione 100% la parte piena è fuori
-   e la parola è nascosta, a 0% la copre tutta e la parola si vede.
-   black e transparent qui non sono colori visibili: dicono solo cosa mostrare.
-   padding-right: il corsivo sporge un poco a destra, così la maschera non lo taglia */
-.home-hero-parole-animate span {
+.home-hero-misura,
+.home-hero-scritta {
   grid-area: 1 / 1;
   justify-self: start;
+  white-space: nowrap;
+}
+
+/* invisibile ma occupa spazio; padding-right lascia posto al cursore dopo la parola più lunga */
+.home-hero-misura {
+  visibility: hidden;
   padding-right: 0.15em;
-  opacity: 0;
-  -webkit-mask-image: linear-gradient(to right, black 40%, transparent 60%);
-  mask-image: linear-gradient(to right, black 40%, transparent 60%);
-  -webkit-mask-size: 250% 100%;
-  mask-size: 250% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
-  transition: opacity 0.5s ease;
 }
 
-/* scrive: 1 secondo (uguale a SCRIVI in js/hero.js) */
-.home-hero-parole-animate span.scrive {
-  opacity: 1;
-  transition: none;
-  animation: home-hero-scrivi 1s ease-out both;
+/* cursore: una barretta sottile terracotta che lampeggia dopo l'ultima lettera */
+.home-hero-cursore {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  margin-left: 0.06em;
+  vertical-align: -0.05em;
+  background: var(--terracotta);
+  animation: home-hero-lampeggia 1s steps(1) infinite;
 }
 
-.home-hero-parole-animate span.ferma {
-  opacity: 1;
-}
-
-/* sparisce in dissolvenza: 0,5 secondi (la transizione qui sopra, uguale a CANCELLA in js/hero.js) */
-.home-hero-parole-animate span.cancella {
-  opacity: 0;
-}
-
-@keyframes home-hero-scrivi {
-  from {
-    -webkit-mask-position: 100% 0;
-    mask-position: 100% 0;
-  }
-  to {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
+@keyframes home-hero-lampeggia {
+  50% {
+    opacity: 0;
   }
 }
 

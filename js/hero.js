@@ -1,13 +1,14 @@
 /* =====================================================
-   HERO DELLA HOME: la parola in corsivo del titolo si "scrive" da sinistra a destra,
-   resta ferma, sparisce e lascia il posto alla successiva, a ciclo.
+   HERO DELLA HOME: la parola in corsivo del titolo si scrive come a macchina,
+   una lettera alla volta, con un cursore che lampeggia; resta ferma, si cancella
+   da destra a sinistra (come il tasto backspace) e lascia il posto alla successiva.
 
    Nell'HTML il titolo resta "Il tuo brand merita di essere riconosciuto al primo sguardo":
    Google e i lettori di schermo leggono sempre "riconosciuto" (qui diventa visually-hidden),
-   mentre le parole animate sono aria-hidden.
-   Con "riduci movimento" attivo, o se JavaScript non parte, resta fissa "riconosciuto".
+   mentre le lettere animate e il cursore sono aria-hidden.
+   Con "riduci movimento" attivo, o se JavaScript non parte, resta fissa "riconosciuto", senza cursore.
    L'animazione si ferma quando la scheda del browser non è visibile.
-   Lo stile (maschera e tempi) è in home.css, sezione "hero"
+   Lo stile (cursore e spazio stabile) è in home.css, sezione "hero"
    ===================================================== */
 
 (function () {
@@ -16,9 +17,10 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const PAROLE = ["riconosciuto", "ricordato", "scelto", "memorabile", "capito"];
-  const SCRIVI = 1000;     // ms per scrivere la parola (uguale all'animazione in home.css)
-  const FERMA = 2500;      // ms in cui resta ferma
-  const CANCELLA = 500;    // ms per sparire (uguale alla transizione in home.css)
+  const SCRIVI = 90;       // ms per ogni lettera scritta
+  const CANCELLA = 50;     // ms per ogni lettera cancellata
+  const FERMA = 2000;      // ms in cui la parola resta intera
+  const PAUSA = 300;       // ms a parola cancellata, prima di scrivere la successiva
 
   // "riconosciuto" resta nel titolo per Google e i lettori di schermo, nascosto alla vista
   const testoVero = parola.textContent;
@@ -27,55 +29,71 @@
   perLettori.className = "visually-hidden";
   perLettori.textContent = testoVero;
 
-  // le cinque parole sovrapposte nella stessa cella: lo spazio è quello della più lunga
-  const gruppo = document.createElement("span");
-  gruppo.className = "home-hero-parole-animate";
-  gruppo.setAttribute("aria-hidden", "true");
-  const parole = PAROLE.map((testo) => {
-    const span = document.createElement("span");
-    span.textContent = testo;
-    gruppo.appendChild(span);
-    return span;
-  });
+  // parte visibile, nascosta ai lettori di schermo:
+  // - "misura": la parola più lunga, invisibile, tiene fermo lo spazio (niente salti)
+  // - "scritta": le lettere che compaiono, seguite dal cursore
+  const visibile = document.createElement("span");
+  visibile.className = "home-hero-macchina";
+  visibile.setAttribute("aria-hidden", "true");
 
-  parola.append(perLettori, gruppo);
+  const misura = document.createElement("span");
+  misura.className = "home-hero-misura";
+  misura.textContent = PAROLE.reduce((a, b) => (b.length > a.length ? b : a));
 
-  let indice = 0;
+  const scritta = document.createElement("span");
+  scritta.className = "home-hero-scritta";
+  const testo = document.createElement("span");
+  const cursore = document.createElement("span");
+  cursore.className = "home-hero-cursore";
+  scritta.append(testo, cursore);
+
+  visibile.append(misura, scritta);
+  parola.append(perLettori, visibile);
+
+  let indice = 0;                 // parola attuale
+  let lettere = PAROLE[0].length; // lettere visibili: si parte con "riconosciuto" già scritta
+  let fase = "ferma";             // "scrive", "ferma", "cancella"
   let timer = null;
 
-  function fase(nome) {
-    parole.forEach((span) => span.classList.remove("scrive", "ferma", "cancella"));
-    parole[indice].classList.add(nome);
+  testo.textContent = PAROLE[0];
+
+  function passo() {
+    const attuale = PAROLE[indice];
+
+    if (fase === "scrive") {
+      lettere++;
+      testo.textContent = attuale.slice(0, lettere);
+      if (lettere < attuale.length) {
+        timer = setTimeout(passo, SCRIVI);
+      } else {
+        fase = "ferma";
+        timer = setTimeout(passo, FERMA);
+      }
+    } else if (fase === "ferma") {
+      fase = "cancella";
+      timer = setTimeout(passo, CANCELLA);
+    } else {
+      lettere--;
+      testo.textContent = attuale.slice(0, lettere);
+      if (lettere > 0) {
+        timer = setTimeout(passo, CANCELLA);
+      } else {
+        indice = (indice + 1) % PAROLE.length;
+        fase = "scrive";
+        timer = setTimeout(passo, PAUSA);
+      }
+    }
   }
 
-  // scrive la parola attuale, la tiene ferma, la fa sparire e passa alla successiva
-  function ciclo() {
-    fase("scrive");
-    timer = setTimeout(() => {
-      fase("ferma");
-      timer = setTimeout(cancellaEPassa, FERMA);
-    }, SCRIVI);
-  }
+  timer = setTimeout(passo, FERMA);
 
-  function cancellaEPassa() {
-    fase("cancella");
-    timer = setTimeout(() => {
-      indice = (indice + 1) % parole.length;
-      ciclo();
-    }, CANCELLA);
-  }
-
-  // all'apertura si vede subito "riconosciuto" già scritto, poi parte il ciclo
-  fase("ferma");
-  timer = setTimeout(cancellaEPassa, FERMA);
-
-  // scheda nascosta: si ferma; quando torna visibile, riparte dalla parola attuale
+  // scheda nascosta: si ferma; quando torna visibile, riprende da dove era
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       clearTimeout(timer);
       timer = null;
     } else if (timer === null) {
-      ciclo();
+      timer = setTimeout(passo, fase === "ferma" ? FERMA : SCRIVI);
     }
   });
 })();
