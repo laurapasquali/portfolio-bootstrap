@@ -397,10 +397,17 @@ header {
   display: none;
 }
  
+/* ogni slide: la foto e, sotto, la didascalia con nome del progetto e settore */
 .progetto-slide {
   flex: 0 0 100%;
   scroll-snap-align: center;
   text-decoration: none;
+  display: block;
+}
+
+/* angoli arrotondati e ritaglio stanno sulla foto: così lo zoom al passaggio del mouse
+   resta dentro la foto e non copre la didascalia */
+.progetto-slide-foto {
   display: block;
   overflow: hidden;
   border-radius: 12px;
@@ -420,11 +427,33 @@ header {
   transform: scale(1.05);
 }
 
-/* immagine con margini trasparenti (Podere i Cerri): la ingrandisce dentro la slide,
+/* immagine con margini trasparenti (Podere i Cerri): la ingrandisce dentro la foto,
    che con overflow: hidden nasconde i bordi vuoti. scale e transform si sommano,
    quindi l'effetto hover resta */
 .progetto-slide-zoom {
   scale: 1.3;
+}
+
+/* didascalia sotto la foto: nome del progetto */
+.progetto-slide-nome {
+  display: block;
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--burgundy);
+}
+
+/* settore del progetto, sotto il nome (slider della home e card di progetti.html):
+   etichetta piccola, maiuscola e spaziata come .pack-etichetta. Navy su crema 6,8:1 */
+.progetto-settore {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
 }
  
 .slider-nav {
@@ -656,13 +685,27 @@ header {
   padding-right: 1.25rem;
 }
  
+/* ogni card: la foto (con il velo) e, sotto, nome e settore sempre visibili,
+   anche su telefono dove il velo non compare */
 .progetto-card {
   display: block;
+  text-decoration: none;
+}
+
+.progetto-card-foto {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  text-decoration: none;
   aspect-ratio: 4 / 3;
+}
+
+.progetto-card-nome {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.2;
+  color: var(--burgundy);
 }
  
 .progetto-img {
@@ -673,7 +716,7 @@ header {
   transition: transform var(--transition);
 }
  
-/* velo bordeaux sopra la card: compare al passaggio del mouse */
+/* velo bordeaux sopra la foto della card, con la descrizione: compare al passaggio del mouse */
 .progetto-cover {
   position: absolute;
   inset: 0;
@@ -686,13 +729,6 @@ header {
   padding: 1.5rem;
   opacity: 0;
   transition: opacity var(--transition);
-}
- 
-.progetto-cover h2 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--base);
-  margin-bottom: 0.5rem;
 }
  
 .progetto-cover p {
@@ -2611,8 +2647,8 @@ header {
     padding-right: 10%;
   }
  
-  .progetto-cover h2 {
-    font-size: 2rem;
+  .progetto-card-nome {
+    font-size: 1.75rem;
   }
  
   .progetto-cover p {
