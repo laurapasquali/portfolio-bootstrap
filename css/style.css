@@ -12,7 +12,7 @@
    Ordine delle sezioni, uguale in tutti e tre i blocchi:
    header e menu, slider dei progetti, form, footer,
    pagina progetti, pagina progetto singolo,
-   pagina about me, pagina contatti, pagina chi sono,
+   pagina about me, pagina chi sono,
    pagina pacchetti, pagina privacy, pagina grazie.
    ===================================================== */
 
@@ -420,147 +420,6 @@ header {
  
 /* form di contatto */
  
-.form {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: var(--base);
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
- 
-.form h1 {
-  font-family: var(--font-display);
-  font-size: var(--h1-size);
-  color: var(--burgundy);
-  margin-bottom: 1.5rem;
-  line-height: 0.9;
-  text-align: center;
-}
- 
-.form p {
-  font-size: var(--p-size);
-  color: var(--burgundy);
-  padding-bottom: 0.5rem;
-  line-height: 1.1;
-  text-align: center;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
- 
-.form-box {
-  background-color: var(--navy);
-  border-radius: 20px;
-  padding: 1.5rem;
-}
- 
-.form-box form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
- 
-/* "Invia una richiesta" è un h2: la pagina ha un solo h1 */
-.form-box h2 {
-  font-family: var(--font-display);
-  font-size: var(--h3-size);
-  line-height: 0.9;
-  color: var(--base);
-  text-align: center;
-  margin-bottom: 1rem;
-}
- 
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: var(--p-size);
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--base);
-  color: var(--burgundy);
-  outline: none;
-  transition: background-color var(--transition);
-}
- 
-/* il campo attivo si vede anche navigando con la tastiera */
-.form-field input:focus-visible,
-.form-field textarea:focus-visible {
-  outline: 2px solid var(--base);
-  outline-offset: 2px;
-}
- 
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: var(--burgundy);
-}
- 
-.form-field textarea {
-  resize: vertical;
-  min-height: 100px;
-}
- 
-.form-field button {
-  width: 100%;
-  background-color: var(--terracotta);
-  color: var(--base);
-  border: none;
-  border-radius: 8px;
-  padding: 0.85rem;
-  font-family: var(--font-display);
-  font-size: var(--p-size);
-  cursor: pointer;
-  transition: background-color var(--transition);
-}
- 
-.form-field button:hover {
-  background-color: var(--verde);
-  color: var(--base);
-}
-
-/* checkbox della privacy: fuori da .form-field, così non prende la larghezza dei campi */
-.form-privacy {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
-
-.form-privacy input {
-  flex-shrink: 0;
-  width: 1.1rem;
-  height: 1.1rem;
-  margin-top: 0.15rem;
-  accent-color: var(--terracotta);
-}
-
-.form-privacy label {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: var(--base);
-}
-
-/* il colore va dichiarato, altrimenti il link prende il blu di Bootstrap */
-.form-privacy a,
-.form-box .form-errore a {
-  color: var(--base);
-  text-decoration: underline;
-}
-
-/* messaggio di errore sopra il bottone: compare solo con ?errore=1.
-   .form-box davanti serve a battere .form p, che centrerebbe e colorerebbe il testo */
-.form-box .form-errore {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--base);
-  text-align: left;
-  border-left: 3px solid var(--terracotta);
-  padding: 0 0 0 0.75rem;
-  margin: 0;
-}
-
 /* antispam (honeypot): il campo resta nella pagina per i bot ma esce dallo schermo.
    Niente display: none, perché alcuni bot saltano i campi nascosti così */
 .campo-trappola {
@@ -1167,15 +1026,6 @@ header {
 }
  
  
-/* pagina contatti: riusa .form e cambia solo gli spazi */
- 
-.form-contatti {
-  padding-top: calc(var(--nav-height) + 2rem);
-  padding-bottom: 4rem;
-  background-color: var(--base);
-}
-
-
 /* pagina chi sono */
 
 /* ogni sezione: fondo crema con la grana e i margini laterali del sito */
@@ -1595,6 +1445,11 @@ header {
 
 .pack-apertura .pack-titolo {
   font-size: var(--h1-size);
+}
+
+/* a capo solo su mobile (titolo della hero): dal tablet in su sparisce */
+.pack-a-capo-mobile {
+  display: inline;
 }
 
 .pack-titolo em {
@@ -2443,6 +2298,11 @@ header {
 
   /* pagina pacchetti: da qui le colonne stanno affiancate */
 
+  /* titolo della hero su una riga sola: gli a capo servono solo su mobile */
+  .pack-a-capo-mobile {
+    display: none;
+  }
+
   /* colonne affiancate: la foto riempie quasi tutta la colonna, allineata a destra */
   .pack-foto {
     width: 85%;
@@ -2602,50 +2462,6 @@ header {
     scroll-snap-align: start;
   }
 
- 
-  /* form di contatto */
- 
-  .form .container-fluid {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
- 
-  .form-text {
-    align-self: start;
-  }
- 
-  .form-text h1 {
-    font-size: 4rem;
-    text-align: left;
-    margin-bottom: 4rem;
-  }
- 
-  .form-text p {
-    font-size: 1.5rem;
-    text-align: left;
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 80%;
-  }
- 
-  .text-extra {
-    margin-top: 2rem;
-  }
- 
-  .form-box {
-    padding: 2.5rem;
-  }
- 
-  .form-box h2 {
-    font-size: 2rem;
-  }
- 
-  .form-field button {
-    font-size: 1.5rem;
-  }
- 
  
   /* footer */
 
@@ -2923,13 +2739,6 @@ header {
   }
  
  
-  /* pagina contatti */
- 
-  .form-contatti {
-    padding-top: calc(var(--nav-height) + 6rem);
-  }
-
-
   /* pagina chi sono */
 
   /* l'ordine conta: bordeaux e apertura vengono dopo e correggono il padding sopra */

@@ -5,8 +5,7 @@
  *
  * Esiti:
  * - invio riuscito, oppure bot riconosciuto  -> grazie.html
- * - dati non validi, limite superato, errore -> la pagina del modulo con ?errore=1
- *   (home o contatti, in base al campo nascosto "pagina")
+ * - dati non validi, limite superato, errore -> index.html?errore=1#form
  *
  * Nei log scrivo solo il tipo di errore, mai i dati di chi scrive.
  */
@@ -16,12 +15,7 @@ use PHPMailer\PHPMailer\Exception;
 
 const PAGINA_GRAZIE = 'grazie.html';
 
-// pagine di errore ammesse: il campo "pagina" sceglie solo tra queste due,
-// non viene mai usato direttamente come indirizzo
-const PAGINE_ERRORE = [
-    'home'     => 'index.html?errore=1#contatti',
-    'contatti' => 'contatti.html?errore=1',
-];
+const PAGINA_ERRORE = 'index.html?errore=1#form';
 
 const MAX_INVII_ORA = 5;
 const SECONDI_MINIMI = 3;
@@ -30,9 +24,6 @@ const SECONDI_MINIMI = 3;
 $cartella_privata = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\') . '/../';
 define('FILE_TENTATIVI', $cartella_privata . 'modulo-tentativi.json');
 define('FILE_CONFIG', $cartella_privata . 'config-mail.php');
-
-// qualsiasi valore diverso da "contatti" vale come "home"
-define('PAGINA_ERRORE', PAGINE_ERRORE[($_POST['pagina'] ?? '') === 'contatti' ? 'contatti' : 'home']);
 
 function vai_a(string $pagina): void
 {
@@ -179,7 +170,6 @@ $corpo = "Nuova richiesta dal modulo di contatto di laurapasquali.it\n\n"
     . "Attività: " . ($attivita !== '' ? $attivita : '-') . "\n"
     . "Sito web: " . ($sito !== '' ? $sito : '-') . "\n"
     . "Privacy: accettata\n"
-    . "Pagina del modulo: " . (PAGINA_ERRORE === PAGINE_ERRORE['contatti'] ? 'contatti' : 'home') . "\n"
     . "Data e ora: " . date('d/m/Y H:i') . "\n\n"
     . "Messaggio:\n{$messaggio}\n";
 

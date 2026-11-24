@@ -748,6 +748,88 @@
   color: inherit;
 }
 
+/* sezione del modulo su fondo navy: testi crema, campi chiari, bottone crema.
+   Contrasti: crema su navy 6,8:1, bordeaux su crema 12,9:1 */
+.home-sezione-navy {
+  background-color: var(--navy);
+}
+
+.home-sezione-navy .home-titolo,
+.home-sezione-navy .home-testo {
+  color: var(--base);
+}
+
+/* terracotta schiarito: il terracotta pieno sul navy si leggerebbe poco (1,6:1).
+   Al 50% il contrasto è 3,4:1, sufficiente per un titolo grande */
+.home-sezione-navy .home-titolo em {
+  color: color-mix(in srgb, var(--terracotta) 50%, var(--base));
+}
+
+.home-sezione-navy .home-modulo {
+  background-color: transparent;
+  border-color: var(--base);
+}
+
+.home-sezione-navy .home-modulo label {
+  color: var(--base);
+}
+
+/* campi chiari sul navy: si vedono come fogli, il testo resta bordeaux */
+.home-sezione-navy .home-modulo input[type="text"],
+.home-sezione-navy .home-modulo input[type="email"],
+.home-sezione-navy .home-modulo input[type="url"],
+.home-sezione-navy .home-modulo textarea {
+  background-color: var(--base);
+  border-color: var(--base);
+  color: var(--burgundy);
+}
+
+/* al 70% il placeholder arriva a 5,4:1 sul crema */
+.home-sezione-navy .home-modulo ::placeholder {
+  opacity: 0.7;
+}
+
+.home-sezione-navy .home-modulo-privacy input {
+  accent-color: var(--base);
+}
+
+.home-sezione-navy .home-modulo-privacy a {
+  color: var(--base);
+}
+
+/* all'85% la nota resta sopra 4,5:1 (5,4:1) */
+.home-sezione-navy .home-modulo-nota {
+  color: var(--base);
+  opacity: 0.85;
+}
+
+.home-sezione-navy .home-modulo-errore {
+  color: var(--base);
+  border-left-color: var(--base);
+}
+
+/* bottone crema con testo navy; al passaggio del mouse bordeaux con testo crema */
+.home-sezione-navy .home-btn {
+  background-color: var(--base);
+  border-color: var(--base);
+  color: var(--navy);
+}
+
+.home-sezione-navy .home-btn:hover {
+  background-color: var(--burgundy);
+  border-color: var(--burgundy);
+  color: var(--base);
+}
+
+/* contorno di focus crema: il terracotta sul navy non si vedrebbe */
+.home-sezione-navy .home-modulo input:focus-visible,
+.home-sezione-navy .home-modulo textarea:focus-visible,
+.home-sezione-navy a:focus-visible,
+.home-sezione-navy button:focus-visible {
+  outline: 2px solid var(--base);
+  outline-offset: 2px;
+}
+
 
 /* domande frequenti: <details> si apre e si chiude senza JavaScript */
 
