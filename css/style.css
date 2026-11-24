@@ -269,7 +269,7 @@ header {
   text-underline-offset: 0.35em;
 }
 
-/* "Sentiamoci": nel menu a tendina è un bottone terracotta centrato */
+/* "Facciamo una chiacchierata": nel menu a tendina è un bottone terracotta centrato */
 .menu .prenotaunacalltendina {
   display: block;
   width: fit-content;
@@ -2406,7 +2406,7 @@ header {
  
   /* altezza della navbar desktop:
      parte del logo 91px = 8 sopra + logo 80 + 2 sotto + linea 1;
-     riga delle voci 74px = 18 sopra + bottone "Sentiamoci" 38 + 18 sotto.
+     riga delle voci 74px = 18 sopra + bottone "Facciamo una chiacchierata" 38 + 18 sotto.
      Cambiando la variabile si aggiornano da sole l'altezza dell'header e tutti i calc() che la usano */
   :root {
     --nav-height: 165px;
@@ -2415,7 +2415,7 @@ header {
 
   /* header e menu: sfondo bordeaux, attaccato al bordo alto e largo tutta la pagina.
      In alto il logo centrato con il payoff, poi una linea crema da un bordo all'altro,
-     sotto le voci in una riga con spazio uguale tra loro; per ultimo il bottone "Sentiamoci" */
+     sotto le voci in una riga con spazio uguale tra loro; per ultimo il bottone "Facciamo una chiacchierata" */
 
   /* fissa in alto, sempre della stessa misura. L'ombra compare solo quando la pagina
      è scorsa sotto (classe .scorsa, la aggiunge js/menu.js), per staccarla dal contenuto */
@@ -2479,7 +2479,7 @@ header {
   }
 
   /* voci come prima di questa modifica: Geist, 1rem, peso normale, senza maiuscolo.
-     Alte 32px, meno del bottone "Sentiamoci" (38px): è il bottone a dare l'altezza alla riga */
+     Alte 32px, meno del bottone "Facciamo una chiacchierata" (38px): è il bottone a dare l'altezza alla riga */
   .menu a {
     padding: 0.25rem 0;
   }
@@ -2488,7 +2488,7 @@ header {
     display: none;
   }
 
-  /* "Sentiamoci": bottone nella riga delle voci, con il bordo crema.
+  /* "Facciamo una chiacchierata": bottone nella riga delle voci, con il bordo crema.
      Angoli di 10px, come i bottoni della home (.home-btn e .home-btn-contorno in home.css).
      Hover e focus: sfondo e bordo terracotta; testo crema sul terracotta 4,3:1, sotto il 4,5:1 */
   .menu .prenotaunacalltendina {
