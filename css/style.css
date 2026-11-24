@@ -102,7 +102,7 @@
   --h3-size:  1rem;     /* 16px */
   --p-size:   0.75rem;  /* 12px */
  
-  --nav-height: 120px;   /* navbar mobile: riquadro di 108px + 12px di margine sopra (desktop: 120px) */
+  --nav-height: 128px;   /* navbar mobile: riquadro di 116px + 12px di margine sopra (desktop: 165px) */
   --transition: 0.3s ease;
 }
  
@@ -142,7 +142,7 @@ section[id] {
 /* mobile e tablet: un riquadro bordeaux staccato dai bordi (12px), fisso in alto mentre si scorre.
    Tutto centrato in colonna: logo, linea crema, bottone del menu; il menu aperto compare sotto,
    dentro lo stesso riquadro, che si allunga verso il basso.
-   --nav-height (120px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
+   --nav-height (128px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
    Contrasti sul bordeaux: crema 12,9:1; terracotta (hover e focus) 3,0:1, sotto 4,5:1 */
 header {
   position: fixed;
@@ -168,13 +168,13 @@ header {
   align-items: center;
 }
 
-/* riga del logo, con la linea crema sotto (56px, linea compresa) */
+/* riga del logo, con la linea crema sotto (64px, linea compresa) */
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 56px;
+  height: 64px;
   border-bottom: 1px solid var(--base);
 }
 
@@ -187,10 +187,10 @@ header {
   outline-offset: 2px;
 }
 
-/* lo stesso logo crema del footer (logo-footer.png, con il payoff), alto come nel footer su mobile.
+/* lo stesso logo crema del footer (logo-footer.png, con il payoff).
    Il file ha circa il 18% di spazio vuoto sopra e sotto il disegno */
 .logo-mobile {
-  height: 48px;
+  height: 56px;
 }
 
 /* il contenitore di menu e bottone non fa da scatola: menu e bottone
@@ -2405,11 +2405,11 @@ header {
 @media (min-width: 1200px) {
  
   /* altezza della navbar desktop:
-     parte del logo 81px = 11 sopra + logo 64 + 5 sotto + linea 1;
+     parte del logo 91px = 8 sopra + logo 80 + 2 sotto + linea 1;
      riga delle voci 74px = 18 sopra + bottone "Sentiamoci" 38 + 18 sotto.
      Cambiando la variabile si aggiornano da sole l'altezza dell'header e tutti i calc() che la usano */
   :root {
-    --nav-height: 155px;
+    --nav-height: 165px;
   }
 
 
@@ -2436,15 +2436,15 @@ header {
     padding: 0;
   }
 
-  /* il file del logo ha già circa 11px di vuoto sopra e sotto il disegno (a 64px di altezza):
-     11px + 11px fanno circa 22px sopra la scritta, 5px + 11px circa 16px tra il payoff e la linea */
+  /* logo alto 80px, come nel footer su desktop. Il file ha già circa 14px di vuoto sopra e sotto il disegno:
+     8px + 14px fanno circa 22px sopra la scritta, 2px + 14px circa 16px tra il payoff e la linea */
   .logo {
     height: auto;
-    padding: 11px 0 5px;
+    padding: 8px 0 2px;
   }
 
   .logo img {
-    height: 64px;
+    height: 80px;
   }
 
   /* il menu torna una riga sotto la linea: 18px sopra e sotto, voci centrate in verticale.
