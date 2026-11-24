@@ -26,7 +26,7 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
 
   <script src="js/lenis.min.js"></script>
 <script>
@@ -47,7 +47,8 @@
 
         <div class="logo">
           <a href="index.html">
-           <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" class="logo-mobile" width="1522" height="450" />
+           <img src="img/logo-scritta.png" alt="Laura Pasquali" class="logo-mobile" width="1506" height="209" />
+           <span class="logo-payoff">Graphic designer</span>
           </a>
         </div>
 
@@ -62,8 +63,8 @@
               <li><a href="index.html#come-lavoro">Come lavoro</a></li>
             </ul>
 
-             <!-- "Prenota una chiamata": bottone nel menu a tendina (mobile e tablet), ultima voce della riga su desktop -->
-          <a href="index.html#form" class="prenotaunacalltendina">Prenota una chiamata<span class="menu-freccia" aria-hidden="true">→</span></a>
+             <!-- "Sentiamoci": bottone nel menu a tendina (mobile e tablet), ultimo elemento della riga su desktop -->
+          <a href="index.html#form" class="prenotaunacalltendina">Sentiamoci</a>
 
             <!-- social in fondo al menu a tendina (mobile e tablet) -->
             <div class="menu-social">
@@ -208,6 +209,11 @@
 
       const tornaSu = document.querySelector('.torna-su');
       if (tornaSu) {
+        // compare dopo circa 400px di scorrimento
+        const mostraTornaSu = () => tornaSu.classList.toggle('visibile', window.scrollY > 400);
+        window.addEventListener('scroll', mostraTornaSu, { passive: true });
+        mostraTornaSu();
+
         tornaSu.addEventListener('click', (evento) => {
           evento.preventDefault();
           // chi ha attivato "riduci movimento" torna su con un salto, senza animazione

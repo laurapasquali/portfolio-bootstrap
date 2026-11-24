@@ -27,8 +27,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
-  <link rel="stylesheet" href="css/style.css?v=6" />
-  <link rel="stylesheet" href="css/home.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link rel="stylesheet" href="css/home.css?v=7" />
 
   <script src="js/lenis.min.js"></script>
   <script>
@@ -77,7 +77,8 @@
 
         <div class="logo">
           <a href="index.html">
-            <img src="img/logo-footer.png" alt="Laura Pasquali Graphic Designer" class="logo-mobile" width="1522" height="450" />
+            <img src="img/logo-scritta.png" alt="Laura Pasquali" class="logo-mobile" width="1506" height="209" />
+            <span class="logo-payoff">Graphic designer</span>
           </a>
         </div>
 
@@ -90,8 +91,8 @@
               <li><a href="#come-lavoro">Come lavoro</a></li>
             </ul>
 
-            <!-- "Prenota una chiamata": bottone nel menu a tendina (mobile e tablet), ultima voce della riga su desktop -->
-            <a href="#form" class="prenotaunacalltendina">Prenota una chiamata<span class="menu-freccia" aria-hidden="true">→</span></a>
+            <!-- "Sentiamoci": bottone nel menu a tendina (mobile e tablet), ultimo elemento della riga su desktop -->
+            <a href="#form" class="prenotaunacalltendina">Sentiamoci</a>
 
             <!-- social in fondo al menu a tendina (mobile e tablet) -->
             <div class="menu-social">
@@ -119,52 +120,47 @@
 
     <!-- hero -->
 
+    <!-- tutto centrato in colonna: titolo, testo, bottoni, immagine.
+         Gli a capo con class="home-hero-a-capo" valgono solo su mobile e tablet:
+         su desktop il titolo sta su due righe -->
     <section class="home-hero home-grana" id="hero">
       <div class="container-fluid">
 
-        <div class="row align-items-center">
+        <h1>Il tuo brand<br class="home-hero-a-capo"> merita di essere<br> <em class="home-hero-parola">riconosciuto</em><br class="home-hero-a-capo"> al primo sguardo</h1>
 
-          <div class="col-12 col-xl-6">
+        <p class="home-hero-intro">Creo loghi e identità visive per attività e imprese del territorio, in Lunigiana, a Massa Carrara e da remoto.</p>
 
-            <p class="home-hero-parole">Funzionale&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> coerente&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> riconoscibile</p>
-
-            <h1>Il tuo brand<br>merita di essere<br><em class="home-hero-parola">riconosciuto</em><br>al primo sguardo</h1>
-
-            <p class="home-hero-intro">Creo loghi e identità visive per attività e imprese del territorio, in Lunigiana, a Massa Carrara e da remoto.</p>
-
-            <div class="home-hero-ctas">
-              <a href="#form" class="home-btn">Scrivimi</a>
-              <a href="#come-lavoro" class="home-btn-contorno">Scopri come lavoro</a>
-            </div>
-
-          </div>
-
-          <div class="col-12 col-xl-5 offset-xl-1">
-            <div class="home-foto">
-              <!-- le copertine dello slider si alternano qui (le aggiunge lo script in fondo);
-                   la copertina del primo progetto dello slider (Oodal Festival) resta come riserva
-                   se JavaScript non parte: se cambi il primo progetto, cambia anche questa -->
-              <div class="home-hero-galleria" id="heroGalleria" role="img" aria-label="Copertine di alcuni progetti di Laura Pasquali">
-                <img src="img/oodal-festival/1.jpg" alt="" class="visibile" aria-hidden="true" />
-              </div>
-            </div>
-          </div>
-
+        <div class="home-hero-ctas">
+          <a href="#form" class="home-btn">Scrivimi</a>
+          <a href="#come-lavoro" class="home-btn-contorno">Scopri come lavoro</a>
         </div>
 
-        <!-- cosa faccio -->
-        <div class="home-servizi">
-          <p class="home-servizi-titolo">Cosa faccio</p>
-          <ul>
-            <li>Brand identity</li>
-            <li>Restyling e rebranding</li>
-            <li>Grafica per la stampa</li>
-            <li>Siti vetrina</li>
-          </ul>
+        <div class="home-foto">
+          <!-- le copertine dello slider si alternano qui, una alla volta (le aggiunge lo script in fondo);
+               la copertina del primo progetto dello slider (Oodal Festival) resta come riserva
+               se JavaScript non parte: se cambi il primo progetto, cambia anche questa -->
+          <div class="home-hero-galleria" id="heroGalleria" role="img" aria-label="Copertine di alcuni progetti di Laura Pasquali">
+            <img src="img/oodal-festival/1.jpg" alt="" class="visibile" aria-hidden="true" />
+          </div>
         </div>
 
       </div>
     </section>
+
+
+    <!-- cosa faccio: fascia centrata subito dopo la hero, sotto una linea sottile -->
+
+    <div class="home-servizi-fascia home-grana">
+      <div class="home-servizi">
+        <p class="home-servizi-titolo">Cosa faccio</p>
+        <ul>
+          <li>Brand identity</li>
+          <li>Restyling e rebranding</li>
+          <li>Grafica per la stampa</li>
+          <li>Siti vetrina</li>
+        </ul>
+      </div>
+    </div>
 
 
     <!-- manifesto -->
@@ -586,6 +582,11 @@
 
       const tornaSu = document.querySelector('.torna-su');
       if (tornaSu) {
+        // compare dopo circa 400px di scorrimento
+        const mostraTornaSu = () => tornaSu.classList.toggle('visibile', window.scrollY > 400);
+        window.addEventListener('scroll', mostraTornaSu, { passive: true });
+        mostraTornaSu();
+
         tornaSu.addEventListener('click', (evento) => {
           evento.preventDefault();
           // chi ha attivato "riduci movimento" torna su con un salto, senza animazione

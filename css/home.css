@@ -133,15 +133,13 @@
 
 /* hero */
 
-/* il padding sopra la fa partire sotto la navbar fissa */
+/* tutto centrato in colonna: titolo, testo, bottoni, immagine.
+   Il padding sopra la fa partire sotto la navbar fissa */
 .home-hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  padding-top: calc(var(--nav-height) + 2.5rem);
+  padding-top: calc(var(--nav-height) + 2rem);
   padding-bottom: 3rem;
   background-color: var(--base);
+  text-align: center;
   overflow-x: clip;
 }
 
@@ -150,20 +148,9 @@
   padding-right: 1.25rem;
 }
 
-/* tre parole sopra il titolo, separate da puntini */
-.home-hero-parole {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 1rem;
-}
-
-.home-hero-sep {
-  color: var(--verde);
-  padding: 0 0.4rem;
+/* a capo del titolo che valgono solo su mobile e tablet (su desktop il titolo sta su due righe) */
+.home-hero-a-capo {
+  display: inline;
 }
 
 .home-hero h1 {
@@ -191,8 +178,12 @@
 .home-hero-misura,
 .home-hero-scritta {
   grid-area: 1 / 1;
-  justify-self: start;
   white-space: nowrap;
+}
+
+/* la parola che si scrive sta al centro del suo spazio, come il resto del titolo centrato */
+.home-hero-scritta {
+  justify-self: center;
 }
 
 /* invisibile ma occupa spazio; padding-right lascia posto al cursore dopo la parola più lunga */
@@ -224,12 +215,13 @@
   line-height: 1.55;
   color: var(--burgundy);
   max-width: 34rem;
-  margin-bottom: 1.75rem;
+  margin: 0 auto 1.75rem;
 }
 
 .home-hero-ctas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
 }
 
@@ -264,30 +256,41 @@
   transition: none;
 }
 
+/* immagine della hero: una sola, centrata sotto i bottoni, con la cornice (rettangolo navy
+   ruotato dietro e filo verde oliva); più piccola su mobile */
 .home-hero .home-foto {
-  width: 70%;
-  margin: 3.5rem auto 1rem;
+  width: 60%;
+  max-width: 16rem;
+  margin: 3rem auto 1.5rem;
 }
 
-/* cosa faccio: etichetta e servizi a pillola */
+/* cosa faccio: fascia crema subito dopo la hero, con etichetta e servizi a pillola
+   centrati sotto una linea sottile */
+.home-servizi-fascia {
+  background-color: var(--base);
+  padding: 0 1.25rem 3rem;
+}
+
 .home-servizi {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 3rem;
+  gap: 0.75rem;
+  border-top: 1px solid var(--burgundy);
+  padding-top: 2rem;
 }
 
 .home-servizi-titolo {
   font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--burgundy);
-  margin: 0 0.5rem 0 0;
+  margin: 0;
 }
 
 .home-servizi ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   list-style: none;
   padding: 0;
@@ -867,9 +870,14 @@
     font-size: 4rem;
   }
 
-  .home-hero .home-foto,
   .home-about .home-foto {
     width: 50%;
+  }
+
+  /* immagine della hero sul tablet: centrata, un po' più grande che su mobile */
+  .home-hero .home-foto {
+    width: 18rem;
+    max-width: none;
   }
 
   /* la foto di chi sono è orizzontale: qui può essere più larga */
@@ -949,35 +957,41 @@
 
   /* hero */
 
+  /* misure scelte per un portatile 1366×768: navbar 120px, titolo su due righe,
+     testo su due righe, bottoni; l'immagine (larga 340px, alta circa 410px) parte
+     a circa 480px dall'alto, quindi nella prima schermata se ne vedono circa i due terzi */
   .home-hero {
-    padding-top: calc(var(--nav-height) + 3rem);
+    padding-top: calc(var(--nav-height) + 2rem);
   }
 
-  .home-hero-parole {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  /* su desktop il titolo sta su due righe */
+  .home-hero-a-capo {
+    display: none;
   }
 
   .home-hero h1 {
-    font-size: clamp(3.5rem, 4.6vw, 5.5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(3.25rem, 4.6vw, 5.5rem);
+    margin-bottom: 1.25rem;
   }
 
   .home-hero-intro {
     font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    max-width: 44rem;
+    margin-bottom: 1.75rem;
   }
 
-  /* il bordo destro della foto coincide con quello di "Prenota una call" */
   .home-hero .home-foto {
-    width: 72%;
-    margin: 0 0 0 auto;
-    top: 2rem;
+    width: 340px;
+    margin: 2.5rem auto 1rem;
+  }
+
+  .home-servizi-fascia {
+    padding: 0 10% 4rem;
   }
 
   .home-servizi {
-    margin-top: 4rem;
     gap: 1rem;
+    padding-top: 2.5rem;
   }
 
   .home-servizi-titolo,

@@ -67,7 +67,7 @@
   font-display: swap;
 }
 
-/* Geist 600: .home-hero-parole, .home-passo-nota */
+/* Geist 600: .home-passo-nota e il messaggio di errore del modulo */
 @font-face {
   font-family: 'Geist';
   src: url('../assets/fonts/Geist-SemiBold.ttf') format('truetype');
@@ -102,7 +102,7 @@
   --h3-size:  1rem;     /* 16px */
   --p-size:   0.75rem;  /* 12px */
  
-  --nav-height: 128px;   /* navbar mobile: riquadro di 116px + 12px di margine sopra (desktop: 160px) */
+  --nav-height: 120px;   /* navbar mobile: riquadro di 108px + 12px di margine sopra (desktop: 120px) */
   --transition: 0.3s ease;
 }
  
@@ -141,7 +141,7 @@ html {
 /* mobile e tablet: un riquadro bordeaux staccato dai bordi (12px), fisso in alto mentre si scorre.
    Tutto centrato in colonna: logo, linea crema, bottone del menu; il menu aperto compare sotto,
    dentro lo stesso riquadro, che si allunga verso il basso.
-   --nav-height (128px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
+   --nav-height (120px) comprende anche i 12px sopra: le prime sezioni la usano per partire sotto.
    Contrasti sul bordeaux: crema 12,9:1; terracotta (hover e focus) 3,0:1, sotto 4,5:1 */
 header {
   position: fixed;
@@ -167,19 +167,45 @@ header {
   align-items: center;
 }
 
-/* riga del logo, con la linea crema sotto (64px, linea compresa) */
+/* riga del logo, con la linea crema sotto (56px, linea compresa) */
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 64px;
+  height: 56px;
   border-bottom: 1px solid var(--base);
 }
 
-/* logo crema (logo-footer.png): il file ha spazio vuoto sopra e sotto la scritta */
+/* il link del logo tiene insieme la scritta e il payoff, uno sotto l'altro */
+.logo a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.logo a:focus-visible {
+  outline: 2px solid var(--base);
+  outline-offset: 4px;
+}
+
+/* scritta "laura pasquali" crema (logo-scritta.png, ritagliata da logo-footer.png senza il payoff) */
 .logo-mobile {
-  height: 44px;
+  height: 24px;
+}
+
+/* payoff sotto la scritta: maiuscolo, molto spaziato, almeno 7px su mobile (9px su desktop).
+   margin-right negativo: compensa lo spazio dopo l'ultima lettera, così il payoff resta centrato */
+.logo-payoff {
+  font-family: var(--font-body);
+  font-size: 7px;
+  line-height: 1;
+  letter-spacing: 0.4em;
+  margin-right: -0.4em;
+  text-transform: uppercase;
+  color: var(--base);
 }
 
 /* il contenitore di menu e bottone non fa da scatola: menu e bottone
@@ -258,7 +284,7 @@ header {
   text-underline-offset: 0.35em;
 }
 
-/* "Prenota una chiamata": nel menu a tendina è un bottone terracotta centrato */
+/* "Sentiamoci": nel menu a tendina è un bottone terracotta centrato */
 .menu .prenotaunacalltendina {
   display: block;
   width: fit-content;
@@ -278,11 +304,6 @@ header {
 .menu .prenotaunacalltendina:focus-visible {
   background: var(--navy);
   color: var(--base);
-}
-
-/* la freccia dopo "Prenota una chiamata" si vede solo su desktop */
-.menu-freccia {
-  display: none;
 }
 
 /* social in fondo al menu: icone crema, area da toccare di 44px */
@@ -565,9 +586,14 @@ header {
   opacity: 0.7;
 }
 
-/* pulsante per tornare su: fisso in basso a destra, resta visibile mentre la pagina scorre.
+/* pulsante per tornare su: fisso in basso a destra.
+   Nascosto in cima alla pagina; compare in dissolvenza dopo circa 400px di scorrimento
+   (la classe .visibile la aggiunge lo script in fondo a ogni pagina).
+   visibility: da nascosto non si può cliccare né raggiungere con il tasto Tab.
    z-index 90: sopra i contenuti, sotto la navbar (100) */
 .torna-su {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   right: 1.25rem;
   bottom: 1.25rem;
@@ -584,7 +610,19 @@ header {
   font-size: 1.4rem;
   line-height: 1;
   text-decoration: none;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.torna-su.visibile {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* con "riduci movimento" compare e sparisce senza dissolvenza */
+@media (prefers-reduced-motion: reduce) {
+  .torna-su {
+    transition: none;
+  }
 }
 
 /* il colore va ripetuto, altrimenti all'hover vince quello dei link di Bootstrap */
@@ -2381,16 +2419,16 @@ header {
  
 @media (min-width: 1200px) {
  
-  /* altezza della navbar desktop: riga del logo (104px, linea compresa) + riga delle voci (56px).
+  /* altezza della navbar desktop: riga del logo (72px, linea compresa) + riga delle voci (48px).
      Cambiando la variabile si aggiornano da sole l'altezza dell'header e tutti i calc() che la usano */
   :root {
-    --nav-height: 160px;
+    --nav-height: 120px;
   }
 
 
   /* header e menu: sfondo bordeaux, attaccato al bordo alto e largo tutta la pagina.
-     In alto il logo centrato, poi una linea crema da un bordo all'altro, sotto le voci in una riga
-     con spazio uguale tra loro. "Prenota una chiamata" è l'ultima voce, in terracotta con la freccia */
+     In alto il logo centrato con il payoff, poi una linea crema da un bordo all'altro,
+     sotto le voci in una riga con spazio uguale tra loro; per ultimo il bottone "Sentiamoci" */
 
   header {
     top: 0;
@@ -2405,12 +2443,15 @@ header {
   }
 
   .logo {
-    height: 104px;
+    height: 72px;
   }
 
-  /* 72px: il file del logo ha spazio vuoto sopra e sotto, la scritta risulta alta circa 46px */
   .logo img {
-    height: 72px;
+    height: 34px;
+  }
+
+  .logo-payoff {
+    font-size: 9px;
   }
 
   /* il menu torna una riga sotto la linea.
@@ -2423,7 +2464,7 @@ header {
     align-items: center;
     gap: 2.5rem;
     order: 0;
-    height: 56px;
+    height: 48px;
     max-height: none;
     overflow: visible;
     border-top: none;
@@ -2453,35 +2494,29 @@ header {
     display: none;
   }
 
-  /* "Prenota una chiamata": l'ultima voce della riga, con lo stesso stile delle altre ma in terracotta.
-     Contrasto: terracotta sul bordeaux 3,0:1, sotto il 4,5:1 */
+  /* "Sentiamoci": bottone nella riga delle voci, con il bordo crema.
+     Angoli di 10px, come i bottoni della home (.home-btn e .home-btn-contorno in home.css).
+     Hover e focus: sfondo e bordo terracotta; testo crema sul terracotta 4,3:1, sotto il 4,5:1 */
   .menu .prenotaunacalltendina {
     display: inline-flex;
     align-items: center;
-    gap: 0.4em;
+    height: 38px;
     margin: 0;
-    padding: 0.5rem 0;
-    border-radius: 0;
-    background: none;
-    color: var(--terracotta);
+    padding: 0 20px;
+    border: 1.5px solid var(--base);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--base);
     font-family: var(--font-body);
     font-size: var(--h3-size);
+    transition: background-color var(--transition), border-color var(--transition);
   }
 
   .menu .prenotaunacalltendina:hover,
   .menu .prenotaunacalltendina:focus-visible {
-    background: none;
+    background: var(--terracotta);
+    border-color: var(--terracotta);
     color: var(--base);
-  }
-
-  /* la freccia si sposta un poco al passaggio del mouse */
-  .menu-freccia {
-    display: inline-block;
-    transition: transform var(--transition);
-  }
-
-  .menu .prenotaunacalltendina:hover .menu-freccia {
-    transform: translateX(3px);
   }
 
   /* il bottone del menu non serve su desktop */
