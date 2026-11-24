@@ -635,7 +635,8 @@
 /* contatti */
 
 /* il modulo: un riquadro navy sul fondo crema della sezione.
-   Dentro: testi crema, campi crema con testo bordeaux, bottone crema.
+   Dentro: testi crema, campi crema con testo bordeaux,
+   bottone terracotta come gli altri della home (.home-btn).
    Contrasti: crema su navy 6,8:1, bordeaux su crema 12,9:1 */
 .home-modulo {
   background-color: var(--navy);
@@ -730,17 +731,6 @@
   width: 100%;
   margin-top: 0.5rem;
   border: none;
-}
-
-/* bottone crema con testo navy; al passaggio del mouse bordeaux con testo crema */
-.home-modulo .home-btn {
-  background-color: var(--base);
-  color: var(--navy);
-}
-
-.home-modulo .home-btn:hover {
-  background-color: var(--burgundy);
-  color: var(--base);
 }
 
 /* all'85% la nota resta sopra 4,5:1 (5,4:1) */
