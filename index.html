@@ -27,8 +27,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- prima gli stili comuni a tutto il sito, poi quelli della sola home -->
-  <link rel="stylesheet" href="css/style.css?v=4" />
-  <link rel="stylesheet" href="css/home.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
+  <link rel="stylesheet" href="css/home.css?v=5" />
 
   <script src="js/lenis.min.js"></script>
   <script>
@@ -90,8 +90,8 @@
               <li><a href="#come-lavoro">Come lavoro</a></li>
             </ul>
 
-            <!-- bottone dentro il menu a tendina (mobile) -->
-            <a href="#form" class="prenotaunacalltendina">Prenota una chiamata</a>
+            <!-- "Prenota una chiamata": bottone nel menu a tendina (mobile e tablet), ultima voce della riga su desktop -->
+            <a href="#form" class="prenotaunacalltendina">Prenota una chiamata<span class="menu-freccia" aria-hidden="true">→</span></a>
 
             <!-- social in fondo al menu a tendina (mobile e tablet) -->
             <div class="menu-social">
@@ -104,8 +104,6 @@
             </div>
           </nav>
 
-          <!-- bottone visibile su desktop -->
-          <a href="#form" class="prenotaunacall">Prenota una chiamata</a>
 
           <button class="toggleMenu" onclick="toggleMenu()" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu">
             <img src="img/decorazioni/puntiverdi.svg" alt="" width="317" height="67" />
@@ -130,7 +128,7 @@
 
             <p class="home-hero-parole">Funzionale&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> coerente&nbsp;<span class="home-hero-sep" aria-hidden="true">•</span> riconoscibile</p>
 
-            <h1>Il tuo brand<br>merita di essere<br><em>riconosciuto</em><br>al primo sguardo</h1>
+            <h1>Il tuo brand<br>merita di essere<br><em class="home-hero-parola">riconosciuto</em><br>al primo sguardo</h1>
 
             <p class="home-hero-intro">Creo loghi e identità visive per attività e imprese del territorio, in Lunigiana, a Massa Carrara e da remoto.</p>
 
@@ -616,24 +614,6 @@
   </script>
 
   <script>
-    /* ---- MENU HAMBURGER ---- */
-    /* ogni link del menu a tendina (le voci e il bottone "Prenota una chiamata") chiude il menu:
-       sulla home il form e "Come lavoro" sono nella stessa pagina e il menu aperto li coprirebbe */
-    document.querySelectorAll("#menu a").forEach((link) => {
-      link.addEventListener("click", () => {
-        if (document.getElementById("menu").classList.contains("open")) toggleMenu();
-      });
-    });
-
-    /* apre e chiude il menu; aggiorna anche il nome del bottone per i lettori di schermo
-       (puntini da chiuso, X da aperto: lo scambio lo fa il CSS) */
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      const bottone = document.querySelector(".toggleMenu");
-      const aperto = menu.classList.toggle("open");
-      bottone.setAttribute("aria-expanded", aperto);
-      bottone.setAttribute("aria-label", aperto ? "Chiudi il menu" : "Apri il menu");
-    }
 
 
 
@@ -722,5 +702,7 @@
     }
   </script>
 
+  <script src="js/menu.js?v=1"></script>
+  <script src="js/hero.js?v=1"></script>
 </body>
 </html>
