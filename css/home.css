@@ -181,9 +181,19 @@
   white-space: nowrap;
 }
 
-/* la parola che si scrive sta al centro del suo spazio, come il resto del titolo centrato */
+/* la parola che si scrive: js/hero.js le dà la larghezza della parola finita;
+   il riquadro sta al centro dello spazio e le lettere partono da sinistra,
+   così a parola finita il vuoto resta diviso a metà prima e dopo */
 .home-hero-scritta {
   justify-self: center;
+  text-align: left;
+}
+
+/* serve solo a js/hero.js per misurare le parole: invisibile e fuori dal flusso */
+.home-hero-prova {
+  position: absolute;
+  visibility: hidden;
+  white-space: nowrap;
 }
 
 /* invisibile ma occupa spazio; padding-right lascia posto al cursore dopo la parola più lunga */
@@ -957,11 +967,11 @@
 
   /* hero */
 
-  /* misure scelte per un portatile 1366×768: navbar 120px, titolo su due righe,
-     testo su due righe, bottoni; l'immagine (larga 340px, alta circa 410px) parte
-     a circa 480px dall'alto, quindi nella prima schermata se ne vedono circa i due terzi */
+  /* spazi: 96px tra navbar e titolo, 32px tra titolo e testo, 40px tra testo e bottoni,
+     80px tra bottoni e immagine, 120px tra immagine e la fascia "Cosa faccio" */
   .home-hero {
-    padding-top: calc(var(--nav-height) + 2rem);
+    padding-top: calc(var(--nav-height) + 96px);
+    padding-bottom: 120px;
   }
 
   /* su desktop il titolo sta su due righe */
@@ -970,19 +980,23 @@
   }
 
   .home-hero h1 {
-    font-size: clamp(3.25rem, 4.6vw, 5.5rem);
-    margin-bottom: 1.25rem;
+    font-size: clamp(3rem, 4.2vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 32px;
   }
 
+  /* text-wrap: balance divide il testo in righe di lunghezza simile;
+     "Massa Carrara" non si spezza grazie allo spazio unificatore (&nbsp;) nell'HTML */
   .home-hero-intro {
     font-size: 1.2rem;
-    max-width: 44rem;
-    margin-bottom: 1.75rem;
+    max-width: 36rem;
+    text-wrap: balance;
+    margin-bottom: 40px;
   }
 
   .home-hero .home-foto {
     width: 340px;
-    margin: 2.5rem auto 1rem;
+    margin: 80px auto 0;
   }
 
   .home-servizi-fascia {

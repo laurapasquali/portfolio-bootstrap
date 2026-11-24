@@ -23,6 +23,15 @@ document.querySelectorAll("#menu a").forEach((link) => {
   });
 });
 
+/* navbar: quando la pagina è scorsa sotto, la classe .scorsa aggiunge un'ombra alla base
+   (su desktop; il riquadro mobile ha già la sua ombra) */
+const intestazione = document.querySelector("header");
+if (intestazione) {
+  const ombra = () => intestazione.classList.toggle("scorsa", window.scrollY > 0);
+  window.addEventListener("scroll", ombra, { passive: true });
+  ombra();
+}
+
 document.addEventListener("keydown", (evento) => {
   if (evento.key === "Escape" && document.getElementById("menu").classList.contains("open")) {
     toggleMenu();

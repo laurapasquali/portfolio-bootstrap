@@ -124,10 +124,11 @@ img {
 }
  
  
-/* i link interni (#form, #come-lavoro) si fermano sotto la navbar fissa */
- 
-html {
-  scroll-padding-top: var(--nav-height);
+/* i link interni (#form, #come-lavoro…) si fermano sotto la navbar fissa:
+   ogni sezione con un id lascia sopra di sé lo spazio della navbar */
+
+section[id] {
+  scroll-margin-top: var(--nav-height);
 }
  
  
@@ -2419,10 +2420,12 @@ header {
  
 @media (min-width: 1200px) {
  
-  /* altezza della navbar desktop: riga del logo (72px, linea compresa) + riga delle voci (48px).
+  /* altezza della navbar desktop:
+     parte del logo 85px = 22 sopra + scritta 34 + 3 + payoff 9 + 16 sotto + linea 1;
+     riga delle voci 74px = 18 sopra + bottone "Sentiamoci" 38 + 18 sotto.
      Cambiando la variabile si aggiornano da sole l'altezza dell'header e tutti i calc() che la usano */
   :root {
-    --nav-height: 120px;
+    --nav-height: 159px;
   }
 
 
@@ -2430,20 +2433,29 @@ header {
      In alto il logo centrato con il payoff, poi una linea crema da un bordo all'altro,
      sotto le voci in una riga con spazio uguale tra loro; per ultimo il bottone "Sentiamoci" */
 
+  /* fissa in alto, sempre della stessa misura. L'ombra compare solo quando la pagina
+     è scorsa sotto (classe .scorsa, la aggiunge js/menu.js), per staccarla dal contenuto */
   header {
     top: 0;
     left: 0;
     right: 0;
     border-radius: 0;
     box-shadow: none;
+    transition: box-shadow var(--transition);
+  }
+
+  header.scorsa {
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--burgundy) 30%, transparent);
   }
 
   .container-full {
     padding: 0;
   }
 
+  /* 22px sopra il logo, 16px tra il payoff e la linea */
   .logo {
-    height: 72px;
+    height: auto;
+    padding: 22px 0 16px;
   }
 
   .logo img {
@@ -2454,7 +2466,7 @@ header {
     font-size: 9px;
   }
 
-  /* il menu torna una riga sotto la linea.
+  /* il menu torna una riga sotto la linea: 18px sopra e sotto, voci centrate in verticale.
      .menu.open serve se il menu è stato aperto su mobile e poi la finestra si allarga */
   .menu,
   .menu.open {
@@ -2464,11 +2476,11 @@ header {
     align-items: center;
     gap: 2.5rem;
     order: 0;
-    height: 48px;
+    height: auto;
     max-height: none;
     overflow: visible;
     border-top: none;
-    padding: 0 1.25rem;
+    padding: 18px 1.25rem;
   }
 
   .menu ul {
@@ -2485,9 +2497,10 @@ header {
     border-top: none;
   }
 
-  /* voci come prima di questa modifica: Geist, 1rem, peso normale, senza maiuscolo */
+  /* voci come prima di questa modifica: Geist, 1rem, peso normale, senza maiuscolo.
+     Alte 32px, meno del bottone "Sentiamoci" (38px): è il bottone a dare l'altezza alla riga */
   .menu a {
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
   }
 
   .menu-social {

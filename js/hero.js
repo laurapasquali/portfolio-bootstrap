@@ -16,7 +16,7 @@
   if (!parola) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const PAROLE = ["riconosciuto", "ricordato", "scelto", "memorabile", "capito"];
+  const PAROLE = ["riconosciuto", "apprezzato", "ricordato"];
   const SCRIVI = 90;       // ms per ogni lettera scritta
   const CANCELLA = 50;     // ms per ogni lettera cancellata
   const FERMA = 2000;      // ms in cui la parola resta intera
@@ -31,7 +31,10 @@
 
   // parte visibile, nascosta ai lettori di schermo:
   // - "misura": la parola più lunga, invisibile, tiene fermo lo spazio (niente salti)
-  // - "scritta": le lettere che compaiono, seguite dal cursore
+  // - "scritta": le lettere che compaiono, seguite dal cursore. È larga quanto la parola
+  //   finita ed è centrata: le lettere partono da sinistra e, a parola finita,
+  //   il vuoto resta diviso a metà prima e dopo
+  // - "prova": invisibile, serve solo a misurare la larghezza di ogni parola
   const visibile = document.createElement("span");
   visibile.className = "home-hero-macchina";
   visibile.setAttribute("aria-hidden", "true");
@@ -47,7 +50,10 @@
   cursore.className = "home-hero-cursore";
   scritta.append(testo, cursore);
 
-  visibile.append(misura, scritta);
+  const prova = document.createElement("span");
+  prova.className = "home-hero-prova";
+
+  visibile.append(misura, scritta, prova);
   parola.append(perLettori, visibile);
 
   let indice = 0;                 // parola attuale
@@ -55,7 +61,19 @@
   let fase = "ferma";             // "scrive", "ferma", "cancella"
   let timer = null;
 
+  // larghezza della parola finita, cursore compreso, in em:
+  // in em resta giusta anche se la finestra cambia misura e il titolo cresce o si rimpicciolisce
+  function preparaSpazio() {
+    prova.textContent = PAROLE[indice];
+    const corpo = parseFloat(getComputedStyle(scritta).fontSize);
+    const spazioCursore = cursore.getBoundingClientRect().width + parseFloat(getComputedStyle(cursore).marginLeft);
+    scritta.style.width = (prova.getBoundingClientRect().width + spazioCursore) / corpo + "em";
+  }
+
   testo.textContent = PAROLE[0];
+  preparaSpazio();
+  // i font arrivano un attimo dopo: quando sono pronti si rimisura
+  if (document.fonts) document.fonts.ready.then(preparaSpazio);
 
   function passo() {
     const attuale = PAROLE[indice];
@@ -79,6 +97,7 @@
         timer = setTimeout(passo, CANCELLA);
       } else {
         indice = (indice + 1) % PAROLE.length;
+        preparaSpazio();
         fase = "scrive";
         timer = setTimeout(passo, PAUSA);
       }
