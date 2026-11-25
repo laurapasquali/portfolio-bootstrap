@@ -423,8 +423,13 @@ header {
   transition: transform var(--transition);
 }
  
-.progetto-slide:hover img {
-  transform: scale(1.05);
+/* zoom al passaggio del mouse solo dove il mouse c'è davvero (hover: hover).
+   Su telefono e tablet il primo tocco farebbe partire lo zoom invece di aprire
+   il progetto, e servirebbe un secondo tocco: così la slide si apre subito */
+@media (hover: hover) {
+  .progetto-slide:hover img {
+    transform: scale(1.05);
+  }
 }
 
 /* immagine con margini trasparenti (Podere i Cerri): la ingrandisce dentro la foto,
